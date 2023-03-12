@@ -1,12 +1,12 @@
-[1. Méthodes GET et POST](#1-méthodes-get-et-post)  
-[Comparaison méthodes](#comparaison-méthodes)  
-[Extensible](#extensible)  
-[Sans état](#sans-état)  
-[URL](#url)  
-[Codes Status](#codes status)  
-[Négociation de contenu](#négociation-de-contenu)  
-[Installation Apache & configuration](#installation-apache-&-configuration)  
-[CURL](#curl)  
+[1 Méthodes GET et POST](#1-méthodes-get-et-post)  
+[2 Comparaison méthodes](#2-comparaison-méthodes)  
+[3 Extensible](#3-extensible)  
+[4 Sans état](#4-sans-état)  
+[5 URL](#5-url)  
+[6 Codes Status](#6-codes status)  
+[7 Négociation de contenu](#7-négociation-de-contenu)  
+[8 Installation Apache & configuration](#8-installation-apache-&-configuration)  
+[9 CURL](#9curl)  
 [10 Headers](#10-headers)
 
 
@@ -151,7 +151,7 @@ access-control-allow-methods: GET, POST
 <br><br><br>
 
 
-# Comparaison méthodes
+# 2 Comparaison méthodes
 
 Ce que  l'on peut déduire des exemples:
 
@@ -163,25 +163,25 @@ Ce que  l'on peut déduire des exemples:
 
 
 
-# Extensible
+# 3 Extensible
 
 Le protocole HTTP est extensible grâce aux en-têtes de requêtes et de réponses.
 En effet, ces en-têtes (headers) rendent évolutif le protocole car il est possible dans créer de nouvelles afin de transmettre dans le flux d'échange, de nouvelles informations.
 
-# Sans état
+# 4 Sans état
 HTTP est considéré comme un protocole sans état car chaque requête et réponse est traité de façon indépendante par le serveur qui ne garde pas de trace des informations des requêtes précédentes.
 Les conséquences sur la navigation web sont que les serveurs web ne peuvent pas retenir les information de sessions d'une page à l'autre.
 Cela confère aux serveurs web des performances accrues car ils peuvent traiter un grand nombre de demandes simultanées.
 Pour que les sessions utilisateur soit cohérentes, des mécanismes tels que les cookies sont mis en oeuvre en utilisant les en-têtes.
 
-# URL
+# 5 URL
 
 ![](images/url.png)
 
 Créé avec Excalidraw (Obsidian)
 
 
-# Codes Status
+# 6 Codes Status
 
 
 |     Code      | 1XX           |   2XX    |                  3XX                  |                   4XX                   |              5XX              |
@@ -189,7 +189,7 @@ Créé avec Excalidraw (Obsidian)
 | Signification | Informatif    |  Succès  |             Redirection               |         Erreurs côté client             |     Erreurs côté serveur      |
 |   Exemple     | 100 continue  | 200 Ok   | 304 la ressource n'a pas été modifiée | 403 l'accès à la ressource est interdit | 500 erreur interne au serveur |
 
-# Négociation de contenu
+# 7 Négociation de contenu
 
 Une ressource est un terme générique qui peut exprimer une identité, une imprimante...
 Ce qui va circuler dans le flux d'échange c'est la représentation de la ressource.
@@ -211,11 +211,11 @@ Cela est implémenté dans le protocole grâce à des en-têtes spécialisées
 Nous avons donc une paire d'en-tête client-serveur.
 
 
-# Installation Apache & configuration
+# 8 Installation Apache & configuration
 
 ![](images/dev.local.png)
 
-# CURL
+# 9 CURL
 
  Pour chaque requête effectuée, afficher la commande, le résultat et vos commentaires. Requêtes à effectuer en invite de commande, avec curl : 
  
