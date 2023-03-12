@@ -11,7 +11,8 @@
 [10 - Headers](#10---headers)
 
 
-# 1 - Méthodes GET et POST [[haut de page]](#client-/-serveur-web)
+# 1 - Méthodes GET et POST 
+[[haut de page]](#client-/-serveur-web)
 
 Le format d'une requête:
 ```
@@ -152,7 +153,8 @@ access-control-allow-methods: GET, POST
 <br><br><br>
 
 
-# 2 - Comparaison méthodes [[haut de page]](#client-/-serveur-web)
+# 2 - Comparaison méthodes 
+[[haut de page]](#client-/-serveur-web)
 
 Ce que  l'on peut déduire des exemples:
 
@@ -164,25 +166,29 @@ Ce que  l'on peut déduire des exemples:
 
 
 
-# 3 - Extensible [[haut de page]](#client-/-serveur-web)
+# 3 - Extensible
+[[haut de page]](#client-/-serveur-web)
 
 Le protocole HTTP est extensible grâce aux en-têtes de requêtes et de réponses.
 En effet, ces en-têtes (headers) rendent évolutif le protocole car il est possible dans créer de nouvelles afin de transmettre dans le flux d'échange, de nouvelles informations.
 
-# 4 - Sans état [[haut de page]](#client-/-serveur-web)
+# 4 - Sans état
+[[haut de page]](#client-/-serveur-web)
 HTTP est considéré comme un protocole sans état car chaque requête et réponse est traité de façon indépendante par le serveur qui ne garde pas de trace des informations des requêtes précédentes.
 Les conséquences sur la navigation web sont que les serveurs web ne peuvent pas retenir les information de sessions d'une page à l'autre.
 Cela confère aux serveurs web des performances accrues car ils peuvent traiter un grand nombre de demandes simultanées.
 Pour que les sessions utilisateur soit cohérentes, des mécanismes tels que les cookies sont mis en oeuvre en utilisant les en-têtes.
 
-# 5 - URL [[haut de page]](#client-/-serveur-web)
+# 5 - URL 
+[[haut de page]](#client-/-serveur-web)
 
 ![](images/url.png)
 
 Créé avec Excalidraw (Obsidian)
 
 
-# 6 - Codes Status [[haut de page]](#client-/-serveur-web)
+# 6 - Codes Status 
+[[haut de page]](#client-/-serveur-web)
 
 
 |     Code      | 1XX           |   2XX    |                  3XX                  |                   4XX                   |              5XX              |
@@ -190,7 +196,8 @@ Créé avec Excalidraw (Obsidian)
 | Signification | Informatif    |  Succès  |             Redirection               |         Erreurs côté client             |     Erreurs côté serveur      |
 |   Exemple     | 100 continue  | 200 Ok   | 304 la ressource n'a pas été modifiée | 403 l'accès à la ressource est interdit | 500 erreur interne au serveur |
 
-# 7 - Négociation de contenu [[haut de page]](#client-/-serveur-web)
+# 7 - Négociation de contenu 
+[[haut de page]](#client-/-serveur-web)
 
 Une ressource est un terme générique qui peut exprimer une identité, une imprimante...
 Ce qui va circuler dans le flux d'échange c'est la représentation de la ressource.
@@ -212,11 +219,13 @@ Cela est implémenté dans le protocole grâce à des en-têtes spécialisées
 Nous avons donc une paire d'en-tête client-serveur.
 
 
-# 8 - Installation Apache et configuration [[haut de page]](#client-/-serveur-web)
+# 8 - Installation Apache et configuration 
+[[haut de page]](#client-/-serveur-web)
 
 ![](images/dev.local.png)
 
-# 9 - CURL [[haut de page]](#client-/-serveur-web)
+# 9 - CURL 
+[[haut de page]](#client-/-serveur-web)
 
  Pour chaque requête effectuée, afficher la commande, le résultat et vos commentaires. Requêtes à effectuer en invite de commande, avec curl : 
  
@@ -250,7 +259,8 @@ curl -O c:\Users\Didier\Documents\Git\nfa085\web\download\test.txt
 ```
 Le fichier test .txt a été téléchargé dans le répertoire de travail.
 <br><br>
-# 10 - Headers [[haut de page]](#client-/-serveur-web)
+# 10 - Headers 
+[[haut de page]](#client-/-serveur-web)
 
 #### En-têtes de requête
 |       En-tête       |                                         Description                                          |                                                              Exemple                                                               |
