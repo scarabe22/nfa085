@@ -1,5 +1,6 @@
-2 - Comparaison méthodes  
 [Menu](../menu.md)
+
+2 - Comparaison méthodes  
 
 Ce que  l'on peut déduire des exemples:
 

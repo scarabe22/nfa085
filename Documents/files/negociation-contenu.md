@@ -1,5 +1,6 @@
-7 - Négociation de contenu  
 [Menu](../menu.md)
+
+7 - Négociation de contenu  
 
 Une ressource est un terme générique qui peut exprimer une identité, une imprimante...
 Ce qui va circuler dans le flux d'échange c'est la représentation de la ressource.

@@ -1,5 +1,6 @@
- 1 - Méthodes GET et POST   
-[Menu](../menu.md)  
+[Menu](../menu.md)
+
+1 - Méthodes GET et POST   
 Le format d'une requête:
 ```
 <Méthode> <URL> HTTP/<version du protocole>

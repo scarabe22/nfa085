@@ -1,5 +1,6 @@
-4 - Sans état   
 [Menu](../menu.md)
+
+4 - Sans état   
 
 
 HTTP est considéré comme un protocole sans état car chaque requête et réponse est traité de façon indépendante par le serveur qui ne garde pas de trace des informations des requêtes précédentes.
