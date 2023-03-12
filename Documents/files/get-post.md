@@ -1,4 +1,4 @@
- 1 - Méthodes GET et POST 
+ 1 - Méthodes GET et POST   
 [Menu](../menu.md)  
 Le format d'une requête:
 ```

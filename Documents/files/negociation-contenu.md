@@ -1,4 +1,4 @@
-7 - Négociation de contenu
+7 - Négociation de contenu  
 [Menu](../menu.md)
 
 Une ressource est un terme générique qui peut exprimer une identité, une imprimante...
