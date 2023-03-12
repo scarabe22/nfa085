@@ -1,4 +1,4 @@
-[1. Méthodes GET et POST](#1.méthodes-get-et-post)  
+[1. Méthodes GET et POST](#1.-méthodes-get-et-post)  
 [Comparaison méthodes](#comparaison-méthodes)  
 [Extensible](#extensible)  
 [Sans état](#sans-état)  
@@ -7,10 +7,10 @@
 [Négociation de contenu](#négociation-de-contenu)  
 [Installation Apache & configuration](#installation-apache-&-configuration)  
 [CURL](#curl)  
-[10. Headers](#10.headers)
+[10. Headers](#10.-headers)
 
 
-# Méthodes GET et POST
+# 1. Méthodes GET et POST
 
 Le format d'une requête:
 ```
@@ -249,7 +249,7 @@ curl -O c:\Users\Didier\Documents\Git\nfa085\web\download\test.txt
 ```
 Le fichier test .txt a été téléchargé dans le répertoire de travail.
 <br><br>
-# Headers
+# 10. Headers
 
 #### En-têtes de requête
 |       En-tête       |                                         Description                                          |                                                              Exemple                                                               |
