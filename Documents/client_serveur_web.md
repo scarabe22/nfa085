@@ -1,4 +1,4 @@
-[1. Méthodes GET et POST](#1.-méthodes-get-et-post)  
+[1. Méthodes GET et POST](#1--méthodes-get-et-post)  
 [Comparaison méthodes](#comparaison-méthodes)  
 [Extensible](#extensible)  
 [Sans état](#sans-état)  
