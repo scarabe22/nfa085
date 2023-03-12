@@ -288,7 +288,7 @@ curl -O c:\Users\Didier\Documents\Git\nfa085\web\download\test.txt
 Le fichier test .txt a été téléchargé dans le répertoire de travail.
 <br><br>
 # 10 - Headers 
-[[haut de page]](#client-serveur-web-architecture)
+[[haut de page]](#client-serveur-web---architecture)
 
 #### En-têtes de requête
 |       En-tête       |                                         Description                                          |                                                              Exemple                                                               |
