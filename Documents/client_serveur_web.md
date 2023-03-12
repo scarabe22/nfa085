@@ -159,10 +159,10 @@ access-control-allow-methods: GET, POST
 
 Ce que  l'on peut déduire des exemples:
 
-|     | Méthode | Body     |                  Action                    |   
-|:---:|:-------:|:--------:|:------------------------------------------:|
-|Get  |  GET    | réponse  | demande au serveur l'accès à une ressource |   
-|Post |  POST   | requête  |       envoie des données au serveur        |   
+ |  Méthode | Body     |              Action                        |   
+|:--------:|:--------:|:------------------------------------------:|
+|   GET    | réponse  | demande au serveur l'accès à une ressource |   
+|   POST   | requête  |       envoie des données au serveur        |   
 
 On trouve dans la littérature d'autres différences entre ces 2 méthodes:
 
