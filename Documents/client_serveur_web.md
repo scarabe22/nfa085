@@ -1,4 +1,4 @@
-[Méthodes GET et POST](#méthodes-get-et-post)  
+[1. Méthodes GET et POST](#1.méthodes-get-et-post)  
 [Comparaison méthodes](#comparaison-méthodes)  
 [Extensible](#extensible)  
 [Sans état](#sans-état)  
@@ -7,7 +7,7 @@
 [Négociation de contenu](#négociation-de-contenu)  
 [Installation Apache & configuration](#installation-apache-&-configuration)  
 [CURL](#curl)  
-[Headers](#headers)
+[10. Headers](#10.headers)
 
 
 # Méthodes GET et POST
