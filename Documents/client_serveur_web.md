@@ -172,8 +172,10 @@ Ce que  l'on peut déduire des exemples:
 Le protocole HTTP est extensible grâce aux en-têtes de requêtes et de réponses.
 En effet, ces en-têtes (headers) rendent évolutif le protocole car il est possible dans créer de nouvelles afin de transmettre dans le flux d'échange, de nouvelles informations.
 
-# 4 - Sans état
-[[haut de page]](#client-serveur-web)
+# 4 - Sans état  
+[[haut de page]](#client-serveur-web)  
+
+
 HTTP est considéré comme un protocole sans état car chaque requête et réponse est traité de façon indépendante par le serveur qui ne garde pas de trace des informations des requêtes précédentes.
 Les conséquences sur la navigation web sont que les serveurs web ne peuvent pas retenir les information de sessions d'une page à l'autre.
 Cela confère aux serveurs web des performances accrues car ils peuvent traiter un grand nombre de demandes simultanées.
