@@ -1,3 +1,3 @@
 8 - Installation Apache et configuration
 
-![](./images/dev.local.png)
+![](../images/dev.local.png)
