@@ -1,10 +1,10 @@
-[1 -  Méthodes GET et POST](#1---methodes-get-et-post)  
-[2 -  Comparaison méthodes](#2---comparaison-methodes)  
+[1 -  Méthodes GET et POST](#1---méthodes-get-et-post)  
+[2 -  Comparaison méthodes](#2---comparaison-méthodes)  
 [3 - Extensible](#3---extensible)  
-[4 - Sans état](#4---sans-etat)  
+[4 - Sans état](#4---sans-état)  
 [5 - URL](#---5-url)  
 [6 - Codes Status](#6---codes-status)  
-[7 - Négociation de contenu](#7---negociation-de-contenu)  
+[7 - Négociation de contenu](#7---négociation-de-contenu)  
 [8 - Installation Apache et configuration](#8---installation-apache-et-configuration)  
 [9 - CURL](#9---curl)  
 [10. Headers](#10.-headers)
@@ -249,7 +249,7 @@ curl -O c:\Users\Didier\Documents\Git\nfa085\web\download\test.txt
 ```
 Le fichier test .txt a été téléchargé dans le répertoire de travail.
 <br><br>
-# 10 - Headers
+# 10. Headers
 
 #### En-têtes de requête
 |       En-tête       |                                         Description                                          |                                                              Exemple                                                               |
