@@ -1,4 +1,5 @@
-2 - Comparaison méthodes 
+2 - Comparaison méthodes
+[Menu](../menu.md)
 
 Ce que  l'on peut déduire des exemples:
 
