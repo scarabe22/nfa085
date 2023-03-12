@@ -180,16 +180,16 @@ On trouve dans la littérature d'autres différences entre ces 2 méthodes:
 # 3 - Extensible
 [[haut de page]](#client-serveur-web---architecture)
 
-Le protocole HTTP est extensible grâce aux en-têtes de requêtes et de réponses.
+Le protocole HTTP est extensible grâce aux en-têtes de requêtes et de réponses.  
 En effet, ces en-têtes (headers) rendent évolutif le protocole car il est possible dans créer de nouvelles afin de transmettre dans le flux d'échange, de nouvelles informations.
 
 # 4 - Sans état  
 [[haut de page]](#client-serveur-web---architecture)  
 
 
-HTTP est considéré comme un protocole sans état car chaque requête et réponse est traité de façon indépendante par le serveur qui ne garde pas de trace des informations des requêtes précédentes.
-Les conséquences sur la navigation web sont que les serveurs web ne peuvent pas retenir les information de sessions d'une page à l'autre.
-Cela confère aux serveurs web des performances accrues car ils peuvent traiter un grand nombre de demandes simultanées.
+HTTP est considéré comme un protocole sans état car chaque requête et réponse est traité de façon indépendante par le serveur qui ne garde pas de trace des informations des requêtes précédentes.  
+Les conséquences sur la navigation web sont que les serveurs web ne peuvent pas retenir les information de sessions d'une page à l'autre.  
+Cela confère aux serveurs web des performances accrues car ils peuvent traiter un grand nombre de demandes simultanées.  
 Pour que les sessions utilisateur soit cohérentes, des mécanismes tels que les cookies sont mis en oeuvre en utilisant les en-têtes.
 
 # 5 - URL 
@@ -209,7 +209,7 @@ très bien changer d'adresse IP et donc le lien devient obsolète.
 - le port est facultatif. 80 pour http et 443 pour https.
 - le chemin (path) indique l'endroit où est pointée la ressource sur le serveur web.
 - les paramètres sont une paire de key/value (clé/valeur) située après le #, qui sont spécifiques du serveur web.
-- l'ancre, située après le ?,  indique l'endroit de la ressource qu'il faut pointer. Dans un document HTML, cela va permettre de scroller à l'endroit ciblé
+- l'ancre, située après le ?,  indique l'endroit précis de la ressource qu'il doit être pointé. Dans un document HTML, cela va permettre de scroller à l'endroit ciblé
  et dans le cas d'une vidéo, on pointe vers le timestamp cible.
 
 
@@ -227,14 +227,14 @@ très bien changer d'adresse IP et donc le lien devient obsolète.
 # 7 - Négociation de contenu 
 [[haut de page]](#client-serveur-web---architecture)
 
-Une ressource est un terme générique qui peut exprimer une identité, une imprimante...
-Ce qui va circuler dans le flux d'échange c'est la représentation de la ressource.
-En effet une ressource donnée peut avoir plusieurs représentions.
-Une représentation en html va permettre un affichage dans le navigateur.
-Une représentation en json va pouvoir être exploitée par un programme afin d'effectuer un traitement.
-On peut avoir des  représentations sous  forme d'image en png ou jpeg par exemple.
-Le client et le serveur s'échangent des représentations de ressources et la négociation consiste dans le fait que le client et le serveur se mettent d'accord quant au type de représentation échangé.
-Le client va indiquer au serveur le type de représentation qu'il est capable de traiter et il va préciser ses préférences.
+Une ressource est un terme générique qui peut exprimer une identité, une imprimante...  
+Ce qui va circuler dans le flux d'échange c'est la représentation de la ressource.  
+En effet une ressource donnée peut avoir plusieurs représentions.  
+Une représentation en html va permettre un affichage dans le navigateur.  
+Une représentation en json va pouvoir être exploitée par un programme afin d'effectuer un traitement.  
+On peut avoir des  représentations sous  forme d'image en png ou jpeg par exemple.  
+Le client et le serveur s'échangent des représentations de ressources et la négociation consiste dans le fait que le client et le serveur se mettent d'accord quant au type de représentation échangé.  
+Le client va indiquer au serveur le type de représentation qu'il est capable de traiter et il va préciser ses préférences.  
 Le serveur va recevoir la requête et vérifier ce qu'il est capable de réaliser. Il fera au mieux pour satisfaire les préférences du client.
 Cela est implémenté dans le protocole grâce à des en-têtes spécialisées
 - en-tête client:
@@ -248,7 +248,62 @@ Nous avons donc une paire d'en-tête client-serveur.
 
 
 # 8 - Installation Apache et configuration 
-[[haut de page]](#client-serveur-web---architecture)
+[[haut de page]](#client-serveur-web---architecture)  
+
+Installation:  
+Téléchargement de Xampp depuis https://www.apachefriends.org/  
+Exécution de l'installeur téléchargé
+
+![](images/xampp.png)    
+
+![](images/xampp_racine.png)  
+Configuration/virtualhosts:  
+Le dossier racine par défaut (root) d'Apache pour la publication de ressources web est c:\xampp\htdocs.  
+La mise en place de virtualhosts permet de spécifier des localisations et noms DNS pour chaque site hébergés :
+Enregistrement DNS local  
+Pour ajouter le nom dev.local dans le fichier hosts, il faut insérer la ligne suivante dans le fichier c:\windows\system32\driver\etc\hosts  
+`127.0.0.1 dev.local`    
+
+En testant la résolution DNS, on obtient:  
+![](images/ping_dev_local.png)    
+Virtualhosts  
+Les virtualhosts sont configurés dans c:\xampp\apache\conf\extra\httpd-vhost.conf :
+Ajout d'un vhost pour préserver l'accès normal à la racine de Xampp :  
+```
+<VirtualHost *:80>
+DocumentRoot "C:/xampp/htdocs/"
+ServerName 127.0.0.1
+</VirtualHost>  
+```  
+Ajout d'un vhost par name pour dev.local :  
+```
+<VirtualHost *:80>
+    DocumentRoot "C:\Users\Didier\Documents\Git\nfa085\web"
+    ServerName dev.local
+    ErrorLog "logs/dev.local-error.log"
+    CustomLog "logs/dev.local-access.log" common
+    <Directory "C:\Users\Didier\Documents\Git\nfa085\web">
+        Require all granted    
+    </Directory>
+</VirtualHost
+
+```  
+Création du fichier index.html à la racine du dossier (utilisé comme DirectoryIndex).  
+```html
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web local</title>
+</head>
+<body>
+    <h1>TDs web</h1>
+</body>
+</html>
+```  
+Redémarrage de Apache et test à l'adresse http://dev.local :   
 
 ![](images/dev.local.png)
 
