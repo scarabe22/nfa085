@@ -1,3 +1,3 @@
 5 - URL
 
-![](/images/url.png)
+![](./images/url.png)
