@@ -10,7 +10,7 @@
 [9 - CURL](#9---curl)  
 [10 - Headers](#10---headers)
 
-[Menu](./files/menu.md)
+[Menu](menu.md)
 
 # 1 - Méthodes GET et POST 
 [[haut de page]](#client-serveur-web)
