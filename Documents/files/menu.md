@@ -7,5 +7,5 @@
 [6 - Codes Status](./codes-status.md)  
 [7 - Négociation de contenu](./negociation-contenu.md)  
 [8 - Installation Apache et configuration](./installation-apache.md)  
-[9 - CURL](./curl)  
+[9 - CURL](./curl.md)  
 [10 - Headers](./headers.md)
