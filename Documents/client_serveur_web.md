@@ -1,4 +1,4 @@
-# Client-serveur web
+# Client Serveur Web - Architecture
 [1 -  Méthodes GET et POST](#1---méthodes-get-et-post)  
 [2 -  Comparaison méthodes](#2---comparaison-méthodes)  
 [3 - Extensible](#3---extensible)  
@@ -13,7 +13,7 @@
 [Menu](menu.md)
 
 # 1 - Méthodes GET et POST 
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
 Le format d'une requête:
 ```
@@ -155,7 +155,7 @@ access-control-allow-methods: GET, POST
 
 
 # 2 - Comparaison méthodes 
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
 Ce que  l'on peut déduire des exemples:
 
@@ -168,13 +168,13 @@ Ce que  l'on peut déduire des exemples:
 
 
 # 3 - Extensible
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
 Le protocole HTTP est extensible grâce aux en-têtes de requêtes et de réponses.
 En effet, ces en-têtes (headers) rendent évolutif le protocole car il est possible dans créer de nouvelles afin de transmettre dans le flux d'échange, de nouvelles informations.
 
 # 4 - Sans état  
-[[haut de page]](#client-serveur-web)  
+[[haut de page]](#client-serveur-web-architecture)  
 
 
 HTTP est considéré comme un protocole sans état car chaque requête et réponse est traité de façon indépendante par le serveur qui ne garde pas de trace des informations des requêtes précédentes.
@@ -183,15 +183,30 @@ Cela confère aux serveurs web des performances accrues car ils peuvent traiter 
 Pour que les sessions utilisateur soit cohérentes, des mécanismes tels que les cookies sont mis en oeuvre en utilisant les en-têtes.
 
 # 5 - URL 
-[[haut de page]](#client-serveur-web)
-
-![](images/url.png)
-
+[[haut de page]](#client-serveur-web-architecture)  
+![](images/url.png)  
 Créé avec Excalidraw (Obsidian)
+
+L'URL (Uniform Resource Locator) désigne  l’endroit, sur le réseau, où est située la ressource pointée par l’URL.  
+Elle est composée de plusieurs parties:
+- protocole: en anglais scheme (schéma), il désigne le protocole utilisé pour 
+la communication client/serveur. Il en existent plus de 250 (http, https, mailto, data, skype, chrome, bitcoin...)  
+- les deux points (:) séparent le protocole du reste de l'URL. 
+- les deux slashes (//) indiquent qu'un nom de domaine va suivre. (pas le cas pour mailto: par exemple)
+- le nom de domaine indique le serveur web sollicité. Ce peut aussi être une adresse IP mais un nom de domaine peut
+très bien changer d'adresse IP et donc le lien devient obsolète.
+- les deuxièmes deux point (:) séparent le nom de domaine du reste de l'URL.
+- le port est facultatif. 80 pour http et 443 pour https.
+- le chemin (path) indique l'endroit où est pointée la ressource sur le serveur web.
+- les paramètres sont une paire de key/value (clé/valeur) située après le #, qui sont spécifiques du serveur web.
+- l'ancre, située après le ?,  indique l'endroit de la ressource qu'il faut pointer. Dans un document HTML, cela va permettre de scroller à l'endroit ciblé
+ et dans le cas d'une vidéo, on pointe vers le timestamp cible.
+
+
 
 
 # 6 - Codes Status 
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
 
 |     Code      | 1XX           |   2XX    |                  3XX                  |                   4XX                   |              5XX              |
@@ -200,7 +215,7 @@ Créé avec Excalidraw (Obsidian)
 |   Exemple     | 100 continue  | 200 Ok   | 304 la ressource n'a pas été modifiée | 403 l'accès à la ressource est interdit | 500 erreur interne au serveur |
 
 # 7 - Négociation de contenu 
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
 Une ressource est un terme générique qui peut exprimer une identité, une imprimante...
 Ce qui va circuler dans le flux d'échange c'est la représentation de la ressource.
@@ -223,12 +238,12 @@ Nous avons donc une paire d'en-tête client-serveur.
 
 
 # 8 - Installation Apache et configuration 
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
 ![](images/dev.local.png)
 
 # 9 - CURL 
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
  Pour chaque requête effectuée, afficher la commande, le résultat et vos commentaires. Requêtes à effectuer en invite de commande, avec curl : 
  
@@ -263,7 +278,7 @@ curl -O c:\Users\Didier\Documents\Git\nfa085\web\download\test.txt
 Le fichier test .txt a été téléchargé dans le répertoire de travail.
 <br><br>
 # 10 - Headers 
-[[haut de page]](#client-serveur-web)
+[[haut de page]](#client-serveur-web-architecture)
 
 #### En-têtes de requête
 |       En-tête       |                                         Description                                          |                                                              Exemple                                                               |

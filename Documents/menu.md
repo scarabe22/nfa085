@@ -1,4 +1,4 @@
-# Client-serveur web
+# Client Serveur web - Architecture
 [1 -  Méthodes GET et POST](files/get-post.md)  
 [2 -  Comparaison méthodes](files/comparaison-methodes.md)  
 [3 - Extensible](files/extensible.md)  
