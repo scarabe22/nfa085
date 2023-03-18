@@ -969,6 +969,9 @@ Avant s'affichait l'arborescence des fichiers et répertoires.
 
 Après  
 
-![forbidden.png](images/forbidden.png)
+![forbidden.png](images/forbidden.png)  
+
+[[haut de page]](#client-serveur-web--culture-web)
+
 
 
