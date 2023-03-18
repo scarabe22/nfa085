@@ -8,7 +8,7 @@
 [6 - Interrogation d'API Web - lecture](#6--interrogation-dapi-web---lecture)  
 [7 - Interrogation d'API Web - operations multiples](#7---interrogation-dapi-web---operations-multiples)  
 [8 - Pages Web](#8---pages-web)   
-[9 - Configuration de serveur HTTP ](#9---configuration-de-serveur-http)
+[9 - Configuration de serveur HTTP](#9---configuration-de-serveur-http)
 
 [Menu](./files/menu.md)  
 
