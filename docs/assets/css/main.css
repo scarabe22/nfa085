@@ -1,0 +1,21 @@
+h1 {
+    font-size: 300%;
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 200%;
+    text-align: center;
+}
+
+a {
+    font-size: 170%;
+    color: rgb(255, 157, 0);
+    text-decoration: none;
+    margin-left: 500px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}

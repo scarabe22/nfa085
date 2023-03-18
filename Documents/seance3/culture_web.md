@@ -921,16 +921,17 @@ A chaque commit/push avec modification du contenu du dossier docs, github exécu
 ## 9 - Configuration de serveur HTTP  
 [[haut de page]](#client-serveur-web--culture-web)
 
-1. Modifiez la configuration de votre virtualhost local (avec apache) pour qu’il pointe sur le dossier docs de votre repository.  
+1. Modifiez la configuration de votre virtualhost local (avec apache) pour qu’il pointe sur le dossier docs de votre repository.
 
-Modification du fichier `httpd-vhost.conf`  
+Modification du fichier `httpd-vhost.conf` 
 
-![docs.png](images%2Fdocs.png)  
+![docs.png](images/docs.png)    
 
 2. Modifiez la configuration du serveur pour qu’il n’affiche pas les informations relatives à sa version, ni celles relatives au système d’exploitation. 
 
-Modification du fichier `httpd.conf`
-![versions.png](images%2Fversions.png)  
+Modification du fichier `httpd.conf`  
+
+![versions.png](images/versions.png)  
 
 
 3. Désactivez le listage des répertoires  

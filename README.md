@@ -1,6 +1,7 @@
 # NFA085
-
-Travail de la *séance 2* dans le répertoire Documents  
-- Fichier: 
-[`client_serveur_web.md`](Documents/client_serveur_web.md)
+Travaux dans le répertoire Documents/sessionX (X étant le n° de session)
+- séance 2
+  
+  Fichier: 
+[`Documents/session2/client_serveur_web.md`](Documents/session2/client_serveur_web.md)
 

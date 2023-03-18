@@ -7,5 +7,6 @@ Client Serveur Web – Culture Web
 [5 - Architecture](architecture.md)  
 [6 - Interrogation d'API Web - lecture](lecture.md)  
 [7 - Interrogation d'API Web - opérations multiples](operations_multiples.md)  
-
-[Accueil](../culture_web.md)
+[8 - Pages Web](pages_web.md)  
+[9 - Configuration de serveur HTTP](config_http.md)  
+[Accueil](../culture_web.md)  

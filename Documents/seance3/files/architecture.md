@@ -16,7 +16,7 @@ Voici une explication des trois couches :
 
 Voici un exemple de schéma illustrant l'architecture 3-tiers pour une application web :
 
-![](images/deux_tiers.excalidraw.png)  
+![](../images/deux_tiers.excalidraw.png)  
 *Réalisé avec Excalidraw (Obsidian)*
 
 
