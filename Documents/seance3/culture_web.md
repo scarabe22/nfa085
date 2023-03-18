@@ -939,7 +939,7 @@ Modification du fichier `httpd.conf`
 Modification du fichier `httpd.conf`  
 On  passe de `Options Indexes FollowSymLinks Includes ExecCGI` à
 
-![directory.png](images%2Fdirectory.png)   
+![directory.png](images/directory.png)   
 
 4. Affichez les modifications effectuées
 
@@ -952,11 +952,11 @@ Les modifications se font dans le fichier httpd.conf de façon générale et htt
 
 Avant  
 
-![not_found.png](images%2Fnot_found.png)  
+![not_found.png](images/not_found.png)  
 
 Après  
 
-![without_version.png](images%2Fwithout_version.png)
+![without_version.png](images/without_version.png)
 - Directory browsing  
 
 Aucun changements sur le répertoire docs.
@@ -965,10 +965,10 @@ du navigateur 127.0.0.1/xampp par exemple:
 
 Avant s'affichait l'arborescence des fichiers et répertoires.  
 
-  ![directory_browsing.png](images%2Fdirectory_browsing.png)  
+  ![directory_browsing.png](images/directory_browsing.png)  
 
 Après  
 
-![forbidden.png](images%2Fforbidden.png)
+![forbidden.png](images/forbidden.png)
 
 
