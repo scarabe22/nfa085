@@ -17,39 +17,38 @@
 
 ### Expliquez la différence entre les deux
 
-|                                |                      Pages Web statiques	                   |                        Pages Web dynamiques                                                       |
-|:------------------------------:|:--------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------:|
-|            Contenu             | fixe et ne change pas en fonction des actions de l'utilisateur |        généré en temps réel en fonction de l'action de l'utilisateur ou d'autres facteurs         |
-|        Base de données	      |                     pas de base de données                     |                                    appel à une base de données                                    |
-| Temps de chargement de la page |                             rapide                             | plus long en théorie (outils d'accélération tels que le CDN, le caching et l'optimisation du code |
-|   Changement d’information	  |                 manuelle en modifiant le code                  |                                            automatique                                            |
-|         Complexité	          |                       facile à concevoir                       |                                   moins aisé à mettre en oeuvre                                   |
-|          Code utilisé          |                     HTML, CSS, JavaScript                      |               HTML, CSS, JavaScript, NodeJs, Python, Ruby, Perl, PHP, AJAX, ASP ...               |
-|            qualité             |                          consultatif                           |                                            interactif                                             | 
-|         fréquentation          |                           plus rare                            |                                     accrue car plus attractif                                     |
+|                                | Pages Web statiques	                                           | Pages Web dynamiques                                                                              |
+|--------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| Contenu                        | fixe et ne change pas en fonction des actions de l'utilisateur | généré en temps réel en fonction de l'action de l'utilisateur ou d'autres facteurs                |
+| Base de données	              | pas de base de données                                         | appel à une base de données                                                                       |
+| Temps de chargement de la page | rapide                                                         | plus long en théorie (outils d'accélération tels que le CDN, le caching et l'optimisation du code |
+| Changement d’information	      | manuelle en modifiant le code                                  | automatique                                                                                       |
+| Complexité	                  | facile à concevoir                                             | moins aisé à mettre en oeuvre                                                                     |
+| Code utilisé                   | HTML, CSS, JavaScript                                          | HTML, CSS, JavaScript, NodeJs, Python, Ruby, Perl, PHP, AJAX, ASP ...                             |
+| qualité                        | consultatif                                                    | interactif                                                                                        | 
+| fréquentation                  | plus rare                                                      | accrue car plus attractif                                                                         |
 <br>
 
 ### Comment identifier qu’une ressource Web est statique ou dynamique ?
+- Analyse de l'URL : L'URL du site peut donner des indices sur la nature dynamique ou statique du site. Si l'URL contient des noms de fichiers tels que ".php", ".aspx", ".jsp", cela indique souvent que le site est dynamique.
 
-**De 2 façons:**
-- Aller sur le site et voir si la page qui s'affiche change ou pas. S'il s'agit d'une page web statique, il n'y a pas de changement.
- S'il y a des changements dans la page lorsque l'on y retourne plusieurs fois, il s'agit alors d'une page web dynamique.  
-- Utiliser l'inspecteur du navigateur et voir si des scripts particuliers sont présents.  
-La présence de scripts JavaScript peut faire penser à un site dynamique dans la mesure où JavaSript est utilisé pour apporter
-une certaine interactivité, mais cela ne doit pas être le seul critère.  
-En effet, selon l'importance du degré d'interactivité, cela répond ou pas aux critères de définition d'un site statique ou dynamique.
-Des scripts tels que des appels AJAX, des scripts serveurs (PHP, ASP, JSP, Ruby on Rail...) sont plus en faveur d'un site dynamique.
+- Analyse du code source : Si on a accès au code source du site (ce qui n'est pas toujours le cas) grâce aux outils de développement du nagivateur , on peux regarder les balises HTML pour voir si elles contiennent des appels à des scripts ou à des bases de données. Si le site utilise des scripts pour générer du contenu, cela indique qu'il est dynamique.
+
+- Analyse du contenu : Si le contenu du site change fréquemment, cela peut également être un indicateur qu'il est dynamique. Les sites web dynamiques sont généralement conçus pour afficher des informations actualisées régulièrement.
+
+- Utilisation de logiciels spécialisés : Il existe des outils et des logiciels spécialisés pour analyser les sites web et déterminer s'ils sont dynamiques ou statiques. Ces outils peuvent analyser le code source, le contenu et l'architecture du site pour déterminer s'il est dynamique ou statique. Ce sont par exemple WebPageTest, WebInspect, SiteAnalyzer, Screaming Frog SEO Spider, Wappalyzer, Google PageSpeed Insights, Pingdom Website Speed Test, GTmetrix.
+
+En combinant ces différentes méthodes, il est possible de déterminer avec précision si un site web est dynamique ou statique.
 
 <br>
 
 ### Les sites suivants sont-ils statiques ou dynamiques ? Justifiez.   
 
-o http://www.rleonardi.com/interactive-resume/  
-Ce site est visiblement dynamique dans la mesure où il y a interaction entre la page web et l'utilisateur par le biais de la souris ou du clavier.  
-Le degré d'interactivité est toutefois limité, car le déroulement de l'animation est toujours la même.   
+- http://www.rleonardi.com/interactive-resume/  
+Ce site est statique dans la mesure où il se passe toujours la même chose, le déroulement de la scène d'animation est identique quelque soit l'utilisateur.  
 
-o https://www.je-change-de-metier.com/  
-Il s'agit d'un site statique, car à chaque fois que l'on accède à la page web, il n'y a aucun changement quant à l'affichage.  
+- https://www.je-change-de-metier.com/  
+Il s'agit d'un site dynamique, car il offre au travers de ses différents tests, des réponses personnalisées donc différentes pour chaque utilisateur.  
 
 <br>
 
@@ -65,9 +64,9 @@ Les images, le texte, la mise en page, le design, correspondent au front-end.
 #### - back-end  
 Il s'agit de la partie cachée qui travaille en arrière-plan, comme la gestion des bases de données, l'authentification des utilisateurs et la gestion des requêtes de l'utilisateur.
 
-|          |                               front-end                               |                back-end                |
-|:--------:|:---------------------------------------------------------------------:|:--------------------------------------:|
-| langages |  HTML, CSS, JavaScript,SSAS, React, Angular, Vue, jQuery, Swift, Elm  | Node.js, PHP, Python, Ruby, Java, Perl |
+|          |          front-end          |                back-end                |
+|:--------:|:---------------------------:|:--------------------------------------:|
+| langages | HTML, CSS, JavaScript,SSAS  | Node.js, PHP, Python, Ruby, Java, Perl |
 
 
 ## 3 - Technologies  
@@ -80,11 +79,11 @@ Il s'agit de la partie cachée qui travaille en arrière-plan, comme la gestion 
 
 #### - Ajax :  
 Ajax (Asynchronous JavaScript and XML) est une technique de développement web qui permet de créer des applications web interactives et dynamiques sans nécessiter de rechargement de la page entière. Cela signifie qu'une page peut être mise à jour en arrière-plan sans perturber l'expérience de l'utilisateur. Ajax utilise des technologies web telles que JavaScript et XML pour envoyer et recevoir des données du serveur, souvent via des requêtes HTTP asynchrones.  
-  Par exemple, lorsqu'un utilisateur remplit un formulaire de contact sur un site web et clique sur le bouton "Envoyer", Ajax peut être utilisé pour envoyer les données du formulaire au serveur en arrière-plan, sans que la page entière soit rechargée. Les messages de réussite ou d'erreur peuvent alors être affichés dynamiquement sur la page, sans perturber l'expérience utilisateur.  
+Par exemple, lorsqu'un utilisateur remplit un formulaire de contact sur un site web et clique sur le bouton "Envoyer", Ajax peut être utilisé pour envoyer les données du formulaire au serveur en arrière-plan, sans que la page entière soit rechargée. Les messages de réussite ou d'erreur peuvent alors être affichés dynamiquement sur la page, sans perturber l'expérience utilisateur.  
 
 #### - SPA web :  
   SPA (Single Page Application) est un type d'application web qui ne nécessite qu'une seule page HTML pour fonctionner. Les SPAs utilisent souvent des frameworks JavaScript tels que React, Vue.js ou Angular pour rendre la page interactive et dynamique en modifiant le contenu de la page en réponse aux actions de l'utilisateur, sans que la page entière soit rechargée.
-  Par exemple, un site web de commerce électronique peut être conçu comme une SPA, où les produits sont affichés dynamiquement à mesure que l'utilisateur fait défiler la page, sans qu'une nouvelle page soit chargée à chaque fois. Cela peut rendre l'expérience utilisateur plus fluide et rapide.
+  Par exemple, lorsque l'on utilise Gmail, il n'y a pas de changements notables lors de la navigation. La barre latérale et l’en-tête restent inchangés. Citons également Google Map, Trello, Facebook.
 
 #### - API web :  
 Une API (Application Programming Interface) web est un ensemble de protocoles et de spécifications qui permettent aux applications de communiquer entre elles via Internet. Les API web permettent aux développeurs de créer des applications qui utilisent des services web tiers pour accéder à des données et des fonctionnalités supplémentaires.
@@ -97,10 +96,13 @@ Par exemple, une application mobile de réservation de voyage peut utiliser une 
 
 ### Quelle est la différence entre les 2 ?   
 
-**Une bibliothèque** (ou librairie) est un ensemble de fonctions ou de modules qui peuvent être appelés par un programme pour effectuer des tâches spécifiques. Une bibliothèque est généralement conçue pour effectuer des tâches particulières et est souvent modulaire, ce qui signifie qu'elle peut être utilisée pour ajouter des fonctionnalités spécifiques à un programme.
+**Une librairie** (ou bibliothèque) est un ensemble de fonctions ou de modules qui peuvent être appelés par un programme pour effectuer des tâches spécifiques. Une bibliothèque est généralement conçue pour effectuer des tâches particulières et est souvent modulaire, ce qui signifie qu'elle peut être utilisée pour ajouter des fonctionnalités spécifiques à un programme. Elles sont utilisées pour la mise en oeuvre de petits projets
 
-**Un framework**, quant à lui, est un ensemble de concepts, de pratiques et de normes de codage qui peuvent être utilisés pour guider le développement d'applications. Les frameworks fournissent souvent une structure de base pour l'architecture d'une application, ce qui peut accélérer le développement. Les frameworks peuvent également inclure des bibliothèques pour faciliter la tâche des développeurs.  
+**Un framework**, quant à lui, est un ensemble de concepts, de pratiques et de normes de codage qui peuvent être utilisés pour guider le développement d'applications. Les frameworks fournissent souvent une structure de base pour l'architecture d'une application, ce qui peut accélérer le développement. Les frameworks peuvent également inclure des bibliothèques pour faciliter la tâche des développeurs. Ils sont utilisés pour la réalisation de projets complexes.  
 
+La différence fondamentale entre une librairie et un framework est l'inversion de contrôle:
+- Le code du développeur a la liberté d'appeler ou pas une librairie qui ne va pas changer le code mais apporte de nouvelles fonctionnalités.
+- Au contraire, le framework appelle le code du développeur et impose des changements de code.
 ### Citez quelques librairies et framework, en dissociant back et front-end  
 
 En ce qui concerne les exemples de bibliothèques et de frameworks pour le développement web, on peut les dissocier en back-end et front-end :
@@ -924,23 +926,44 @@ A chaque commit/push avec modification du contenu du dossier docs, github exécu
 1. Modifiez la configuration de votre virtualhost local (avec apache) pour qu’il pointe sur le dossier docs de votre repository.
 
 Modification du fichier `httpd-vhost.conf` 
+```shell
+<VirtualHost *:80>
+    DocumentRoot "C:/xampp/htdocs/"
+    ServerName 127.0.0.1
+</VirtualHost>
 
-![docs.png](images/docs.png)    
+<VirtualHost *:80>
+    DocumentRoot "C:/Users/Didier/Documents/Git/nfa085/nfa085/docs"
+    ServerName dev.local
+    ErrorLog "logs/dev.local-error.log"
+    CustomLog "logs/dev.local-access.log" common
+    <Directory "C:/Users/Didier/Documents/Git/nfa085/nfa085/docs">
+        Require all granted   
+    </Directory>
+</VirtualHost>
+```
+    
 
-2. Modifiez la configuration du serveur pour qu’il n’affiche pas les informations relatives à sa version, ni celles relatives au système d’exploitation. 
+2. Modifiez la configuration du serveur pour qu’il n’affiche pas les informations relatives à sa version, ni celles relatives au système d’exploitation.
+Modification du fichier `httpd.conf`
 
-Modification du fichier `httpd.conf`  
-
-![versions.png](images/versions.png)  
-
-
+```shell
+# Disable Apache and OS signatures
+ServerTokens Prod
+ServerSignature off 
+```
 3. Désactivez le listage des répertoires  
 
 Modification du fichier `httpd.conf`  
-On  passe de `Options Indexes FollowSymLinks Includes ExecCGI` à
-
-![directory.png](images/directory.png)   
-
+On passe de
+```shell
+ Options Indexes FollowSymLinks Includes ExecCGI
+```  
+à
+```shell
+#Disable directory browsing
+    Options FollowSymLinks Includes ExecCGI
+```
 4. Affichez les modifications effectuées
 
 Les modifications se font dans le fichier httpd.conf de façon générale et httpd-vhost.conf pour une vhost en particulier.  

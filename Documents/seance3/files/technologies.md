@@ -12,7 +12,8 @@ Par exemple, lorsqu'un utilisateur remplit un formulaire de contact sur un site 
 
 #### - SPA web :
 SPA (Single Page Application) est un type d'application web qui ne nécessite qu'une seule page HTML pour fonctionner. Les SPAs utilisent souvent des frameworks JavaScript tels que React, Vue.js ou Angular pour rendre la page interactive et dynamique en modifiant le contenu de la page en réponse aux actions de l'utilisateur, sans que la page entière soit rechargée.
-Par exemple, un site web de commerce électronique peut être conçu comme une SPA, où les produits sont affichés dynamiquement à mesure que l'utilisateur fait défiler la page, sans qu'une nouvelle page soit chargée à chaque fois. Cela peut rendre l'expérience utilisateur plus fluide et rapide.
+Par exemple, lorsque l'on utilise Gmail, il n'y a pas de changements notables lors de la navigation. La barre latérale et l’en-tête restent inchangés. Citons également Google Map, Trello, Facebook.
+
 
 #### - API web :
 Une API (Application Programming Interface) web est un ensemble de protocoles et de spécifications qui permettent aux applications de communiquer entre elles via Internet. Les API web permettent aux développeurs de créer des applications qui utilisent des services web tiers pour accéder à des données et des fonctionnalités supplémentaires.

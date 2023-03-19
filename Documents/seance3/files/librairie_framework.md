@@ -3,9 +3,13 @@
 
 ### Quelle est la différence entre les 2 ?
 
-**Une bibliothèque** (ou librairie) est un ensemble de fonctions ou de modules qui peuvent être appelés par un programme pour effectuer des tâches spécifiques. Une bibliothèque est généralement conçue pour effectuer des tâches particulières et est souvent modulaire, ce qui signifie qu'elle peut être utilisée pour ajouter des fonctionnalités spécifiques à un programme.
+**Une librairie** (ou bibliothèque) est un ensemble de fonctions ou de modules qui peuvent être appelés par un programme pour effectuer des tâches spécifiques. Une bibliothèque est généralement conçue pour effectuer des tâches particulières et est souvent modulaire, ce qui signifie qu'elle peut être utilisée pour ajouter des fonctionnalités spécifiques à un programme. Elles sont utilisées pour la mise en oeuvre de petits projets
 
-**Un framework**, quant à lui, est un ensemble de concepts, de pratiques et de normes de codage qui peuvent être utilisés pour guider le développement d'applications. Les frameworks fournissent souvent une structure de base pour l'architecture d'une application, ce qui peut accélérer le développement. Les frameworks peuvent également inclure des bibliothèques pour faciliter la tâche des développeurs.
+**Un framework**, quant à lui, est un ensemble de concepts, de pratiques et de normes de codage qui peuvent être utilisés pour guider le développement d'applications. Les frameworks fournissent souvent une structure de base pour l'architecture d'une application, ce qui peut accélérer le développement. Les frameworks peuvent également inclure des bibliothèques pour faciliter la tâche des développeurs. Ils sont utilisés pour la réalisation de projets complexes.  
+
+La différence fondamentale entre une librairie et un framework est l'inversion de contrôle:
+- Le code du développeur a la liberté d'appeler ou pas une librairie qui ne va pas changer le code mais apporte de nouvelles fonctionnalités.
+- Au contraire, le framework appelle le code du développeur et impose des changements de code.
 
 ### Citez quelques librairies et framework, en dissociant back et front-end
 
