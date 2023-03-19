@@ -9,12 +9,22 @@ h2 {
     text-align: center;
 }
 
-a {
+.version ul {
+    list-style-type: none; /*supprime le point d'une liste*/
+    margin: 0;
+    padding: 0;
+}
+
+.version ul li {
     font-size: 170%;
+    text-align: center;
+}
+
+.version ul li a {
     color: rgb(255, 157, 0);
-    text-decoration: none;
+    text-decoration: none; /*supprime le soulignement*/
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /*Google Font*/
 }
