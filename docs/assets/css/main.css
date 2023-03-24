@@ -29,7 +29,6 @@ body {
     font-family: 'Roboto', sans-serif; /*Google Font*/
 }
 
-.version
- ul li a:hover {
+.version ul li a:hover {
     text-decoration: underline; /*souligne au passage de la souris*/
 }
