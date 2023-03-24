@@ -2,7 +2,6 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans serif;
 }
 
 body {
@@ -16,6 +15,7 @@ h1 {
     font-weight: bold;
 }  
 
+/* Table */
 table { border-collapse: collapse; 
     border: 5px solid #ececec;
     margin-top: 20px;
@@ -34,7 +34,7 @@ tbody td:nth-child(7n+1) {
     background-color: #eae9e6 /*couleur de fond colonne 1*/
 } 
 
-tr + tr { 
+tr + tr { /*selecteur de frère adjacent (adjacent sibling selector)*/
     border-top: 5px solid #d5d5d2; /*bordures internes horizontales*/
 }
 
@@ -43,6 +43,6 @@ td + td, th + th {
 }
 
 td, th { 
-    padding: 20px 20px 30px 10px; 
+    padding: 20px 20px 30px 10px; /*contenu des cellules*/
 }
 

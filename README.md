@@ -1,8 +1,10 @@
 # NFA085
-Travaux dans le répertoire Documents/sessionX (X étant le n° de session)
-- Séance 2 - Architecture Web
+
+- Séance 2 - Architecture Web (main branch) 
   
- - Séance 3 - Culture Web
+- Séance 3 - Culture Web (seance3 branch)
+
+- Séance 5 - Bases HTML - Structuration (seance5 branch)
 
 
 
