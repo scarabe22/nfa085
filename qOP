@@ -1,0 +1,319 @@
+[33mcommit 2dfc66bb27306a1e645de19bbd67f02a9b63a196[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Mon Mar 13 18:31:12 2023 +0100
+
+    création d'un répertoire session2 et sesion3
+
+[33mcommit bf17681ba974e16a4bba49e6de1be71a593839a3[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 23:56:31 2023 +0100
+
+    complément installation xampp
+
+[33mcommit 8069b5de34453247080eed4d68861de8a7579295[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 22:56:34 2023 +0100
+
+    correction 1er tableau comparaison
+
+[33mcommit faf7a65f5a1f8fd59f610bb3766ba839e8021a38[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 22:51:54 2023 +0100
+
+    correction ancre accueil
+
+[33mcommit f04172777e364aaac56a7d5880c561e3f5e6cfed[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 22:50:03 2023 +0100
+
+    ajout tableau comparatif get et post + correction ancre accueil)
+
+[33mcommit d51e7a36f05e4de5744919cbf855d816878b4af8[m
+Merge: 2682010 4de808c
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 22:22:25 2023 +0100
+
+    Merge branch 'main' of https://github.com/scarabe22/nfa085
+
+[33mcommit 2682010edde9298e20e430286e660a8e25f4a523[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 22:21:49 2023 +0100
+
+    ajout de commentaires sur l'URL
+
+[33mcommit 4de808cf8ea57163eeaadde6d8e5b62a4bd3e6a6[m
+Author: Didier Corlay <43239120+scarabe22@users.noreply.github.com>
+Date:   Sun Mar 12 19:56:28 2023 +0100
+
+    Update README.md
+
+[33mcommit 43cd120b0ccdf0bd0028aba7ba482e177fcb76c9[m
+Author: Didier Corlay <43239120+scarabe22@users.noreply.github.com>
+Date:   Sun Mar 12 19:55:34 2023 +0100
+
+    Update README.md
+
+[33mcommit dd247ba9c6d5de4b63d914bba528fd10c129366f[m
+Author: Didier Corlay <43239120+scarabe22@users.noreply.github.com>
+Date:   Sun Mar 12 19:54:50 2023 +0100
+
+    Update README.md
+
+[33mcommit 9273f70a8c85db84ae832f71c89c6b7fca1b76d2[m
+Author: Didier Corlay <43239120+scarabe22@users.noreply.github.com>
+Date:   Sun Mar 12 18:55:43 2023 +0100
+
+    Update README.md
+
+[33mcommit 0aa0a6d7d1740022c9e9297bc0e927f3514f0e66[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:48:09 2023 +0100
+
+    test
+
+[33mcommit 87d803456d38502458ea1b6020126d129e5f717f[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:45:40 2023 +0100
+
+    test
+
+[33mcommit f65f0386192087b0c70d89e83def8f655807e53b[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:42:25 2023 +0100
+
+    test
+
+[33mcommit d3951b9b6441010ed8baf3773a5f250c0bf9228b[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:40:39 2023 +0100
+
+    test
+
+[33mcommit 94365cdeabef4efdf202e1f91efc246608503108[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:35:58 2023 +0100
+
+    test
+
+[33mcommit 8c116cb4332e01f496be704190c143272df0e13f[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:33:21 2023 +0100
+
+    test
+
+[33mcommit df43cc3fcd6616bdba63dff93893eecc975e1e8e[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:30:57 2023 +0100
+
+    test
+
+[33mcommit 1ffe8b8a3167dd1f8ca3ed86a8f2ccb136d41399[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:24:05 2023 +0100
+
+    test
+
+[33mcommit d588824f6e88ec400315a792e05ff56bb6ea6863[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:21:20 2023 +0100
+
+    test
+
+[33mcommit d30deecce172a05806242c55ae0cf533ad36804d[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:19:13 2023 +0100
+
+    test
+
+[33mcommit a311d72e47609e962c9e3c27770a0b5bfe59bd9b[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:17:35 2023 +0100
+
+    test
+
+[33mcommit cb24aea885869854c78b31dc966cabaacd3b0ae5[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:16:11 2023 +0100
+
+    test
+
+[33mcommit 44c9bd7c81c3720cfdbfb71aea3a2c05924bb14c[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:12:03 2023 +0100
+
+    correction du path dans menu
+
+[33mcommit bd55951b964bbb801769303852e23128cc47e05e[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 18:04:05 2023 +0100
+
+    ajout d'une ligne menu pointant vers des pages uniques
+
+[33mcommit ffa8efcd1476e8461c494ef7756427503346b72e[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 17:33:44 2023 +0100
+
+    test
+
+[33mcommit 4d28cd7a0845bf24f7639dc825ca240d1fefdb5e[m[33m ([m[1;31morigin/ver1.01[m[33m)[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:53:12 2023 +0100
+
+    test
+
+[33mcommit a8990813a257d635f869d580c82ec1e1a6630a38[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:49:22 2023 +0100
+
+    test
+
+[33mcommit f01867c07949f3bcca85082308fd9ed2907cc765[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:46:41 2023 +0100
+
+    test
+
+[33mcommit 412503d33589fa7ba3ba44fabcb7efe3250f79c2[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:44:37 2023 +0100
+
+    test
+
+[33mcommit 6a7cd1e0f16ecaf7c97768c605758a0779d01cbb[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:36:57 2023 +0100
+
+    test
+
+[33mcommit 92f64c370f4633f0ecbaebfa45b4065abf752ada[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:33:25 2023 +0100
+
+    test
+
+[33mcommit f0a1b41cc484eaf1570052683d85819e429cc750[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:29:09 2023 +0100
+
+    test
+
+[33mcommit 23624da4bef16053d69d70bc5f914b23f725e678[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:14:46 2023 +0100
+
+    test
+
+[33mcommit c449c04eaacae4e34d5691cca76bbbe117c762a4[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 16:12:40 2023 +0100
+
+    test
+
+[33mcommit 4ee82f326811dc930b3da879ac6cb3ae2b9bbdc9[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 15:45:22 2023 +0100
+
+    test
+
+[33mcommit 9889657710d91b1c4983a3732700b6376d110418[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 15:40:41 2023 +0100
+
+    test
+
+[33mcommit 2ac5625d9dfc9061fa30febf84f8905ea23937fb[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 15:38:32 2023 +0100
+
+    test
+
+[33mcommit 194063c8e880ae32f0c54a49ba2a2dbdec7a31bd[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 15:37:17 2023 +0100
+
+    test
+
+[33mcommit a2085efba4adb53773e75b9aa692c1eb695233b8[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 15:34:56 2023 +0100
+
+    test
+
+[33mcommit cb31d7e87202204bcbee07921422fb6470006a57[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 15:30:36 2023 +0100
+
+    ajout de links internes pour test (marchent pas sur obsidian ni webstorm)
+
+[33mcommit 2581eba3e3e5fbdbcc69a7c9d0e818205fa4002c[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Sun Mar 12 11:03:47 2023 +0100
+
+    ajout d'une colonne 1XX dans le tableau code status
+    et tableaux rendu plus lisible en markdown
+
+[33mcommit 0009048c42686c8eb76a1ffa99329665f6c8079c[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Wed Mar 8 23:56:05 2023 +0100
+
+    travail séance 2
+
+[33mcommit 60f138abb257d350ae7a18de84cf69376863b05b[m
+Author: Didier Corlay <43239120+scarabe22@users.noreply.github.com>
+Date:   Wed Mar 8 01:30:06 2023 +0100
+
+    Delete test.md
+
+[33mcommit 5b73d4b196320bdc07260fa64e3e44adf18aa309[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Wed Mar 8 01:28:33 2023 +0100
+
+    NFA085: 08-03-2023
+
+[33mcommit d9ceb114d832bbe035274a9e0e017f9604f468a4[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Mon Mar 6 23:10:51 2023 +0100
+
+    Remove folder from repository
+
+[33mcommit e28c2783b0aee1c027f00c8c74af9c48e0fa0ff7[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Mon Mar 6 22:42:29 2023 +0100
+
+    vault backup: 2023-03-06 22:42:29
+
+[33mcommit 04c27d1b4659d2c987b3ed3512e438d7aec27824[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Mon Mar 6 22:41:23 2023 +0100
+
+    vault backup: 2023-03-06 22:41:23
+
+[33mcommit 21d8ebbc2f896a90c80db748a7b2b79c8b7cc3c9[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Mon Mar 6 22:37:27 2023 +0100
+
+    fichier .gitignore effacé
+
+[33mcommit c918f2e628be91b041ca8ff6e50826c33f1e032c[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Mon Mar 6 22:31:25 2023 +0100
+
+    vault backup: 2023-03-06 22:31:25
+
+[33mcommit ee168f983319b088751030461130f9bba82f8f87[m
+Author: scarabe22 <didiercorlay22@gmail.com>
+Date:   Mon Mar 6 21:59:28 2023 +0100
+
+    ajout d'une ligne au fichier readme
+
+[33mcommit 3638ef7c3a68944da7c1c59fe93164062d770818[m
+Author: Didier Corlay <43239120+scarabe22@users.noreply.github.com>
+Date:   Thu Mar 2 19:11:27 2023 +0100
+
+    Update README.md
+
+[33mcommit e473f802264a1924e7ff529ccd4caad35c242539[m
+Author: Didier Corlay <43239120+scarabe22@users.noreply.github.com>
+Date:   Thu Mar 2 18:41:44 2023 +0100
+
+    Initial commit
