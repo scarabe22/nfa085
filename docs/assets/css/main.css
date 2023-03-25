@@ -1,34 +1,66 @@
+/* Mise à zéro des réglages du browser*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Police de caractères */
+body {
+    font-family: 'Roboto', sans-serif; /*Google Font*/
+    margin-left: 100px;
+}
+
+/* En-tête */
 h1 {
     font-size: 300%;
-    text-align: center;
-
+    margin: 30px
 }
 
 h2 {
     font-size: 200%;
-    text-align: center; /*centre le texte*/
+    margin-bottom: 10px;
 }
 
-.version ul {
-    list-style-type: none; /*supprime le point d'une liste*/
-    margin: 0; /*enlève les marges par défaut du browser*/
-    padding: 0; /* "       "         "                 */
+p {
+    margin: 0 10px auto 0;
 }
 
-.version ul li {
+/* Liens */
+.seances {
     font-size: 170%;
-    text-align: center; /*centre le texte*/
 }
 
-.version ul li a {
+.seances {
+    list-style-type: none; /*supprime le point d'une liste*/
+    
+}
+
+.seances li a {
+    text-decoration: none; /*supprime le soulignement*/
+}
+.seances li a {
     color: rgb(255, 157, 0);
+    
+}
+
+.seances li a:hover {
+    color: rgb(0, 98, 255);
     text-decoration: none; /*supprime le soulignement*/
 }
 
-body {
-    font-family: 'Roboto', sans-serif; /*Google Font*/
+.seance5 li {
+    font-size: 150%;
+    margin-left: 40px;
+    list-style-type: disc;
 }
 
-.version ul li a:hover {
-    text-decoration: underline; /*souligne au passage de la souris*/
+.seance5 li a {
+    text-decoration: none;
+    color: rgb(255, 157, 0);
+
+}
+
+.seance5 li a:hover {
+    color: rgb(0, 98, 255);
+    text-decoration: none; /*supprime le soulignement*/
 }
