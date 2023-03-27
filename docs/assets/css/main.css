@@ -4,6 +4,15 @@
     padding: 0;
 }
 
+.index {
+    width: 500px;
+    background-color: #f3f3f3;
+    box-shadow: -10px -25px 15px #aaa inset;
+    padding:  20px 0 80px 200px;
+    border-radius: 25px;
+    margin: 30px auto auto 300px;
+}
+
 /* Police de caractères */
 body {
     font-family: 'Roboto', sans-serif; /*Google Font*/
