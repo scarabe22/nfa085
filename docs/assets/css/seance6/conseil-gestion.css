@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center ;
     flex-wrap: wrap;
-    background: url(/assets/images/seance6/df-min.jpg);
+    background: url(../../images/seance6/df-min.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
