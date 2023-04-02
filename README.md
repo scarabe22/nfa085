@@ -6,5 +6,7 @@
 
 - [Séance 5 - Bases HTML - Structuration (seance5 branch)](https://scarabe22.github.io/nfa085/)
 
+- [Séance 6 - Bases HTML - CSS (seance6 branch)](https://scarabe22.github.io/nfa085/)
+
 
 
