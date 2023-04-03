@@ -181,6 +181,10 @@ header {
     /* padding: 4px; */
 }
 
+.smallbutton-hot:hover{
+    background-color: #7dafff;
+}
+
 .smallbutton {
     display: inline-block;
     text-decoration: none;
