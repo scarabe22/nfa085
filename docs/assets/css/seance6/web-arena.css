@@ -20,8 +20,8 @@ header {
     width: 100%;
     height: 80px;
     background-image:
-      url("../../images/seance6/logo.png"),
-      url("../../images/seance6/header-bg.jpg");
+            url("../../images/seance6/logo.png"),
+            url("../../images/seance6/header-bg.jpg");
     background-repeat: no-repeat;
     background-size: 150px, cover;
     background-position:
@@ -30,26 +30,34 @@ header {
 
 }
 
-.nav {
+header {
     display: flex;
-    justify-content: space-around;
-    align-items: center ;
-    width: 400px;
-    height: 76px;
-    margin-left: 1000px;
-
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.nav a {
-    text-decoration: none;
-    color: #fff;
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 74px;
+    margin-top: -1px;
+}
+
+nav li {
+    margin-left: 26px;
     font-size: 13px;
 }
 
-.nav a:hover {
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
     color: #304566;
 }
-.nav a:active{
+
+nav a:active{
     color: #fff;
 }
 /*============================================
