@@ -2,6 +2,9 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+body p a:hover {
+    color: #00d9ff;
+
 strong {
     font-weight: bold;
 }

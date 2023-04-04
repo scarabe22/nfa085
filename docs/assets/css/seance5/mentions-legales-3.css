@@ -6,6 +6,10 @@ body {
     font-size: 150%
 }
 
+body p:first-child {
+    margin: 30px;
+}
+
 ul li {
     padding: 5px;
 }

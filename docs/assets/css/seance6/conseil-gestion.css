@@ -38,12 +38,15 @@ body {
     text-align: center;
 }
 
-.mainbloc h2 {
-    font-size: 22px;
+.mainbloc p:first-child {  
+    font-weight: bold;
 }
 
-.mainbloc h1 {
+.mainbloc p:nth-child(2),
+.mainbloc p:nth-child(3) {       
     font-size: 50px;
+    font-weight: bold;
+    margin: 30px;
 }
 
 .subbloc {
