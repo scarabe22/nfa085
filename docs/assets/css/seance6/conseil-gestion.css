@@ -38,12 +38,12 @@ body {
     text-align: center;
 }
 
-.mainbloc p:first-child {  
+.aidons {
+    font-size: 20px;
     font-weight: bold;
 }
 
-.mainbloc p:nth-child(2),
-.mainbloc p:nth-child(3) {       
+.conseil {
     font-size: 50px;
     font-weight: bold;
     margin: 30px;
