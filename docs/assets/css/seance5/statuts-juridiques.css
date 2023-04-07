@@ -9,6 +9,13 @@ body {
     margin: 120px auto 600px 120px;
 }
 
+.accueil {
+    margin-bottom: 20px;
+}
+.accueil a:hover {
+    color: #00c3ff;
+}
+
 h1 {
     color: #444443;
     font-family: 'Raleway', sans-serif;
