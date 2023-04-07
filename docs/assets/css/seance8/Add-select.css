@@ -1,0 +1,23 @@
+/* Style pour la liste */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour les éléments de la liste */
+li {
+    background-color: #eee;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+/* Style pour le bouton */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
