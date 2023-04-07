@@ -1,0 +1,48 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 120px auto 600px 120px;
+}
+
+h1 {
+    color: #444443;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}  
+
+/* Table */
+table { border-collapse: collapse; 
+    border: 5px solid #ececec;
+    margin-top: 20px;
+    font-size: 14px;
+    width: 79%; 
+}
+
+th {
+    font-weight: 500; /* texte en-tête */
+    background-color: #f2f2f2; /* couleur de fond en-tête */
+    font-family: 'OpenSans', sans-serif;
+}
+
+tbody td:nth-child(7n+1) {
+    font-family: 'OpenSans', sans-serif;/* police colonne 1 */
+    background-color: #eae9e6 /* couleur de fond colonne 1 */
+} 
+
+tr + tr { /* sélecteur de frère adjacent (adjacent sibling selector) */
+    border-top: 5px solid #d5d5d2; /* bordures internes horizontales */
+}
+
+td + td, th + th { 
+    border-left: 5px solid #ececec; /* bordures internes verticales */
+}
+
+td, th { 
+    padding: 20px 20px 30px 10px; /*contenu des cellules*/
+}
+
