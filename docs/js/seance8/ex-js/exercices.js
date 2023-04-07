@@ -4,20 +4,20 @@ let body = document.querySelector("body");
 let bg_orange = document.getElementById("btn1");
 let bg_greenyellow = document.getElementById("btn2");
 let bg_indianred = document.getElementById("btn3");
-bg_orange.addEventListener("click", function (){
+bg_orange && bg_orange.addEventListener("click", function (){
    body.style.backgroundColor = "coral"
 });
-bg_greenyellow.addEventListener("click", function (){
+bg_greenyellow && bg_greenyellow.addEventListener("click", function (){
    body.style.backgroundColor = "greenyellow"
 });
-bg_indianred.addEventListener("click", function (){
+bg_indianred && bg_indianred.addEventListener("click", function (){
    body.style.backgroundColor = "indianred"
 });
 
 /* Add-select */
 // Action de cliquer sur le bouton lié à une fonction
 let addbutton = document.getElementById("add-button");
-addbutton.addEventListener("click", function (){
+addbutton && addbutton.addEventListener("click", function (){
    // Récupération de la valeur saisie dans la zone de texte
    let value = document.getElementById("msg-input").value;
    // Création d'un élément option
@@ -32,7 +32,7 @@ addbutton.addEventListener("click", function (){
 
 /* Addition*/
 let btn5 = document.getElementById("btn5");
-btn5.addEventListener("click", function (){
+btn5 && btn5.addEventListener("click", function (){
    let num1 = document.getElementById("box1").value;
    let num2 = document.getElementById("box2").value;
    let sum = parseFloat(num1) + parseFloat(num2);
