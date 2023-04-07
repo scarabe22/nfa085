@@ -1,0 +1,35 @@
+h1 {
+    font-size: 300%;
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 200%;
+    text-align: center; /*centre le texte*/
+}
+
+.version ul {
+    list-style-type: none; /*supprime le point d'une liste*/
+    margin: 0; /*enlève les marges par défaut du browser*/
+    padding: 0; /* "       "         "                 */
+}
+
+.version ul li {
+    font-size: 170%;
+    text-align: center; /*centre le texte*/
+}
+
+.version ul li a {
+    color: rgb(255, 157, 0);
+    text-decoration: none; /*supprime le soulignement*/
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /*Google Font*/
+}
+
+.version
+ ul li a:hover {
+    text-decoration: underline; /*souligne au passage de la souris*/
+}
