@@ -1,9 +1,9 @@
 /* background-color */
 // Changer la couleur de fond
-let body = document.querySelector("body"),
-   bg_orange = document.getElementById("btn1"),
-   bg_greenyellow = document.getElementById("btn2"),
-   bg_indianred = document.getElementById("btn3")
+let body = document.querySelector("body");
+let bg_orange = document.getElementById("btn1");
+let bg_greenyellow = document.getElementById("btn2");
+let bg_indianred = document.getElementById("btn3");
 bg_orange.addEventListener("click", function (){
    body.style.backgroundColor = "coral"
 });
@@ -30,6 +30,15 @@ addbutton.addEventListener("click", function (){
    input.value = "";
 });
 
+/* Addition*/
+let btn5 = document.getElementById("btn5");
+btn5.addEventListener("click", function (){
+   let num1 = document.getElementById("box1").value;
+   let num2 = document.getElementById("box2").value;
+   let sum = parseFloat(num1) + parseFloat(num2);
+   document.getElementById("result").innerHTML = sum;
+
+});
 
 /* Images*/
 // function changeImage() {
