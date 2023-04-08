@@ -1,23 +1,29 @@
+/* Intégration du test d'existence */
+function addEvt(objId, evt, fn) {
+   let obj= document.getElementById(objId);
+   obj && obj.addEventListener(evt, fn);
+}
+
 /* background-color */
 // Changer la couleur de fond
 let body = document.querySelector("body");
-let bg_orange = document.getElementById("btn1");
-let bg_greenyellow = document.getElementById("btn2");
-let bg_indianred = document.getElementById("btn3");
-bg_orange && bg_orange.addEventListener("click", function (){
+// let bg_orange = document.getElementById("btn1");
+// let bg_greenyellow = document.getElementById("btn2");
+// let bg_indianred = document.getElementById("btn3");
+addEvt("btn1", "click", function (){
    body.style.backgroundColor = "coral"
 });
-bg_greenyellow && bg_greenyellow.addEventListener("click", function (){
+addEvt("btn2","click", function (){
    body.style.backgroundColor = "greenyellow"
 });
-bg_indianred && bg_indianred.addEventListener("click", function (){
+addEvt("btn3","click", function (){
    body.style.backgroundColor = "indianred"
 });
 
 /* Add-select */
 // Action de cliquer sur le bouton lié à une fonction
-let addbutton = document.getElementById("add-button");
-addbutton && addbutton.addEventListener("click", function (){
+// let addbutton = document.getElementById("add-button");
+addEvt("add-button","click", function (){
    // Récupération de la valeur saisie dans la zone de texte
    let value = document.getElementById("msg-input").value;
    // Création d'un élément option
@@ -31,8 +37,8 @@ addbutton && addbutton.addEventListener("click", function (){
 });
 
 /* Addition*/
-let btn5 = document.getElementById("btn5");
-btn5 && btn5.addEventListener("click", function (){
+// let btn5 = document.getElementById("btn5");
+addEvt("btn5","click", function (){
    let num1 = document.getElementById("box1").value;
    let num2 = document.getElementById("box2").value;
    let sum = parseFloat(num1) + parseFloat(num2);
@@ -41,21 +47,24 @@ btn5 && btn5.addEventListener("click", function (){
 });
 
 /* Images*/
-// function changeImage() {
-//    let selectBox = document.getElementById("images");
-//    let selectedValue = selectBox.options[selectBox.selectedIndex].value;
-//    let image = document.getElementById("image");
-//    if (selectedValue == "image1") {
-//       image.src = "../../assets/images/seance8/blog-img1.jpg";
-//       image.alt = "Image 1";
-//    } else if (selectedValue == "image2") {
-//       image.src = "../../assets/images/seance8/blog-img7.jpg";
-//       image.alt = "Image 2";
-//    } else if (selectedValue == "image3") {
-//       image.src = "../../assets/images/seance8/blog-img8.jpg";
-//       image.alt = "Image 3";
-//    }
-// }
+
+addEvt("images","click", function() {
+   let selectBox = document.getElementById("images");
+   let index = selectBox.selectedIndex; //[0][1][2]
+   let selectedValue = selectBox.options[index].value;
+   let image = document.getElementById("image");
+   if (selectedValue == "groupe") {
+      image.src = "../../../assets/images/seance8/blog-img1.jpg";
+      image.alt = "groupe";
+   } else if (selectedValue == "homme") {
+      image.src = "../../../assets/images/seance8/blog-img7.jpg";
+      image.alt = "homme";
+   } else if (selectedValue == "bureau") {
+      image.src = "../../../assets/images/seance8/blog-img8.jpg";
+      image.alt = "bureau";
+   }
+});
+
 
 
 
