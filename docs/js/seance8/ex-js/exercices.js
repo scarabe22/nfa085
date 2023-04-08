@@ -90,6 +90,49 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
+/* Delete-conf */
+let deleteBtn = document.getElementById("delete-btn");
+let cancelBtn = document.getElementById("cancel-btn");
+let deleteMe = document.getElementById("delete-me");
 
+addEvt("deleteBtn","click", function () {
+   let confirmDelete = confirm('Etes-vous sûr de vouloir supprimer ce paragraphe?');
+   if (confirmDelete) {
+      deleteMe.remove();
+      alert("Paragraphe supprimé!");
+   } else {
+      alert("Annuler.");
+   }
+});
 
+addEvt("cancelBtn","click", function () {
+   alert('Suppression annulée.');
+});
 
+/* Toggle-check */
+let toggle = document.getElementById("toggle");
+let element = document.getElementById("element");
+
+addEvt("toggle","change", function() {
+   if (toggle.checked) {
+      element.style.display = "block";
+   } else {
+      element.style.display = "none";
+   }
+});
+
+/* Form-contact*/
+let form = document.getElementById("contact-form");
+
+addEvt("form","submit", function(event) {
+   event.preventDefault();
+   let name = document.getElementById("name").value;
+   let email = document.getElementById("email").value;
+   let message = document.getElementById("message").value;
+
+   console.log(`Nom: ${name}`);
+   console.log(`Adresse e-mail: ${email}`);
+   console.log(`Message: ${message}`);
+
+   form.reset();
+});
