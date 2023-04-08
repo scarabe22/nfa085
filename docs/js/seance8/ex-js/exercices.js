@@ -65,9 +65,30 @@ addEvt("images","click", function() {
    }
 });
 
+/* Alert-mouse-hover*/
+// Ajouter un événement "mouseover" à l'élément sélectionné
+addEvt("alerte","mouseover", function(){
+      alert("Vous avez survolé le texte !");
+});
 
+/* Horloge */
+function updateClock() {
+   const now = new Date();
+   const hours = now.getHours();
+   const minutes = now.getMinutes();
+   const seconds = now.getSeconds();
 
+   const hoursElement = document.querySelector(".hours");
+   const minutesElement = document.querySelector(".minutes");
+   const secondsElement = document.querySelector(".seconds");
 
+   hoursElement.textContent = hours.toString().padStart(2, "0");
+   minutesElement.textContent = minutes.toString().padStart(2, "0");
+   secondsElement.textContent = seconds.toString().padStart(2, "0");
+}
+
+updateClock();
+setInterval(updateClock, 1000);
 
 
 
