@@ -138,7 +138,7 @@ addEvt("form","submit", function(event) {
    console.log(`Message: ${message}`);
 
    form.reset();
-})
+});
 
 /* 2 – Styles illustration */
 
@@ -155,7 +155,7 @@ const decreaseFontSizeBtn = document.getElementById('decrease-font-size-btn');
 
 const textArea = document.getElementById('text-example');
 
-bold.addEventListener('change', () => {
+addEvt('bold','change', () => {
    if (bold.checked) {
       textArea.style.fontWeight = "bold";
    } else {
@@ -163,7 +163,7 @@ bold.addEventListener('change', () => {
    }
 });
 
-italic.addEventListener('change', () => {
+addEvt("italic",'change', () => {
    if (italic.checked) {
       textArea.style.fontStyle = "italic";
    } else {
@@ -171,7 +171,7 @@ italic.addEventListener('change', () => {
    }
 });
 
-underline.addEventListener('change', () => {
+addEvt("underline",'change', () => {
    if (underline.checked) {
       textArea.style.textDecoration = "underline";
    } else {
@@ -179,7 +179,7 @@ underline.addEventListener('change', () => {
    }
 });
 
-strikethrough.addEventListener('change', () => {
+addEvt("strikethrough",'change', () => {
    if(strikethrough.checked){
       textArea.style.textDecoration = 'line-through';
    } else {
@@ -187,23 +187,19 @@ strikethrough.addEventListener('change', () => {
    }
 });
 
-colorInput.addEventListener('change', () => {
+addEvt("colorInput",'change', () => {
    // Récupérez la couleur sélectionnée
    const color = colorInput.value;
    // Appliquez la couleur sélectionnée au texte du textarea
    textArea.style.color = color;
 });
 
-fontSizeInput.addEventListener('input', () => {
+addEvt("fontSizeInput",'input', () => {
    textArea.style.fontSize = `${fontSizeInput.value}px`;
 });
 
-// fontFamilySelect.addEventListener('change', () => {
-//     textArea.fontFamily = fontFamilySelect.value;
-// });
-
 // Écouter l'événement "change" du select
-fontFamilySelect.addEventListener('change', () => {
+addEvt("fontFamilySelect",'change', () => {
    // Récupérer la valeur de la police sélectionnée
    const selectedFontFamily = fontFamilySelect.value;
 
@@ -213,12 +209,104 @@ fontFamilySelect.addEventListener('change', () => {
 
 let fontSize = 16; // Taille de police initiale
 
-increaseFontSizeBtn.addEventListener("click", function() {
+addEvt("increaseFontSizeBtn","click", function() {
    fontSize += 2; // Augmente la taille de police de 2px
    textArea.style.fontSize = `${fontSize}px`; // Met à jour la taille de police du textarea
 });
 
-decreaseFontSizeBtn.addEventListener("click", function() {
+addEvt("decreaseFontSizeBtn","click", function() {
    fontSize -= 2; // Diminue la taille de police de 2px
    textArea.style.fontSize = `${fontSize}px`; // Met à jour la taille de police du textarea
+});
+
+/* Calculatrice */
+const screen = document.querySelector('#result');
+const operation = document.querySelector('#operation');
+const buttons = document.querySelectorAll('.btn');
+
+let num1 = '';
+let num2 = '';
+let operator = '';
+let decimal = false;
+
+function calculate() {
+   let result = '';
+   switch (operator) {
+      case '+':
+         result = parseFloat(num1) + parseFloat(num2);
+         break;
+      case '-':
+         result = parseFloat(num1) - parseFloat(num2);
+         break;
+      case '*':
+         result = parseFloat(num1) * parseFloat(num2);
+         break;
+      case '/':
+         result = parseFloat(num1) / parseFloat(num2);
+         break;
+      default:
+         break;
+   }
+   return result.toFixed(2);
+}
+
+function displayResult() {
+   let result = calculate();
+   screen.innerHTML = result;
+   operation.innerHTML = num1 + operator + num2;
+}
+
+function handleButtonClick(event) {
+   let clickedButtonValue = event.target.innerHTML;
+
+   if (clickedButtonValue === '+' || clickedButtonValue === '-' || clickedButtonValue === '*' || clickedButtonValue === '/') {
+      operator = clickedButtonValue;
+      decimal = false;
+   } else if (clickedButtonValue === 'C') {
+      num1 = '';
+      num2 = '';
+      operator = '';
+      screen.innerHTML = '';
+      operation.innerHTML = '';
+      decimal = false;
+   } else if (clickedButtonValue === '+/-') {
+      if (num2 !== '') {
+         num2 = (parseFloat(num2) * -1).toString();
+         screen.innerHTML = num2;
+      } else {
+         num1 = (parseFloat(num1) * -1).toString();
+         screen.innerHTML = num1;
+      }
+   } else if (clickedButtonValue === '.') {
+      if (!decimal) {
+         decimal = true;
+         if (num2 !== '') {
+            num2 += clickedButtonValue;
+            screen.innerHTML = num2;
+         } else {
+            num1 += clickedButtonValue;
+            screen.innerHTML = num1;
+         }
+      }
+   } else if (clickedButtonValue === '=') {
+      if (num1 !== '' && num2 !== '') {
+         displayResult();
+         num1 = screen.innerHTML;
+         num2 = '';
+         operator = '';
+         decimal = false;
+      }
+   } else {
+      if (operator === '') {
+         num1 += clickedButtonValue;
+         screen.innerHTML = num1;
+      } else {
+         num2 += clickedButtonValue;
+         screen.innerHTML = num2;
+      }
+   }
+}
+
+buttons.forEach((button) => {
+   button.addEventListener('click', handleButtonClick);
 });
