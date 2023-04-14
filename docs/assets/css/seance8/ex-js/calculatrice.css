@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     font-family: sans-serif;
+}
 
 .calculator {
     margin-top: 30px;
@@ -26,7 +27,7 @@ body {
     width: 500px;
     background-color: #f3f3f3;
     font-family: 'Poppins', sans-serif;
-    font-size: 0px;
+    font-size: 0;
 
 
 }

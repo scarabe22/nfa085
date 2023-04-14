@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assets/css/seance8/ex-js/todo-list.css">
+    <script src="https://kit.fontawesome.com/9a3585f24d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <title>Todoliste</title>
+    <script src="../../../js/seance8/ex-js/todo-list.js" defer></script>
+</head>
+<body>
+
+
+<h1 class="todo">Todo liste</h1>
+<form id="form">
+    <input autocomplete=off required type="text" id="task-field" placeholder="Nom de la tâche">
+    <button type="submit" value="add" id="btn-add"><i class="fa-sharp fa-solid fa-plus"></i> Ajouter une tâche</button>
+</form>
+<div class="separation-line">
+    <div class="line"></div>
+</div>
+
+
+<ul id="ul"></ul>
+
+<button id="btn-del-task">Supprimer les tâches terminées</button>
+
+<div class="save">
+    <input id="save-field" placeholder="Nom de la sauvegarde" type="text">
+    <button id="btn-save">Sauvegarder</button>
+</div>
+
+
+<fieldset>
+    <legend>Charger une sauvegarde:</legend>
+    <div class="load">
+        <select name="list-load" id="list-load">
+        
+        </select>
+        <button id="btn-load">Charger</button>
+    </div>
+</fieldset>
+
+
+</body>
+</html>

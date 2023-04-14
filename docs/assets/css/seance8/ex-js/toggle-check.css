@@ -8,21 +8,9 @@
 }
 
 body {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     margin: 50px;
 
 }
-/* .container{
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-} */
 
 #toggle{
     width: 160px;

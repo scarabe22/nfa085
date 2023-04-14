@@ -124,7 +124,7 @@ addEvt("toggle","change", function() {
    }
 });
 
-/* Form-contact*/
+/* Form-contact */
 let form = document.getElementById("contact-form");
 
 addEvt("form","submit", function(event) {
@@ -140,7 +140,7 @@ addEvt("form","submit", function(event) {
    form.reset();
 });
 
-/* 2 – Styles illustration */
+/* Styles illustration */
 
 const bold = document.getElementById('bold');
 const italic = document.getElementById('italic');
@@ -310,3 +310,4 @@ function handleButtonClick(event) {
 buttons.forEach((button) => {
    button.addEventListener('click', handleButtonClick);
 });
+
