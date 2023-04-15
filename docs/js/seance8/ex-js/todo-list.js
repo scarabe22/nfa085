@@ -11,9 +11,6 @@ const listLoad = document.getElementById("list-load");
 const btnLoad = document.getElementById("btn-load");
 
 
-
-// ul.innerHTML = localStorage.getItem("list");
-
 const spanDels = document.querySelectorAll(".delete");
 for (let span of spanDels) { //boucle sur l'élément spandels
     span.onclick = () => del(span.parentElement);
@@ -30,6 +27,24 @@ form.addEventListener("submit", (event) => {
     const checkBox = document.createElement("input"); //create checkbox
     checkBox.type = "checkbox";
     checkBox.classList.add("checkbox");//create checkbox class
+
+    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const li = this.parentElement;
+            if (this.checked) {
+                texte.style.textDecoration = 'line-through';
+            } else {
+                texte.style.textDecoration = 'none';
+            }
+        });
+    });
+
+
+
+
+
+
     checkBox.addEventListener("change", () => {
         if (checkBox.checked) {
             texte.classList.add("checked");
@@ -48,7 +63,7 @@ form.addEventListener("submit", (event) => {
 
     ul.appendChild(li);
 
-    // localStorage.setItem("list", ul.innerHTML);
+
 
     taskField.value = "";
 });
@@ -56,7 +71,7 @@ form.addEventListener("submit", (event) => {
 function del(element) {
     element.remove();
 
-    // localStorage.setItem("list", ul.innerHTML);
+
 }
 
 btnDelTask.addEventListener("click", () => {
