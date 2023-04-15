@@ -84,3 +84,23 @@ h2 {
     color: rgb(0, 98, 255);
     text-decoration: none; /*supprime le soulignement*/
 }
+
+.seance8-global{
+    font-size: 150%;
+    list-style-type: none; /*supprime le point d'une liste*/
+}
+.seance8 li {
+    margin-left: 40px;
+    list-style-type: none;
+}
+
+.seance8 li a {
+    text-decoration: none;
+    color: rgb(255, 157, 0);
+
+}
+
+.seance8 li a:hover {
+    color: rgb(0, 98, 255);
+    text-decoration: none; /*supprime le soulignement*/
+}
