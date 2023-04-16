@@ -220,94 +220,46 @@ addEvt("decreaseFontSizeBtn","click", function() {
 });
 
 /* Calculatrice */
-const screen = document.querySelector('#result');
-const operation = document.querySelector('#operation');
-const buttons = document.querySelectorAll('.btn');
+const screenDisplay = document.querySelector('.screen');
+const buttons = document.querySelectorAll('button');
+const screenDisplayOperation = document.querySelector('#operation');
+const screenDisplayResult = document.querySelector('#result')
 
-let num1 = '';
-let num2 = '';
-let operator = '';
-let decimal = false;
+let calculation = []
+let accumulativeCalculation
 
-function calculate() {
-   let result = '';
-   switch (operator) {
-      case '+':
-         result = parseFloat(num1) + parseFloat(num2);
-         break;
-      case '-':
-         result = parseFloat(num1) - parseFloat(num2);
-         break;
-      case '*':
-         result = parseFloat(num1) * parseFloat(num2);
-         break;
-      case '/':
-         result = parseFloat(num1) / parseFloat(num2);
-         break;
-      default:
-         break;
-   }
-   return result.toFixed(2);
-}
 
-function displayResult() {
-   let result = calculate();
-   screen.innerHTML = result;
-   operation.innerHTML = num1 + operator + num2;
-}
-
-function handleButtonClick(event) {
-   let clickedButtonValue = event.target.innerHTML;
-
-   if (clickedButtonValue === '+' || clickedButtonValue === '-' || clickedButtonValue === '*' || clickedButtonValue === '/') {
-      operator = clickedButtonValue;
-      decimal = false;
-   } else if (clickedButtonValue === 'C') {
-      num1 = '';
-      num2 = '';
-      operator = '';
-      screen.innerHTML = '';
-      operation.innerHTML = '';
-      decimal = false;
-   } else if (clickedButtonValue === '+/-') {
-      if (num2 !== '') {
-         num2 = (parseFloat(num2) * -1).toString();
-         screen.innerHTML = num2;
-      } else {
-         num1 = (parseFloat(num1) * -1).toString();
-         screen.innerHTML = num1;
-      }
-   } else if (clickedButtonValue === '.') {
-      if (!decimal) {
-         decimal = true;
-         if (num2 !== '') {
-            num2 += clickedButtonValue;
-            screen.innerHTML = num2;
-         } else {
-            num1 += clickedButtonValue;
-            screen.innerHTML = num1;
-         }
-      }
-   } else if (clickedButtonValue === '=') {
-      if (num1 !== '' && num2 !== '') {
-         displayResult();
-         num1 = screen.innerHTML;
-         num2 = '';
-         operator = '';
-         decimal = false;
-      }
+function calculate(button) {
+   const value = button.textContent;
+   let modifiedValue = value.replace('*', 'x').replace('.', ',').replace('x', '*').replace(',', '.');
+   if (modifiedValue === "+/-") {
+      accumulativeCalculation = -1 * accumulativeCalculation;
+      screenDisplayOperation.textContent = accumulativeCalculation;
+   } else if (modifiedValue === "=") {
+      const result = eval(accumulativeCalculation.replace(',', '.'));
+      screenDisplayResult.textContent = result;
+      calculation = [result];
+      accumulativeCalculation = result.toString().replace('.', ',');
    } else {
-      if (operator === '') {
-         num1 += clickedButtonValue;
-         screen.innerHTML = num1;
-      } else {
-         num2 += clickedButtonValue;
-         screen.innerHTML = num2;
-      }
+      calculation.push(modifiedValue);
+      accumulativeCalculation = calculation.join('');
+      screenDisplayOperation.textContent = accumulativeCalculation.replace('*', 'x').replace(',', '.');
    }
 }
 
-buttons.forEach((button) => {
-   button.addEventListener('click', handleButtonClick);
-});
+buttons.forEach(button => button.addEventListener('click', () => calculate(button)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
