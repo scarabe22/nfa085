@@ -8,5 +8,7 @@
 
 - [Séance 6 - Bases HTML - CSS (seance6 branch)](https://scarabe22.github.io/nfa085/)
 
+- [Séance 8 - Programmation côté client (seance8 branch)](https://scarabe22.github.io/nfa085/)
+
 
 
