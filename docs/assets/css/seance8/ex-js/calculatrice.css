@@ -49,6 +49,12 @@ body {
     background-color: #f9f9f9;
 }
 
+#result {
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
 #equals {
     background-color: #004c99;
     color: #fff;
