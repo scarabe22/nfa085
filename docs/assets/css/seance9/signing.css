@@ -116,6 +116,7 @@ button:hover {
     text-align: end;
     border-radius: 10px;
     width: 323px;
+    display: block;
   }
 
   .message.error {
