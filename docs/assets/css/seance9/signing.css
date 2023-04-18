@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container {
+    width: 40%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+}
+
+header {
+    width: 100%;
+    height: 40px;
+    /* font-size: ; */
+    font-weight: bold;
+    background-color: #004c99;
+    color: #fff;
+    padding: 10px;
+}
+
+.email {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+
+}
+
+.label-mail{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+form {
+    width: 100%;
+    height: 96%;
+    background-color: #fff;
+    margin: 10px 15px 5px 0;
+    border-radius: 0 6px 6px 0px;
+    /* padding-left: 30px; */
+    padding-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: #9e9db0;
+    font-size: 14px;
+}
+
+input {
+    /* width: 60%; */
+    height: 30px;
+    border: 1px solid #9e9db0
+}
+
+input:focus {
+    border: 3px solid #db4764;
+    outline: none;
+
+}
+input[type="email"] {
+    width: 75%;
+}
+
+input[type="password"] {
+    width: 40%;
+}
+
+
+button {
+    width: 30%;
+    background-color: #fff;
+    color: #0061c0;
+    padding: 10px 0 10px 0;
+    border: 3px solid #0061c0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0061c0;
+    color: #fff;
+}
+
+.asterisk {
+    font-size: 2ch;
+    color: red;
+    padding-left: 4px;
+}
+
+.message {
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    display: none;
+    margin-bottom: 10px;
+    text-align: end;
+    border-radius: 10px;
+    width: 323px;
+  }
+
+  .message.error {
+    background-color: #db4764;
+    display: block;
+  }
+
+  .message.valid {
+    background-color: green;
+    display: block;  
+  }
+

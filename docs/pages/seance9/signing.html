@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9a3585f24d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../assets/css/seance9/signing.css">
+            <script src="../../js/seance9/signing.js" defer></script>
+    <title>Création de compte</title>
+</head>
+    <body>
+    <div class="container">
+        <header>CR&Eacute;ATION DE COMPTE</header>
+        <form novalidate action="" method="">
+            <div class="form-group email">
+                <label class="label-mail" for="mail">Mon adresse mail<span class='asterisk'>⃰</span></label>
+                <div class="message"></div>
+                <input type="email" id="mail" name="mail" placeholder="monadresse@domaine.com" required pattern="[A-Za-z]+">
+            </div>
+            <div class="form-group">
+                <label for="pass1">Mon mot de passe<span class='asterisk'>⃰</span></label>
+                <input type="password" id="pass1" name="pass1"
+                       minlength="8" required>
+            </div>
+            <div class="form-group">
+                <label for="pass2">Confirmation du mot de passe<span class='asterisk'>⃰</span></label>
+                <input type="password" id="pass2" name="pass2"
+                       minlength="8" required>
+            </div>
+                <div class="class-form-group">
+                <button type="submit">CR&Eacute;ER LE COMPTE</button>
+            </div>
+
+        </form>
+        
+    </div>
+        
+    </body>
+</html>

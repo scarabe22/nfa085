@@ -40,9 +40,11 @@
 // disableAutocomplete("lastname");
 // disableAutocomplete("mail");
 // disableAutocomplete("message");
-//******************************************/
-// Intégration du test d'existence         */
-//*****************************************/
+//************************************/
+//Intégration du test d'existence   */
+//***********************************/
+
+console.log("hello");
 // form.addEventListener("submit", function(event) {
 //     event.preventDefault();
 //     let firstNameValue = document.getElementById("firstname").value;
