@@ -13,7 +13,7 @@ body {
 
 
 .container {
-    width: 40%;
+    width: 50%;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -71,13 +71,36 @@ input {
     border: 1px solid #9e9db0
 }
 
-input:focus {
+#strength-bar{
+    background-color: #dcdcdc;
+    width: 40%;
+    height: 10px;
+    position: relative;
+    margin-top: 5px;
+}
+
+.strength{
+    width: 25%;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    bottom: 5px;
+}
+
+#msg {
+    width: 100%;
+    text-align: left ;
+    margin-top: 5px;
+}
+
+
+/* input:focus {
     border: 3px solid #db4764;
     outline: none;
 
-}
+} */
 input[type="email"] {
-    width: 75%;
+    width: 67%;
 }
 
 input[type="password"] {
@@ -115,7 +138,7 @@ button:hover {
     margin-bottom: 10px;
     text-align: end;
     border-radius: 10px;
-    width: 323px;
+    width: 50%;
     display: block;
   }
 
