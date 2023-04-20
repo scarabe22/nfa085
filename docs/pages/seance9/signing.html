@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9a3585f24d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
     <link rel="stylesheet" href="../../assets/css/seance9/signing.css">
             <script src="../../js/seance9/signing.js" defer></script>
     <title>Création de compte</title>
@@ -19,15 +20,17 @@
                 <input type="email" id="mail" name="mail" placeholder="monadresse@domaine.com" required pattern="[a-z0-9]+@[a-z]+\.[a-z]+">
             </div>
             <div class="form-group">
-                <label for="pass1">Mon mot de passe<span class='asterisk'>⃰</span></label>
-                <input type="password" id="pass1" name="pass1"
+                <label for="password">Mon mot de passe<span class='asterisk'>⃰</span></label>
+                <div class="password-message"></div>
+                <input type="password" id="password" name="password"
                        minlength="8" required>
-                <div id="strength-bar"></div>
-                <p id="msg"></p>
+                <meter id="password-strength" min="0" max="5" value="0"></meter>
+                <p id="password-strength-text"></p>
             </div>
             <div class="form-group">
-                <label for="pass2">Confirmation du mot de passe<span class='asterisk'>⃰</span></label>
-                <input type="password" id="pass2" name="pass2"
+                <label for="confirm-password">Confirmation du mot de passe<span class='asterisk'>⃰</span></label>
+                <div class="confirm-password-message"></div>
+                <input type="password" id="confirm-password" name="confirm-password"
                        minlength="8" required>
             </div>
                 <div class="class-form-group">

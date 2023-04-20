@@ -1,22 +1,23 @@
 console.log("hello!");
 
-//**********************************************************/
-//Utilisation de l'api de validation de contraintes HTML5 */
-//*********************************************************/
+//*************************************************************************/
+//Validation d'adresse mail avec l'api de validation de contraintes HTML5 */
+//************************************************************************/
 let form=document.querySelector("form");
 let mail=document.getElementById("mail");
 let message=document.querySelector('.message');
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  let m=mail.value;
+  // let m=mail.value;
   if (!mail.validity.valid) {
     message.innerHTML = mail.validationMessage;
     message.className = "message error";
-  } else {
-    message.innerHTML=`'${m}' est valide !`;
-    message.className = "message valid";
   }
+  // else {
+  //   message.innerHTML=`'${m}' est valide !`;
+  //   message.className = "message valid";
+  // }
 });
 
 mail.addEventListener("input", function (event) {
@@ -31,56 +32,73 @@ mail.addEventListener("input", function (event) {
 /********************************************/
 //Validation du mot de passe avec check strength bar */
 //****************************************************/
-let parameters = {
-  count : false,
-  letters : false,
-  numbers : false,
-  special : false
+let strength = {
+  0: "Très faible",
+  1: "Faible",
+  2: "Excellent",
+  3: "Fort",
+  4: "Très fort"
 }
-let strengthBar = document.getElementById("strength-bar");
-let msg = document.getElementById("msg");
 
-let password = document.getElementById("pass1");
-password.addEventListener('input', (strengthChecker));
+let password = document.getElementById('password');
+let meter = document.getElementById('password-strength');
+let passwordStrengthText = document.getElementById('password-strength-text');
 
-function strengthChecker(){
-  let password = document.getElementById("pass1").value;
+password.addEventListener('input', function() {
+  let val = password.value;
+  let result = zxcvbn(val);
 
-  parameters.letters = (/[A-Za-z]+/.test(password))?true:false;
-  parameters.numbers = (/[0-9]+/.test(password))?true:false;
-  parameters.special = (/[!\"$%&/()=?@~`\\.\';:+=^*_-]+/.test(password))?true:false;
-  parameters.count = (password.length > 7)?true:false;
+  // This updates the password strength meter
+  meter.value = result.score;
 
-  let barLength = Object.values(parameters).filter(value=>value);
-
-  console.log(Object.values(parameters), barLength);
-
-  strengthBar.innerHTML = "";
-  for( let i in barLength){
-    let span = document.createElement("span");
-    span.classList.add("strength");
-    strengthBar.appendChild(span);
+  // This updates the password meter text
+  if (val !== "") {
+    passwordStrengthText.innerHTML = "Force: " + strength[result.score];
+  } else {
+    passwordStrengthText.innerHTML = "";
   }
+});
+//****************************************************************************/
+//Confirmation de mot de passe avec l'api de validation de contraintes HTML5 */
+//***************************************************************************/
 
-  let spanRef = document.getElementsByClassName("strength");
-  for( let i = 0; i < spanRef.length; i++){
-    switch(spanRef.length - 1){
-      case 0 :
-        spanRef[i].style.background = "#ff3e36";
-        msg.textContent = "Force: Très faible";
-        break;
-      case 1:
-        spanRef[i].style.background = "#ff691f";
-        msg.textContent = "Force: Faible";
-        break;
-      case 2:
-        spanRef[i].style.background = "#ffda36";
-        msg.textContent = "Force: Bon";
-        break;
-      case 3:
-        spanRef[i].style.background = "#0be881";
-        msg.textContent = "Force: Excellent";
-        break;
-    }
+// let form =document.querySelector("form");
+// const password = document.getElementById('password');
+let passwordMessage = document.querySelector('.password-message');
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  if (!password.validity.valid) {
+    passwordMessage.innerHTML = password.validationMessage;
+    passwordMessage.className = "passwordMessage error";
   }
+  else {
+    message.innerHTML= "";
+    // message.className = "message valid";
+  }
+});
+
+let confirmPassword = document.getElementById('confirm-password');
+let confirmPasswordMessage = document.getElementById('confirm-password-message');
+form.addEventListener("submit", function (event2) {
+  event2.preventDefault();
+  if (password.value !== confirmPassword.value) {
+    confirmPasswordMessage.innerHTML = confirmPassword.validationMessage;
+    confirmPasswordMessage.className = "confirmPasswordMessage error";
+  }
+  else {
+    message.innerHTML= "";
+    // message.className = "message valid";
+  }
+});
+
+
+// Afficher le message d'erreur personnalisé
+if (!confirmPassword.checkValidity()) {
+  let passwordMatchMessage = document.getElementById("password-match-message");
+  passwordMatchMessage.innerHTML = confirmPassword.validationMessage;
+  passwordMatchMessage.className = ("passwordMatchMessage error");
+
+} else {
+  passwordMatchMessage.innerHTML = "";
 }
