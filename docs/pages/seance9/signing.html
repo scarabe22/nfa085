@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9a3585f24d.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
     <link rel="stylesheet" href="../../assets/css/seance9/signing.css">
-            <script src="../../js/seance9/signing.js" defer></script>
+    <script src="../../js/seance9/signing.js" defer></script>
     <title>Création de compte</title>
 </head>
     <body>
     <div class="container">
         <header>CR&Eacute;ATION DE COMPTE</header>
-        <form novalidate action="" method="">
+        <form  id="validation-form" method="POST" action="create-account.php" novalidate>
             <div class="form-group email">
                 <label class="label-mail" for="mail">Mon adresse mail<span class='asterisk'>⃰</span></label>
                 <div class="mail-message"></div>
@@ -30,7 +29,7 @@
                 <input type="password" id="password" name="password"
                        minlength="8"  pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$" required>
                 <span></span>
-                <meter id="password-strength-meter" min="0" low="27" optimum="50" high="75" max="100"></meter>
+                <meter id="password-strength-meter" min="0" low="27" optimum="50" high="75" max="100" value=""></meter>
                 <p id="password-strength-text">Force : Aucune</p>
             </div>
             <div class="form-group">

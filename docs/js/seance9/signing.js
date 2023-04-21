@@ -1,5 +1,3 @@
-console.log("hello!");
-
 //*************************************************************************/
 //Validation d'adresse mail avec l'api de validation de contraintes HTML5 */
 //************************************************************************/
@@ -67,10 +65,6 @@ function checkPasswordStrength() {
     strengthText.innerHTML = "Force : Excellente";
   }
 }
-
-//****************************************************************************/
-//Validation du mot de passe avec l'api de validation de contraintes HTML5 */
-//***************************************************************************/
 
 
 //****************************************************************************/

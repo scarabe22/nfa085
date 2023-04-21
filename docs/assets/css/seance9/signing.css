@@ -57,6 +57,10 @@ form {
     position: relative;
 }
 
+/*************/
+/* inputs   */
+/***********/
+
 label {
     display: block;
     font-weight: 100;
@@ -84,6 +88,10 @@ input {
 
 input[type="email"] {
     width: 67%;
+}
+
+.password {
+    margin-top: -170px;
 }
 
 /**************************************/
@@ -144,12 +152,6 @@ button {
 button:hover {
     background-color: #0061c0;
     color: #fff;
-}
-
-
-
-.password {
-    margin-top: -170px;
 }
 
 /***********/
@@ -237,11 +239,6 @@ button:hover {
     margin-left: 200px;
 }
 
-/* #confirm-password-message {
-    position: absolute;
-    right: 5px; 
-  } */
-
 .confirmPasswordMessage.error {
     background-color: #db4764;
     width: 51%;
@@ -255,7 +252,6 @@ meter {
     width: 40%;
     background-color: #ebeae4;
     margin-top: 5px;
-    
 }
 
 /* #password-strength-meter::-webkit-meter-bar {
