@@ -14,7 +14,7 @@
         <header>CR&Eacute;ATION DE COMPTE</header>
         <form  id="validation-form" method="POST" action="create-account.php" novalidate>
             <div class="form-group email">
-                <label class="label-mail" for="mail">Mon adresse mail<span class='asterisk'>⃰</span></label>
+                <label class="label-mail" for="mail">Mon adresse mail<span class='asterisk'>*</span></label>
                 <div class="mail-message"></div>
                 <input type="email" id="mail" name="mail" placeholder="monadresse@domaine.com" required pattern="[a-z0-9]+@[a-z]+\.[a-z]+">
                 <span></span>
@@ -22,7 +22,7 @@
             <div class="box arrow-left">Fournissez un mot de passe pour votre compte dans ces 2 champs</div>
             <div class="form-group password">
                
-                <label for="password">Mon mot de passe<span class='asterisk'>⃰</span></label>
+                <label for="password">Mon mot de passe<span class='asterisk'>*</span></label>
                
                 <div class="password-message"></div>
                 
@@ -33,7 +33,7 @@
                 <p id="password-strength-text">Force : Aucune</p>
             </div>
             <div class="form-group">
-                <label for="confirm-password">Confirmation du mot de passe<span class='asterisk'>⃰</span></label>
+                <label for="confirm-password">Confirmation du mot de passe<span class='asterisk'>*</span></label>
                 <div id="confirm-password-message"></div>
                 <input type="password" id="confirm-password" name="confirm-password"
                        minlength="8" required>

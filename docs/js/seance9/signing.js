@@ -6,8 +6,9 @@ let mail=document.getElementById("mail");
 let mailMessage=document.querySelector('.mail-message');
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault();
+
   if (!mail.validity.valid) {
+    event.preventDefault();
     mailMessage.innerHTML = mail.validationMessage;
     mailMessage.className = "mailMessage error";
   }
