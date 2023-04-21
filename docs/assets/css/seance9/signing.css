@@ -24,7 +24,6 @@ body {
 header {
     width: 100%;
     height: 40px;
-    /* font-size: ; */
     font-weight: bold;
     background-color: #004c99;
     color: #fff;
@@ -35,6 +34,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 8px;
+    position: relative;
 
 }
 
@@ -48,13 +48,13 @@ form {
     background-color: #fff;
     margin: 10px 15px 5px 0;
     border-radius: 0 6px 6px 0px;
-    /* padding-left: 30px; */
     padding-top: 50px;
 }
 
 .form-group {
     margin-bottom: 25px;
     text-align: left;
+    position: relative;
 }
 
 label {
@@ -71,43 +71,65 @@ input {
     border: 1px solid #9e9db0
 }
 
-#strength-bar{
-    background-color: #dcdcdc;
-    width: 40%;
-    height: 10px;
-    position: relative;
-    margin-top: 5px;
+.asterisk {
+    font-size: 2ch;
+    color: red;
+    padding-left: 4px;
 }
 
-.strength{
-    width: 25%;
-    display: inline-block;
-    position: relative;
-    height: 100%;
-    bottom: 5px;
+.email {
+    display: flex;
+    flex-direction: column;
 }
 
-#msg {
-    width: 100%;
-    text-align: left ;
-    margin-top: 5px;
-}
-
-
-/* input:focus {
-    border: 3px solid #db4764;
-    outline: none;
-
-} */
 input[type="email"] {
     width: 67%;
+}
+
+/**************************************/
+/* invalid cross + valid check symbol */
+/**************************************/
+input + span {
+    position: relative;
+}
+
+input[type="email"] + span::before { /* positionnement de la croix */
+    position: absolute;
+    right: 250px;
+    top: -26px;
+}
+
+input[type="password"] + span::before { /* positionnement de la croix */
+    position: absolute;
+    right: 8px;
+    top: 1px;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:invalid + span::before {
+    content:"✖";
+    color: red;
+}
+
+input:valid + span::before {
+    content:"✓";
+    color: green;
+}
+
+input:required + span::after {
+
 }
 
 input[type="password"] {
     width: 40%;
 }
 
-
+/***********/
+/* Button  */
+/***********/
 button {
     width: 30%;
     background-color: #fff;
@@ -124,13 +146,65 @@ button:hover {
     color: #fff;
 }
 
-.asterisk {
-    font-size: 2ch;
-    color: red;
-    padding-left: 4px;
+
+
+.password {
+    margin-top: -170px;
 }
 
-.message {
+/***********/
+/* Warning  */
+/***********/
+.password-warning {
+    width: 130px;
+    height: 50px;
+    background-color: #b3b3b3;
+    content: "Fournissez un mot de passe pour votre compte dans ces 2 champs";
+    color: #fff;
+    font-size: 11px;
+    padding: 3px;
+    text-align: center;
+    border-top-color: transparent;
+}
+
+.password-warning::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    transform: rotate(315deg);
+    background-color: #b3b3b3;
+    opacity: 0.5;
+}
+
+.box {
+    display: inline-block;
+    width: 200px;
+    height: 75px;
+    background-color: #b3b3b3;
+    color: #fff;
+    padding: 12px;
+    position: relative;
+    margin-left: 350px ;
+    margin-bottom: 90px;
+    font-size: 12px;
+  }
+
+  .box.arrow-left::after {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 15px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #b3b3b3;
+    border-left: none;
+    border-bottom: 15px solid transparent;
+  }
+
+/*********************/
+/* Error messages    */
+/*********************/
+.mailMessage {
     color: white;
     border-radius: 4px;
     padding: 8px;
@@ -138,30 +212,13 @@ button:hover {
     margin-bottom: 10px;
     text-align: end;
     border-radius: 10px;
-    width: 50%;
+    width: 80%;
     display: block;
-  }
+    position: absolute;
+    right: 25px;
+}
 
-  .message.error {
-    background-color: #db4764;
-    display: block;
-  }
-
-  .message.valid {
-    background-color: green;
-    display: block;  
-  }
-
-.error-message {
-    color: white;
-    border-radius: 4px;
-    padding: 8px;
-    display: none;
-    margin-bottom: 10px;
-    text-align: end;
-    border-radius: 10px;
-    width: 50%;
-    display: block;
+.mailMessage.error {
     background-color: #db4764;
 }
 
@@ -170,40 +227,54 @@ button:hover {
     border-radius: 4px;
     padding: 8px;
     display: none;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     text-align: end;
     border-radius: 10px;
-    width: 50%;
+    /* width: 80%; */
     display: block;
+    position: absolute;
+    margin-top: -38px;
+    margin-left: 200px;
 }
 
+/* #confirm-password-message {
+    position: absolute;
+    right: 5px; 
+  } */
 
 .confirmPasswordMessage.error {
     background-color: #db4764;
-    width: 100%;
-    /* display: block; */
-
+    width: 51%;
 }
 
-/* check strength bar*/
+/*********************/
+/* check strength bar */
+/*********************/
 meter {
     display: flex;
-    /* margin: ; */
     width: 40%;
-    height: 1em;
+    background-color: #ebeae4;
+    margin-top: 5px;
+    
 }
 
-meter::-webkit-meter-bar {
-    background: none;
-    background-color: rgba(0, 0, 0, 0.1);
-}
+/* #password-strength-meter::-webkit-meter-bar {
+    background-color: #;
+  }
+  
+  #password-strength-meter::-webkit-meter-optimum-value {
+    background-color: #77b259;
+  }
+  
+  #password-strength-meter::-webkit-meter-suboptimum-value {
+    background-color: #77b259;
+  }
+  
+  #password-strength-meter::-webkit-meter-even-less-good-value {
+    background-color: #77b259;
+  } */
 
-/* Webkit based browsers */
-meter[value="1"]::-webkit-meter-optimum-value { background: red; }
-meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
-meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
-meter[value="4"]::-webkit-meter-optimum-value { background: green; }
 
-
+/* Positionnement des messages d'erreur */
 
 

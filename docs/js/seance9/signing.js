@@ -5,25 +5,20 @@ console.log("hello!");
 //************************************************************************/
 let form=document.querySelector("form");
 let mail=document.getElementById("mail");
-let message=document.querySelector('.message');
+let mailMessage=document.querySelector('.mail-message');
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  // let m=mail.value;
   if (!mail.validity.valid) {
-    message.innerHTML = mail.validationMessage;
-    message.className = "message error";
+    mailMessage.innerHTML = mail.validationMessage;
+    mailMessage.className = "mailMessage error";
   }
-  // else {
-  //   message.innerHTML=`'${m}' est valide !`;
-  //   message.className = "message valid";
-  // }
-});
+ });
 
 mail.addEventListener("input", function (event) {
   if (mail.validity.valid) {
-    message.innerHTML = "";
-    message.className = "message";
+    mailMessage.innerHTML = "";
+    mailMessage.className = "mailMessage";
 
 }
 
@@ -32,73 +27,79 @@ mail.addEventListener("input", function (event) {
 /********************************************/
 //Validation du mot de passe avec check strength bar */
 //****************************************************/
-let strength = {
-  0: "Très faible",
-  1: "Faible",
-  2: "Excellent",
-  3: "Fort",
-  4: "Très fort"
+let passwordInput = document.getElementById("password");
+let strengthMeter = document.getElementById("password-strength-meter");
+let strengthText = document.getElementById("password-strength-text");
+
+passwordInput.addEventListener("input", checkPasswordStrength);
+
+function checkPasswordStrength() {
+  let password = passwordInput.value;
+  let criteriaCount = 0;
+
+  if (password.length >= 8) {
+    criteriaCount++;
+  }
+
+  if (password.match(/[A-Z]/)) {
+    criteriaCount++;
+  }
+
+  if (password.match(/[0-9]/)) {
+    criteriaCount++;
+  }
+
+  if (password.match(/[!@#$%^&*(),.?":{}|<>]/)) {
+    criteriaCount++;
+  }
+
+  strengthMeter.value = (criteriaCount / 4) * 100;
+
+  if (criteriaCount == 0) {
+    strengthText.innerHTML = "Force : Aucune";
+  } else if (criteriaCount == 1) {
+    strengthText.innerHTML = "Force : Faible";
+  } else if (criteriaCount == 2) {
+    strengthText.innerHTML = "Force : Moyenne";
+  } else if (criteriaCount == 3) {
+    strengthText.innerHTML = "Force : Bonne";
+  } else if (criteriaCount == 4) {
+    strengthText.innerHTML = "Force : Excellente";
+  }
 }
 
-let password = document.getElementById('password');
-let meter = document.getElementById('password-strength');
-let passwordStrengthText = document.getElementById('password-strength-text');
-
-password.addEventListener('input', function() {
-  let val = password.value;
-  let result = zxcvbn(val);
-
-  // This updates the password strength meter
-  meter.value = result.score;
-
-  // This updates the password meter text
-  if (val !== "") {
-    passwordStrengthText.innerHTML = "Force: " + strength[result.score];
-  } else {
-    passwordStrengthText.innerHTML = "";
-  }
-});
 //****************************************************************************/
-//Confirmation de mot de passe avec l'api de validation de contraintes HTML5 */
+//Validation du mot de passe avec l'api de validation de contraintes HTML5 */
 //***************************************************************************/
 
-// let form =document.querySelector("form");
-// const password = document.getElementById('password');
-let passwordMessage = document.querySelector('.password-message');
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  if (!password.validity.valid) {
-    passwordMessage.innerHTML = password.validationMessage;
-    passwordMessage.className = "passwordMessage error";
-  }
-  else {
-    message.innerHTML= "";
-    // message.className = "message valid";
-  }
-});
+//****************************************************************************/
+//Confirmation du mot de passe avec l'api de validation de contraintes HTML5 */
+//***************************************************************************/
+// const passwordInput = document.querySelector('#password');
+let confirmPasswordInput = document.querySelector('#confirm-password');
+let confirmPasswordMessage = document.querySelector('#confirm-password-message');
 
-let confirmPassword = document.getElementById('confirm-password');
-let confirmPasswordMessage = document.getElementById('confirm-password-message');
-form.addEventListener("submit", function (event2) {
-  event2.preventDefault();
-  if (password.value !== confirmPassword.value) {
-    confirmPasswordMessage.innerHTML = confirmPassword.validationMessage;
+confirmPasswordInput.addEventListener('input', () => {
+  let password = passwordInput.value;
+  let confirmPassword = confirmPasswordInput.value;
+
+  if (password !== confirmPassword) {
+    confirmPasswordMessage.innerHTML = password.validationMessage;
     confirmPasswordMessage.className = "confirmPasswordMessage error";
-  }
-  else {
-    message.innerHTML= "";
-    // message.className = "message valid";
+    confirmPasswordMessage.textContent = 'Les deux mots de passe ne correspondent pas.';
+    confirmPasswordInput.setCustomValidity('Les deux mots de passe ne correspondent pas.');
+  } else {
+    confirmPasswordMessage.textContent = '';
+    confirmPasswordInput.setCustomValidity('');
   }
 });
 
+confirmPasswordInput.addEventListener("input", function (event) {
+  if (confirmPasswordInput.validity.valid) {
+    confirmPasswordMessage.innerHTML = "";
+    confirmPasswordMessage.className = "passwordMessage";
 
-// Afficher le message d'erreur personnalisé
-if (!confirmPassword.checkValidity()) {
-  let passwordMatchMessage = document.getElementById("password-match-message");
-  passwordMatchMessage.innerHTML = confirmPassword.validationMessage;
-  passwordMatchMessage.className = ("passwordMatchMessage error");
-
-} else {
-  passwordMatchMessage.innerHTML = "";
 }
+
+});
