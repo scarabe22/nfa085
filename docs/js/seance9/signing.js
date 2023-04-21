@@ -13,15 +13,12 @@ form.addEventListener("submit", function (event) {
   }
  });
 
-mail.addEventListener("input", function (event) {
+mail.addEventListener("input", function () {
   if (mail.validity.valid) {
     mailMessage.innerHTML = "";
     mailMessage.className = "mailMessage";
-
 }
-
 });
-
 /********************************************/
 //Validation du mot de passe avec check strength bar */
 //****************************************************/
@@ -53,24 +50,21 @@ function checkPasswordStrength() {
 
   strengthMeter.value = (criteriaCount / 4) * 100;
 
-  if (criteriaCount == 0) {
+  if (criteriaCount === 0) {
     strengthText.innerHTML = "Force : Aucune";
-  } else if (criteriaCount == 1) {
+  } else if (criteriaCount === 1) {
     strengthText.innerHTML = "Force : Faible";
-  } else if (criteriaCount == 2) {
+  } else if (criteriaCount === 2) {
     strengthText.innerHTML = "Force : Moyenne";
-  } else if (criteriaCount == 3) {
+  } else if (criteriaCount === 3) {
     strengthText.innerHTML = "Force : Bonne";
-  } else if (criteriaCount == 4) {
+  } else if (criteriaCount === 4) {
     strengthText.innerHTML = "Force : Excellente";
   }
 }
-
-
 //****************************************************************************/
 //Confirmation du mot de passe avec l'api de validation de contraintes HTML5 */
 //***************************************************************************/
-// const passwordInput = document.querySelector('#password');
 let confirmPasswordInput = document.querySelector('#confirm-password');
 let confirmPasswordMessage = document.querySelector('#confirm-password-message');
 
@@ -89,11 +83,9 @@ confirmPasswordInput.addEventListener('input', () => {
   }
 });
 
-confirmPasswordInput.addEventListener("input", function (event) {
+confirmPasswordInput.addEventListener("input", function () {
   if (confirmPasswordInput.validity.valid) {
     confirmPasswordMessage.innerHTML = "";
     confirmPasswordMessage.className = "passwordMessage";
-
 }
-
 });

@@ -47,7 +47,7 @@ form {
     height: 96%;
     background-color: #fff;
     margin: 10px 15px 5px 0;
-    border-radius: 0 6px 6px 0px;
+    border-radius: 0 6px 6px 0;
     padding-top: 50px;
 }
 
@@ -208,9 +208,7 @@ button:hover {
 /*********************/
 .mailMessage {
     color: white;
-    border-radius: 4px;
     padding: 8px;
-    display: none;
     margin-bottom: 10px;
     text-align: end;
     border-radius: 10px;
@@ -226,13 +224,9 @@ button:hover {
 
 .confirmPasswordMessage {
     color: white;
-    border-radius: 4px;
     padding: 8px;
-    display: none;
-    /* margin-bottom: 10px; */
     text-align: end;
     border-radius: 10px;
-    /* width: 80%; */
     display: block;
     position: absolute;
     margin-top: -38px;
