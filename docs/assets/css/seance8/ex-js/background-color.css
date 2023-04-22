@@ -1,0 +1,43 @@
+/* * { */
+/*     margin: 0; */
+/*     padding: 0; */
+/* } */
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #3b2a28;
+
+}
+
+.container {
+    background-color: #679bc0;
+    width: 80%;
+    height: 50vh;
+    margin: 100px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    /* width: auto; */
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+#btn1 {
+    background-color: coral;
+}
+
+#btn2 {
+    background-color: greenyellow;
+}
+
+#btn3 {
+    background-color: indianred;
+}

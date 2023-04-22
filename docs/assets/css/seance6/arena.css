@@ -94,16 +94,19 @@ header {
 .today {
     width: 635px;
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 .article {
     width: 635px;
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 .james {
     width: 635px;
     text-align: justify;
+    margin-bottom: 20px;
 
 }
 
@@ -119,6 +122,9 @@ header {
     margin-top: 5px;
 }
 
+.recent-post h2 {
+    margin-top: 20px;
+}
 .recent-post p {
     font-size: 12px;
 }
@@ -157,7 +163,7 @@ header {
     border-radius: 5px;
     font-weight: 600;
     color: #202022;
-    margin: 10px 0 10px 0;
+    margin: 15px 0 10px 0;
     padding: 10px;
     text-decoration: none;
 }
@@ -166,9 +172,13 @@ header {
     background-color: #5578b3;
 }
 
-.smallbutton-hot {
-    display: inline-block;
-    text-decoration: none;
+.bouton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 5px
+}
+
+.smallbutton {
     font-size: 13px;
     color: #fff;
     border: 1px solid #557190;
@@ -177,67 +187,11 @@ header {
     border-radius: 5px;
     text-align: center;
     width: 31px;
-    margin: 20px 10px 0 0;
-    /* padding: 4px; */
-}
-
-.smallbutton-hot:hover{
-    background-color: #7dafff;
-}
-
-.smallbutton {
-    display: inline-block;
+    margin: 10px 10px 0 0;
     text-decoration: none;
-    background-color: #557ba5;
-    border-radius: 5px;
-    border: 1px solid #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 4px;
-    width: 60px;
-    margin: 20px 0 0 0;
 }
-
-.smallbutton:hover {
+.smallbutton:hover{
     background-color: #7dafff;
-}
-
-.stronks {
-    margin-right: 10px;
-}
-
-.smallbutton-HOT {
-    width: 30px;
-    margin: 5px 5px 5px 0;
-    font-size: 10px;
-}
-.smallbutton-FRESH {
-    width: 40px;
-    margin: 5px;
-    font-size: 10px;
-}
-.smallbutton-TEXT {
-    width: 35px;
-    margin: 5px;
-    font-size: 10px;
-}
-.smallbutton-POPULAR {
-    width: 60px;
-    margin: 5px;
-    font-size: 10px;
-}
-
-.smallbutton-PUBLIC {
-    width: 50px;
-    margin: 5px 5px 5px 0;
-    font-size: 10px;
-}
-
-.bouton {
-    display: flex;
-    flex-wrap: wrap;
 }
 /*============================================
         Footer Styles
