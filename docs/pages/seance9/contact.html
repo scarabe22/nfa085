@@ -25,12 +25,12 @@
                 <form id="contact-form" method="POST" action="submit-contact.php">
                     <div class="form-group">
                         <label for="firstname">Prénom<span class='asterisk'>*</span></label>
-                        <input type="text" id="firstname" name="firstname" placeholder="Entrez votre prénom" required pattern="[A-Za-z]+">
+                        <input type="text" id="firstname" name="firstname" placeholder="Entrez votre prénom" required pattern="^[A-Z][a-zéèêëîïûüôöàâäç]+((\s|-)[A-Z][a-zéèêëîïûüôöàâäç]+){0,5}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="lastname">Nom<span class='asterisk'>*</span></label>
-                        <input type="text" id="lastname" name="lastname" placeholder="Entrez votre nom" required pattern="[A-Za-z]+">
+                        <input type="text" id="lastname" name="lastname" placeholder="Entrez votre nom" required pattern="^[A-Za-zéèêëîïûüôöàâäç]+([- ]?[A-Za-zéèêëîïûüôöàâäç]+)*( [dD][eE]( [lL])?)?([- ]?[A-Za-zéèêëîïûüôöàâäç]+)*$">
                     </div>
                     <div class="form-group">
                         <label for="mail">Mail<span class='asterisk'>*</span></label>
