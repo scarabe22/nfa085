@@ -1,6 +1,6 @@
-//*************************************************************************/
+//**************************************************************************/
 //Validation d'adresse mail avec l'api de validation de contraintes HTML5 */
-//************************************************************************/
+//*************************************************************************/
 let form=document.querySelector("form");
 let mail=document.getElementById("mail");
 let mailMessage=document.querySelector('.mail-message');
@@ -20,9 +20,9 @@ mail.addEventListener("input", function () {
     mailMessage.className = "mailMessage";
 }
 });
-/********************************************/
-//Validation du mot de passe avec check strength bar */
-//****************************************************/
+/*****************************************************/
+//Force du mot de passe avec check strength bar     */
+//***************************************************/
 let passwordInput = document.getElementById("password");
 let strengthMeter = document.getElementById("password-strength-meter");
 let strengthText = document.getElementById("password-strength-text");
@@ -33,40 +33,67 @@ function checkPasswordStrength() {
   let password = passwordInput.value;
   let criteriaCount = 0;
 
-  if (password.length >= 8) {
-    criteriaCount++;
-  }
+  const criteriaArray = [
+    password.length >= 8,
+    password.match(/[A-Z]/),
+    password.match(/[0-9]/),
+    password.match(/[!@#$%^&*(),.?":{}|<>]/)
+  ];
 
-  if (password.match(/[A-Z]/)) {
-    criteriaCount++;
-  }
-
-  if (password.match(/[0-9]/)) {
-    criteriaCount++;
-  }
-
-  if (password.match(/[!@#$%^&*(),.?":{}|<>]/)) {
-    criteriaCount++;
-  }
+  criteriaArray.forEach((criteria) => {
+    if (criteria) {
+      criteriaCount++;
+    }
+  });
 
   strengthMeter.value = (criteriaCount / 4) * 100;
 
-  if (criteriaCount === 0) {
-    strengthText.innerHTML = "Force : Aucune";
-  } else if (criteriaCount === 1) {
-    strengthText.innerHTML = "Force : Faible";
-  } else if (criteriaCount === 2) {
-    strengthText.innerHTML = "Force : Moyenne";
-  } else if (criteriaCount === 3) {
-    strengthText.innerHTML = "Force : Bonne";
-  } else if (criteriaCount === 4) {
-    strengthText.innerHTML = "Force : Excellente";
-  }
+  const strengthArray = [
+    "Force : Aucune",
+    "Force : Faible",
+    "Force : Moyenne",
+    "Force : Bonne",
+    "Force : Excellente"
+  ];
+
+  strengthText.innerHTML = strengthArray[criteriaCount];
 }
-//****************************************************************************/
-//Confirmation du mot de passe avec l'api de validation de contraintes HTML5 */
+
+/*****************************************************************************/
+//Validation du mot de passe avec l'api de validation des contraintes HTML5 */
 //***************************************************************************/
 let confirmPasswordInput = document.querySelector('#confirm-password');
+let passwordMessage = document.querySelector('.password-message');
+
+form.addEventListener('submit', (event) => {
+  if (!passwordInput.checkValidity()) {
+    event.preventDefault();
+    passwordMessage.innerHTML = passwordInput.validationMessage;
+    passwordMessage.className = 'passwordMessage error';
+  } else {
+    passwordMessage.innerHTML = '';
+    passwordMessage.className = 'passwordMessage';
+  }
+
+  if (!confirmPasswordInput.checkValidity()) {
+    event.preventDefault();
+    confirmPasswordInput.setCustomValidity(confirmPasswordInput.validationMessage);
+  } else {
+    confirmPasswordInput.setCustomValidity('');
+  }
+});
+
+passwordInput.addEventListener('input', () => {
+  const pattern = `^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$`;
+  passwordInput.pattern = pattern;
+  confirmPasswordInput.pattern = pattern;
+  password.setCustomValidity("");
+  passwordMessage.innerHTML = "";
+});
+
+//*****************************************************************************/
+//Confirmation du mot de passe avec l'api de validation de contraintes HTML5 */
+//***************************************************************************/
 let confirmPasswordMessage = document.querySelector('#confirm-password-message');
 
 confirmPasswordInput.addEventListener('input', () => {
