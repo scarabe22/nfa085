@@ -38,7 +38,7 @@ utiliser: CIF car une de ses branches a un max en 1. De plus elle est binaire et
 ## 3. Réaliser le modèle logique des données relationnel (MLDR).
 
 **Employe**(<font color='cyan'><ins>id</ins></font>, nom, prenom, dateEntree, age, <font color='Chartreuse'>#idService</font>)  
-<font color='cyan'>Clé primaire: id</font>
+<font color='cyan'>Clé primaire: id</font>  
 <font color='Chartreuse'>Clé(s) étrangère(s): idService en référence à id de Service</font>  
 
 
@@ -46,7 +46,7 @@ utiliser: CIF car une de ses branches a un max en 1. De plus elle est binaire et
 <font color='cyan'>Clé primaire: id</font>  
 
 **Periode**(<font color='cyan'><ins>id_Periode</ins></font>, dateDebut, dateFin, <font color='Chartreuse'>#idService, #immat</font>)  
-<font color='cyan'>Clé primaire: id_periode</font>
+<font color='cyan'>Clé primaire: id_periode</font>  
 <font color='Chartreuse'>Clé(s) étrangère(s):
 - idService en référence à id de Service
 - immat en référence à immat de Vehicule
@@ -55,7 +55,7 @@ utiliser: CIF car une de ses branches a un max en 1. De plus elle est binaire et
 
 
 **Vehicule**(<font color='cyan'><ins>immat</ins></font>, dateEntreeParc, <font color='Chartreuse'>#idEmploye, #idModele</font>)  
-<font color='cyan'>Clé primaire: immat</font>
+<font color='cyan'>Clé primaire: immat</font>  
 <font color='Chartreuse'>Clé(s) secondaire(s):
 - idEmploye en référence à id d'Employe
 - idModele en référence à id de Modele 
@@ -64,7 +64,7 @@ utiliser: CIF car une de ses branches a un max en 1. De plus elle est binaire et
 
 
 **Modele**(<font color='cyan'><ins>id</ins></font>, nomCourt, nomLong, <font color='Chartreuse'>#idMarque</font>)  
-<font color='cyan'>Clé primaire: id</font>
+<font color='cyan'>Clé primaire: id</font>  
 <font color='Chartreuse'>Clé(s) secondaire(s): idMarque en référence à id de Marque</font>  
 
 
@@ -73,7 +73,7 @@ utiliser: CIF car une de ses branches a un max en 1. De plus elle est binaire et
 
 
 **disposerDe**(<font color='Chartreuse'>#idService, #immat, #id_Periode</font>)  
-<font color='cyan'>Clé primaire: idService, immat, id_Periode</font>
+<font color='cyan'>Clé primaire: idService, immat, id_Periode</font>  
 <font color='Chartreuse'>Clé(s) étrangère(s):
 - idService en référence à id de Service
 - immat en référence à immat de Vehicule
