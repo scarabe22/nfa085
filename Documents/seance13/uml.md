@@ -93,3 +93,57 @@ Diagramme de classe:
 
 ![](retro-conception.png)
 
+Code uml
+
+```css
+@startuml
+scale 1.3
+entity Parution {
+num
+titre
+redacteur
+date¨Parution
+}
+
+entity Page {
+id
+numero
+miseEnForme
+numParution
+}
+
+entity Image {
+num
+titre
+descriptif
+largeur
+hauteur
+poids
+}
+
+entity Texte {
+num
+titre
+descriptif
+nombreLignes
+}
+
+entity Comporte_image {
+style
+}
+
+left to right direction
+Parution  "0..1"  -left-"*" Page
+(Page,Parution) . PretePour
+
+Page "*"--left"*"Image
+(Image,Page) . Comporte_image
+
+Texte "*"--"*"Page
+(Page,Texte) . Comporte_texte
+
+@enduml
+```
+
+Diagramme de classe en utilisant PlantUML
+![](plantuml.png)
