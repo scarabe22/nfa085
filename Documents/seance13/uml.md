@@ -37,46 +37,54 @@ utiliser: CIF car une de ses branches a un max en 1. De plus elle est binaire et
 
 ## 3. Réaliser le modèle logique des données relationnel (MLDR).
 
-**Employe**(<font color='cyan'><ins>id</ins></font>, nom, prenom, dateEntree, age, <font color='Chartreuse'>#idService</font>)  
-<font color='cyan'>Clé primaire: id</font>  
-<font color='Chartreuse'>Clé(s) étrangère(s): idService en référence à id de Service</font>  
+**Employe**(<ins>id</ins>, nom, prenom, dateEntree, age, #idService)  
+Clé primaire: id  
+Clé(s) étrangère(s): idService en référence à id de Service  
 
 
-**Service**(<font color="cyan"><ins>id</ins></font>, nom)
-<font color='cyan'>Clé primaire: id</font>  
+**Service**(<ins>id</ins>, nom)
+Clé primaire: id  
 
-**Periode**(<font color='cyan'><ins>id_Periode</ins></font>, dateDebut, dateFin, <font color='Chartreuse'>#idService, #immat</font>)  
-<font color='cyan'>Clé primaire: id_periode</font>  
-<font color='Chartreuse'>Clé(s) étrangère(s):
+**Periode**(<ins>id_Periode</ins>, dateDebut, dateFin, #idService, #immat)  
+Clé primaire: id_periode  
+Clé(s) étrangère(s):
 - idService en référence à id de Service
 - immat en référence à immat de Vehicule
 
-</font>  
+  
 
 
-**Vehicule**(<font color='cyan'><ins>immat</ins></font>, dateEntreeParc, <font color='Chartreuse'>#idEmploye, #idModele</font>)  
-<font color='cyan'>Clé primaire: immat</font>  
-<font color='Chartreuse'>Clé(s) secondaire(s):
+**Vehicule**(<ins>immat</ins>, dateEntreeParc, #idEmploye, #idModele)  
+Clé primaire: immat  
+Clé(s) secondaire(s):
 - idEmploye en référence à id d'Employe
 - idModele en référence à id de Modele 
 
-</font>  
 
 
-**Modele**(<font color='cyan'><ins>id</ins></font>, nomCourt, nomLong, <font color='Chartreuse'>#idMarque</font>)  
-<font color='cyan'>Clé primaire: id</font>  
-<font color='Chartreuse'>Clé(s) secondaire(s): idMarque en référence à id de Marque</font>  
 
 
-**Marque**(<font color='cyan'><ins>id</ins></font>, nomMarque)  
-<font color='cyan'>Clé primaire: id</font>  
+**Modele**(<ins>id</ins>, nomCourt, nomLong, #idMarque)  
+Clé primaire: id  
+Clé(s) secondaire(s): idMarque en référence à id de Marque  
 
 
-**disposerDe**(<font color='Chartreuse'>#idService, #immat, #id_Periode</font>)  
-<font color='cyan'>Clé primaire: idService, immat, id_Periode</font>  
-<font color='Chartreuse'>Clé(s) étrangère(s):
+**Marque**(<ins>id</ins>, nomMarque)  
+Clé primaire: id  
+
+
+**disposerDe**(#idService, #immat, #id_Periode)  
+Clé primaire: idService, immat, id_Periode</font>  
+Clé(s) étrangère(s):
 - idService en référence à id de Service
 - immat en référence à immat de Vehicule
 - id_Periode en référence à id_Periode de Periode
 
-</font>
+# 2 – Ajout de règles de gestion
+
+Une entité Evalutation a été ajouté  
+
+![](uml.png)  
+
+# 3 – Rétro-conception 
+
