@@ -82,9 +82,14 @@ Clé(s) étrangère(s):
 
 # 2 – Ajout de règles de gestion
 
-Une entité Evalutation a été ajouté  
+Une entité Evaluation a été ajouté.  
+Diagramme de classe intégrant les règles de gestion:
 
 ![](uml.png)  
 
 # 3 – Rétro-conception 
+
+Diagramme de classe: 
+
+![](retro-conception.png)
 
