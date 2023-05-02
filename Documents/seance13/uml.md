@@ -73,13 +73,13 @@ Clé(s) étrangère(s):
 Une entité Evaluation a été ajouté.  
 Diagramme de classe intégrant les règles de gestion:
 
-![](uml2.png)  
+![](uml4.png)  
 
 Un projet est créé par un ou plusieurs auteurs/contributeurs, faisant partie des utilisateurs: 1..* et un utilisateur faisant partie des auteurs/contributeurs (occurence de Categorie) peut créer de 0 à n projets soit *.
 
-Les projets sont ensuite évalués par les autres utilisateurs, qui peuvent leur attribuer une note, et un commentaire (une seule évaluation par utilisateur sur chaque projet): les autres utilisateurs peuvent évaluer de 0 à 1 projet (0..1) et un projet peut être évalué par 0 ou plusieurs autres utilisateurs (*).
+Les projets sont ensuite évalués par les autres utilisateurs, qui peuvent leur attribuer une note, et un commentaire (une seule évaluation par utilisateur sur chaque projet): les autres utilisateurs peuvent donner une évaluation de 0 à 1 projet (0..1) et un projet peut posséder 0 à 1 évaluation.
 
-Certaines catégories d’utilisateurs ont des droits d’accès attribués, quelque soit le projet: De 0 à n utilisateurs possèdent des droits (*) et  de 0 à n projets font l'objet de droits (*).
+Certaines catégories d’utilisateurs ont des droits d’accès attribués, quelque soit le projet: De 0 à n catégories d'utilisateurs se voient attribuer des droits pour accéder à un projet.
 
 # 3 – Rétro-conception 
 
