@@ -75,7 +75,8 @@ Un produit peut être fourni par un fournisseurs donc la cardinalité entre prod
 
 # 3 – MCD Faux
 
-Le `numImmat est une propriété qui ne peut être dans ce type d'association.
+## 1. Relevez les erreurs sur le MCD
+Le `numImmat` est une propriété qui ne peut être dans ce type d'association.
 
 `Souscrire` est une CIF car il y a un 1 en max dans une des branches et donc l'association ne peut être ternaire mais doit être binaire.
 
@@ -83,7 +84,7 @@ Le `numImmat est une propriété qui ne peut être dans ce type d'association.
 
 
 
-2. Apportez les éventuelles corrections, en les justifiant
+## 2. Apportez les éventuelles corrections, en les justifiant
 
 - Suppression de l'entité `DateContrat`  pour que `Souscrire` soit binaire et je place `dateC` en attribut de `Contrat`.
 - Déplacement de  `numImmat` dans `Contrat` pour que `Concerner` soit vraiment une CIF.
