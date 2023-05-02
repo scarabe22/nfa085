@@ -7,15 +7,15 @@ Les clients sont identifiés par un numéro unique, possèdent un nom, un préno
 
 Ils peuvent passer des commandes qui sont identifiées par un numéro unique, une date de création, une adresse de livraison et un code d'état.
 
-La livraison de ces commandes peut se faire selon avec ou sans types de livraison.
+La livraison de ces commandes peut se faire selon un type de livraison.
 
-La livraison sans type est identifiée par un numéro unique et une date de livraison.
+Le type de livraison est identifié par un numéro unique, un libellé, des frais de port et le délai de livraison.
 
-La livraison avec type est identifiée par un numéro unique, un libellé, des frais de port et le délai de livraison.
+Les commandes font l'objet d'une livraison identifiée par un numéro unique et une date de livraison.
 
 Les commandes peuvent être détaillées selon une certaine quantité et concernent des articles qui sont identifiés par une référence (numéro unique), une désignation, un prix, une tranche d'âge et sa disponibilité.
 
-La livraison peut se faire par lot selon une certaine quantité.
+La livraison peut se faire par lot selon une certaine quantité d'articles.
 
 ## 2. Rescencer les associations et préciser leur type (CIF, CIM).
 
@@ -31,21 +31,10 @@ Il y a 5 associations:
 Client(id_client, nom, prenom, adresse, cp, ville, tel, email)
 clé primaire: id_Client
 
-Commande(id_Commande, dateC, adresseLivraison, codeEtat, id_Client, id_TypeLivraison)
+Commande(id_Commande, dateC, adresseLivraison, codeEtat, #id_Client, #id_TypeLivraison)
 clé primaire: id_Commande
 clés étrangères: id_Client en référence à id_client de Client
 id_TypeLivraison en référence à type de livraison Textuelle "courte":
-Commande(id_Commande, dateC, adresseLivraison, codeEtat, #id_Client, #id_TypeLivraison)
-
-Passer(id_commande, id_Client)
-Clé primaire: id_Commande, id_client
-Clés étrangères: id_Commande en référence à id_Commande de Commande
-id_Client en référence à id_Client de Client
-Textuelle "courte":
-Passer(#id_Commande, #id_Client)
-
-LivrerEnMode(#id_TypeLivraison, #id_Commande)
-Clés étrangères: id_TypeLivraison, id_Commande
 
 TypeLivraison(id_TypeLivraison, libelle, fraisPort, delaiPort)
 Clé primaire: TypeLivraison
@@ -61,21 +50,15 @@ LivrerLot(#id_livraison, #reference, quantiteLivree)
 
 Detailler(#reference, #id_Commande, quantite)
 
-Livrer(#id_livraison, #id_Commande)
 
 # 2 – Corrections sur MCD
 
-Client ---(0,n)---Passer---(1,1)---Commande---(1,n)---Comporter---(0,n)---Produit
-
-Produit---(1,n)---Fournir---(0,n)---Fournisseur
-
 Commande est passée par un et un seul client donc la cardinalité est (1,1)
 S'il y a une commande il y a au moins un produit dans la commande donc entre Commande et Comporter il y a une cardinalité de (1,n).
-Un produit peut faire l'objet de d'une commande ou pas (il est juste en stock) donc entre comporter et produit la cardinalité est de (0,n).
-Un produit peut être fourni par un ou plusieurs fournisseurs donc la cardinalité entre produit et Fournir est (1,n).
+Un produit peut faire l'objet d'une commande ou pas (il est juste en stock) donc entre comporter et produit la cardinalité est de (0,n).
+Un produit peut être fourni par un fournisseurs donc la cardinalité entre produit et Fournir est (1,1).
 
-D'après les règles de gestion, il n'y a pas d'identifiant Fournisseur id_Fournisseur, c'est la raisonSociale qui est la clé primaire.
-
+![](mea.png)
 
 # 3 – MCD Faux
 
@@ -85,5 +68,5 @@ L'entité DateContrat avec l'attribut dateC n'a pas lieu d'être car on peut met
 
 La propriété numImmat de l'association Concerner est superflue.
 
-L'entité ModeleBatterie est concerné par un seul contrat donc la cardinalité entre Concerner et ModeleBatterie est (1,1).
+
 

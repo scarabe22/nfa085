@@ -130,11 +130,11 @@ entity Comporte_image {
 Page "*"-right-"*"Image
 (Image,Page) . Comporte_image
 
-Page  "0..1" -left-"*" Parution : PretePour
-
+Page  "1..*" -left-"0..1" Parution : PretePour
 Texte "*"--"*"Page : Comporte_texte
 @enduml
 ```
 
-Diagramme de classe en utilisant PlantUML
-![](plantuml2.png)
+Diagramme de classe en utilisant PlantUML  
+
+![](plantuml3.png)
