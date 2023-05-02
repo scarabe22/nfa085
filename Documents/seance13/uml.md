@@ -27,7 +27,7 @@ Il y a 5 associations:
 
 affecter: CIF (Contrainte d'Intégrité Fonctionnelle) car il y a une branche avec un max de 1. De plus elle est binaire et elle ne possède pas de propriété.
 
-disposerDe: CMI (Contrainte d'intégrité multiple) car elle n'a pas de 1 en max sur l'une de ses branche, et elle est ternaire.
+disposerDe: CIM (Contrainte d'intégrité multiple) car elle n'a pas de 1 en max sur l'une de ses branche, et elle est ternaire.
 
 estDutype: CIF car une de ses branches a un max en 1. De plus elle est binaire et ne possède pas de propriété.
 
@@ -45,33 +45,21 @@ Clé(s) étrangère(s): idService en référence à id de Service
 **Service**(<ins>id</ins>, nom)
 Clé primaire: id  
 
-**Periode**(<ins>id_Periode</ins>, dateDebut, dateFin, #idService, #immat)  
+**Periode**(<ins>id_Periode</ins>, dateDebut, dateFin)  
 Clé primaire: id_periode  
-Clé(s) étrangère(s):
-- idService en référence à id de Service
-- immat en référence à immat de Vehicule
-
-  
-
 
 **Vehicule**(<ins>immat</ins>, dateEntreeParc, #idEmploye, #idModele)  
 Clé primaire: immat  
-Clé(s) secondaire(s):
+Clé(s) étrangère(s):
 - idEmploye en référence à id d'Employe
 - idModele en référence à id de Modele 
 
-
-
-
-
 **Modele**(<ins>id</ins>, nomCourt, nomLong, #idMarque)  
 Clé primaire: id  
-Clé(s) secondaire(s): idMarque en référence à id de Marque  
-
+Clé(s) étrangère(s): idMarque en référence à id de Marque  
 
 **Marque**(<ins>id</ins>, nomMarque)  
 Clé primaire: id  
-
 
 **disposerDe**(#idService, #immat, #id_Periode)  
 Clé primaire: idService, immat, id_Periode</font>  
@@ -91,7 +79,7 @@ Diagramme de classe intégrant les règles de gestion:
 
 Diagramme de classe: 
 
-![](retro-conception.png)
+![](retro-conception2.png)
 
 Code uml
 
@@ -99,51 +87,48 @@ Code uml
 @startuml
 scale 1.3
 entity Parution {
-num
-titre
-redacteur
-date¨Parution
+    num
+    titre
+    redacteur
+    date¨Parution
 }
 
 entity Page {
-id
-numero
-miseEnForme
-numParution
+    id
+    numero
+    miseEnForme
+    numParution
 }
 
 entity Image {
-num
-titre
-descriptif
-largeur
-hauteur
-poids
+    num
+    titre
+    descriptif
+    largeur
+    hauteur
+    poids
 }
 
 entity Texte {
-num
-titre
-descriptif
-nombreLignes
+    num
+    titre
+    descriptif
+    nombreLignes
 }
 
 entity Comporte_image {
-style
+    style
 }
 
-left to right direction
-Parution  "0..1"  -left-"*" Page
-(Page,Parution) . PretePour
-
-Page "*"--left"*"Image
+'left to right direction
+Page "*"-right-"*"Image
 (Image,Page) . Comporte_image
 
-Texte "*"--"*"Page
-(Page,Texte) . Comporte_texte
+Page  "0..1" -left-"*" Parution : PretePour
 
+Texte "*"--"*"Page : Comporte_texte
 @enduml
 ```
 
 Diagramme de classe en utilisant PlantUML
-![](plantuml.png)
+![](plantuml2.png)
