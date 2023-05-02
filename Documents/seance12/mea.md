@@ -65,16 +65,12 @@ Livrer(#id_livraison, #id_Commande)
 
 # 2 – Corrections sur MCD
 
-Client ---(0,n)---Passer---(1,1)---Commande---(1,n)---Comporter---(0,n)---Produit
-
-Produit---(1,n)---Fournir---(0,n)---Fournisseur
-
 Commande est passée par un et un seul client donc la cardinalité est (1,1)
 S'il y a une commande il y a au moins un produit dans la commande donc entre Commande et Comporter il y a une cardinalité de (1,n).
-Un produit peut faire l'objet de d'une commande ou pas (il est juste en stock) donc entre comporter et produit la cardinalité est de (0,n).
-Un produit peut être fourni par un ou plusieurs fournisseurs donc la cardinalité entre produit et Fournir est (1,n).
+Un produit peut faire l'objet d'une commande ou pas (il est juste en stock) donc entre comporter et produit la cardinalité est de (0,n).
+Un produit peut être fourni par un fournisseurs donc la cardinalité entre produit et Fournir est (1,1).
 
-D'après les règles de gestion, il n'y a pas d'identifiant Fournisseur id_Fournisseur, c'est la raisonSociale qui est la clé primaire.
+![](mea.png)
 
 
 # 3 – MCD Faux
