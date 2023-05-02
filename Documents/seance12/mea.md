@@ -79,11 +79,22 @@ D'après les règles de gestion, il n'y a pas d'identifiant Fournisseur id_Fourn
 
 # 3 – MCD Faux
 
-Un Usager peut souscrire ou pas un seul contrat donc la cardinalité entre Usager et Souscrire est (0,1).
+Le `numImmat est une propriété qui ne peut être dans ce type d'association.
 
-L'entité DateContrat avec l'attribut dateC n'a pas lieu d'être car on peut mettre dateC en propriété de l'association Souscrire.
+`Souscrire` est une CIF car il y a un 1 en max dans une des branches et donc l'association ne peut être ternaire mais doit être binaire.
 
-La propriété numImmat de l'association Concerner est superflue.
+`contactFabricant` et `adresseFabricant` sont trop vagues.
 
-L'entité ModeleBatterie est concerné par un seul contrat donc la cardinalité entre Concerner et ModeleBatterie est (1,1).
+
+
+2. Apportez les éventuelles corrections, en les justifiant
+
+- Suppression de l'entité `DateContrat`  pour que `Souscrire` soit binaire et je place `dateC` en attribut de `Contrat`.
+- Déplacement de  `numImmat` dans `Contrat` pour que `Concerner` soit vraiment une CIF.
+
+- Précision sur `contactfabricant` et `adresseFabriquant`
+    - `tel` et `email` pour `contactFabricant`
+    - `adresse` `cp` et `ville` pour `adresseFabricant`
+
+![](mcd.png)
 
