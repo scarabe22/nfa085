@@ -20,48 +20,35 @@ La livraison peut se faire par lot selon une certaine quantité.
 ## 2. Rescencer les associations et préciser leur type (CIF, CIM).
 
 Il y a 5 associations:
-- Passer de type CIF (Contrainte d'Intégrité Fonctionnelle) car une des branches a un max en 1.
-- LivrerEnMode: de type CIF car une des branches a un max en 1.
-- Livrer de type CIF car une des branches a un max en 1.
-- LivrerLot de type CIM (Contrainte d'Intégrité Multiple) car elle possède une propriété.
-- Detailler de type CIM car elle possède une propriété.
+- `Passer` de type CIF (Contrainte d'Intégrité Fonctionnelle) car une des branches a un max en 1.
+- `LivrerEnMode`: de type CIF car une des branches a un max en 1.
+- `Livrer` de type CIF car une des branches a un max en 1.
+- `LivrerLot` de type CIM (Contrainte d'Intégrité Multiple) car elle possède une propriété.
+- `Detailler` de type CIM car elle possède une propriété.
 
 ## 3. Réaliser le modèle logique des données relationnel (MLDR).
 
-Client(id_client, nom, prenom, adresse, cp, ville, tel, email)
-clé primaire: id_Client
+**Client**(<ins>id_client</ins>, nom, prenom, adresse, cp, ville, tel, email)  
+**clé primaire**: id_Client
 
-Commande(id_Commande, dateC, adresseLivraison, codeEtat, id_Client, id_TypeLivraison)
-clé primaire: id_Commande
-clés étrangères: id_Client en référence à id_client de Client
-id_TypeLivraison en référence à type de livraison Textuelle "courte":
-Commande(id_Commande, dateC, adresseLivraison, codeEtat, #id_Client, #id_TypeLivraison)
+**Commande**(<ins>id_Commande</ins>, dateC, adresseLivraison, codeEtat, #id_Client, #id_TypeLivraison)  
+**clé primaire**: id_Commande  
+**clés étrangères**: id_Client en référence à id_client de Client
+id_TypeLivraison en référence à type de livraison 
 
-Passer(id_commande, id_Client)
-Clé primaire: id_Commande, id_client
-Clés étrangères: id_Commande en référence à id_Commande de Commande
-id_Client en référence à id_Client de Client
-Textuelle "courte":
-Passer(#id_Commande, #id_Client)
+**TypeLivraison**(<ins>id_TypeLivraison</ins>, libelle, fraisPort, delaiPort)    
+**Clé primaire**: TypeLivraison
 
-LivrerEnMode(#id_TypeLivraison, #id_Commande)
-Clés étrangères: id_TypeLivraison, id_Commande
+**Article**(<ins>reference</ins>, designation, prix, trancheAge, dispo)  
+**Clé primaire**: reference
 
-TypeLivraison(id_TypeLivraison, libelle, fraisPort, delaiPort)
-Clé primaire: TypeLivraison
+**Livraison**(<ins>id_Livraison</ins>, dateLivraison, #reference)  
+**Clé primaire**: id_Livraison  
+**Clé étrangère**: reference
 
-Article(reference, designation, prix, trancheAge, dispo)
-Clé primaire: reference
+**LivrerLot**(#id_livraison, #reference, quantiteLivree)
 
-Livraison(id_Livraison, dateLivraison, #reference)
-Clé primaire: id_Livraison
-Clé étrangère: reference
-
-LivrerLot(#id_livraison, #reference, quantiteLivree)
-
-Detailler(#reference, #id_Commande, quantite)
-
-Livrer(#id_livraison, #id_Commande)
+**Detailler**(#reference, #id_Commande, quantite)
 
 # 2 – Corrections sur MCD
 
