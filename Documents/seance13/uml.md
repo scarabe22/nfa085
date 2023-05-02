@@ -85,7 +85,7 @@ Certaines catégories d’utilisateurs ont des droits d’accès attribués, que
 
 Diagramme de classe: 
 
-![](retro-conception2.png)
+![](retro-conception4.png)
 
 Code uml
 
@@ -93,21 +93,21 @@ Code uml
 @startuml
 scale 1.3
 entity Parution {
-    num
+    idParution
     titre
     redacteur
-    date¨Parution
+    dateParution
 }
 
 entity Page {
-    id
+    idPage
     numero
     miseEnForme
     numParution
 }
 
 entity Image {
-    num
+    idImage
     titre
     descriptif
     largeur
@@ -116,7 +116,7 @@ entity Image {
 }
 
 entity Texte {
-    num
+    idTexte
     titre
     descriptif
     nombreLignes
@@ -129,7 +129,6 @@ entity Comporte_image {
 'left to right direction
 Page "*"-right-"*"Image
 (Image,Page) . Comporte_image
-
 Page  "1..*" -left-"0..1" Parution : PretePour
 Texte "*"--"*"Page : Comporte_texte
 @enduml
@@ -137,4 +136,4 @@ Texte "*"--"*"Page : Comporte_texte
 
 Diagramme de classe en utilisant PlantUML  
 
-![](plantuml3.png)
+![](plantuml5.png)
