@@ -20,40 +20,41 @@ La livraison peut se faire par lot selon une certaine quantité d'articles.
 ## 2. Rescencer les associations et préciser leur type (CIF, CIM).
 
 Il y a 5 associations:
-- Passer de type CIF (Contrainte d'Intégrité Fonctionnelle) car une des branches a un max en 1.
-- LivrerEnMode: de type CIF car une des branches a un max en 1.
-- Livrer de type CIF car une des branches a un max en 1.
-- LivrerLot de type CIM (Contrainte d'Intégrité Multiple) car elle possède une propriété.
-- Detailler de type CIM car elle possède une propriété.
+- `Passer` de type CIF (Contrainte d'Intégrité Fonctionnelle) car une des branches a un max en 1.
+- `LivrerEnMode`: de type CIF car une des branches a un max en 1.
+- `Livrer` de type CIF car une des branches a un max en 1.
+- `LivrerLot` de type CIM (Contrainte d'Intégrité Multiple) car elle possède une propriété.
+- `Detailler` de type CIM car elle possède une propriété.
 
 ## 3. Réaliser le modèle logique des données relationnel (MLDR).
 
-Client(id_client, nom, prenom, adresse, cp, ville, tel, email)
-clé primaire: id_Client
+**Client**(<ins>id_client</ins>, nom, prenom, adresse, cp, ville, tel, email)  
+**Clé primaire**: id_Client
 
-Commande(id_Commande, dateC, adresseLivraison, codeEtat, #id_Client, #id_TypeLivraison)
-clé primaire: id_Commande
-clés étrangères: id_Client en référence à id_client de Client
-id_TypeLivraison en référence à type de livraison Textuelle "courte":
+**Commande**(<ins>id_Commande</ins>, dateC, adresseLivraison, codeEtat, #id_Client, #id_TypeLivraison)  
+**Clé primaire**: id_Commande  
+**Clés étrangères**: 
+- id_Client en référence à id_client de Client   
+- id_TypeLivraison en référence à type de livraison 
 
-TypeLivraison(id_TypeLivraison, libelle, fraisPort, delaiPort)
-Clé primaire: TypeLivraison
+**TypeLivraison**(<ins>id_TypeLivraison</ins>, libelle, fraisPort, delaiPort)  
+**Clé primaire**: TypeLivraison
 
-Article(reference, designation, prix, trancheAge, dispo)
-Clé primaire: reference
+**Article**(<ins>reference</ins>, designation, prix, trancheAge, dispo)  
+**Clé primaire**: reference
 
-Livraison(id_Livraison, dateLivraison, #reference)
-Clé primaire: id_Livraison
-Clé étrangère: reference
+**Livraison**(<ins>id_Livraison</ins>, dateLivraison, #reference)  
+**Clé primaire**: id_Livraison
+**Clé étrangère**: reference
 
-LivrerLot(#id_livraison, #reference, quantiteLivree)
+**LivrerLot**(#id_livraison, #reference, quantiteLivree)
 
-Detailler(#reference, #id_Commande, quantite)
+**Detailler**(#reference, #id_Commande, quantite)
 
 
 # 2 – Corrections sur MCD
 
-Commande est passée par un et un seul client donc la cardinalité est (1,1)
+`Commande` est passée par un et un seul client donc la cardinalité est (1,1)
 S'il y a une commande il y a au moins un produit dans la commande donc entre Commande et Comporter il y a une cardinalité de (1,n).
 Un produit peut faire l'objet d'une commande ou pas (il est juste en stock) donc entre comporter et produit la cardinalité est de (0,n).
 Un produit peut être fourni par un fournisseurs donc la cardinalité entre produit et Fournir est (1,1).
@@ -62,11 +63,24 @@ Un produit peut être fourni par un fournisseurs donc la cardinalité entre prod
 
 # 3 – MCD Faux
 
-Un Usager peut souscrire ou pas un seul contrat donc la cardinalité entre Usager et Souscrire est (0,1).
+## 1. Relevez les erreurs sur le MCD
 
-L'entité DateContrat avec l'attribut dateC n'a pas lieu d'être car on peut mettre dateC en propriété de l'association Souscrire.
+`Concerner` est une CIF car il y a un 1 en max dans une des branches.
+Le `numImmat est une propriété qui ne peut être dans ce type d'association.
 
-La propriété numImmat de l'association Concerner est superflue.
+`Souscrire` est une CIF car il y a un 1 en max dans une des branches et donc l'association ne peut être ternaire mais doit être binaire.
+
+`contactFabricant` et `adresseFabricant` sont trop vagues.
 
 
+## 2. Apportez les éventuelles corrections, en les justifiant
+
+- Suppression de l'entité `DateContrat`  pour que `Souscrire` soit binaire et je place `dateC` en attribut de `Contrat`.
+- Déplacement de  `numImmat` dans `Contrat` pour que `Concerner` soit vraiment une CIF.
+
+- Précision sur `contactfabricant` et `adresseFabriquant`
+    - `tel` et `email` pour `contactFabricant`
+    - `adresse` `cp` et `ville` pour `adresseFabricant`
+
+![](mcd.png)
 
