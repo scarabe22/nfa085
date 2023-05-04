@@ -6,3 +6,85 @@ Il s'agit de préciser la nature unique d'un vin selon son millesime.
 
 ## 2. Elaborez le MEA en utilisant Looping
 ![](vin.png)
+
+# 2 – Refuges SPA – conception de A à Z
+
+## 1. Après analyse de ce système d’information, proposer un modèle conceptuel des données en utilisant le formalisme de votre choix.
+
+`status` correspond à SOS (boléen)  
+
+![](spa.png)
+
+## 2. Elaborer le modèle logique des données relationnel, en version textuelle normalisée
+
+**Refuge** = (<ins>idRefuge</ins>, nom, localisationGps, numAdresse, rue, complement, cp, ville, tel, email, description, horaires)  
+**Clé primaire**: idRefuge en référence à Refuge
+
+**Adoptant** = (<ins>idAdoptant</ins>, nom, prenom, numAdresse, rue, complement, cp, ville, telFixe, telMobile, email, infoComplementaires, dateAdoption, montant)  
+**Clé primaire**: idAdoptant en référence à Adoptant
+
+**Animal** = (<ins>idAnimal</ins>, dateEntree, espece, nom, sexe, complement, race, dateNaisance, numIdentification, description, compatibilite, status, #idAdoptant, #idRefuge)  
+**Clé primaire**: idAnimal en référence à Animal  
+**clé(s) étrangère(s)**:
+- idAdoptant en référence à Adoptant
+- idRefuge en référence à Refuge
+
+
+## 3. Générer la base de données pour MariaDB et afficher le modèle physique
+
+```sql
+CREATE TABLE Refuge(
+   idRefuge CHAR(50),
+   nom VARCHAR(50) NOT NULL,
+   localisationGps VARCHAR(50) NOT NULL,
+   numAdresse VARCHAR(50),
+   rue VARCHAR(50) NOT NULL,
+   complement VARCHAR(50) NOT NULL,
+   cp VARCHAR(50) NOT NULL,
+   ville VARCHAR(50) NOT NULL,
+   tel VARCHAR(50) NOT NULL,
+   email VARCHAR(50),
+   description VARCHAR(300),
+   horaires VARCHAR(50),
+   PRIMARY KEY(idRefuge)
+);
+
+CREATE TABLE Adoptant(
+   idAdoptant VARCHAR(50),
+   nom VARCHAR(50) NOT NULL,
+   prenom VARCHAR(50) NOT NULL,
+   numAdresse VARCHAR(50),
+   rue VARCHAR(50) NOT NULL,
+   complement VARCHAR(50) NOT NULL,
+   cp VARCHAR(50) NOT NULL,
+   ville VARCHAR(50) NOT NULL,
+   telFixe VARCHAR(50),
+   telMobile VARCHAR(50) NOT NULL,
+   email VARCHAR(50) NOT NULL,
+   infoComplementaires VARCHAR(100),
+   dateAdoption DATE NOT NULL,
+   montant INT NOT NULL,
+   PRIMARY KEY(idAdoptant)
+);
+
+CREATE TABLE Animal(
+   idAnimal CHAR(50),
+   dateEntree DATE NOT NULL,
+   espece VARCHAR(50) NOT NULL,
+   nom VARCHAR(50) NOT NULL,
+   sexe VARCHAR(50) NOT NULL,
+   complement VARCHAR(50) NOT NULL,
+   race VARCHAR(50) NOT NULL,
+   dateNaisance DATE NOT NULL,
+   numIdentification VARCHAR(50) NOT NULL,
+   description VARCHAR(50) NOT NULL,
+   compatibilite VARCHAR(50) NOT NULL,
+   status LOGICAL NOT NULL,
+   idAdoptant VARCHAR(50) NOT NULL,
+   idRefuge CHAR(50) NOT NULL,
+   PRIMARY KEY(idAnimal),
+   FOREIGN KEY(idAdoptant) REFERENCES Adoptant(idAdoptant),
+   FOREIGN KEY(idRefuge) REFERENCES Refuge(idRefuge)
+);
+
+```
