@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=width-device, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../assets/css/seance8/ex-js/styles-illustration.css">
+    <title>Styles Illustration</title>
+</head>
+
+<body>
+<div class="title">
+    <div class="editor">
+        <h1>Exemple d'interface pour visualiser les attributs de style d'un texte</h1>
+        <p>Cliquez sur mes casse à cocher et utilisez les autres éléments ci-dessous pour changer les attributs de style du texte affiché dans la zone:</p>
+    </div>
+</div>
+<div class="container">
+    <div class="text-control">
+        <label><input type="checkbox" id="bold"> Gras</label>
+        <label><input type="checkbox" id="italic"> Italique</label>
+        <label><input type="checkbox" id="underline"> Souligné</label>
+        <label><input type="checkbox" id="strikethrough"> Barré</label>
+        <input type="color" id="color-input" value="#000000">
+        <input type="number" id="font-size-input" value="16">
+        <select id="font-family-select">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Georgia">Georgia</option>
+        </select>
+        <button id="increase-font-size-btn">Augmenter taille</button>
+        <button id="decrease-font-size-btn">Diminuer taille</button>
+    </div>
+    <div class="text-area">
+        <textarea id="text-example">Texte exemple pour illustrer le changement des attributs de style.</textarea>
+    </div>
+</div>
+<script src="../../../js/seance8/ex-js/style-illustration.js"></script>
+
+</body>
+</html>

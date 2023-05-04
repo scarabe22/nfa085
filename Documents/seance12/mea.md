@@ -51,7 +51,6 @@ Il y a 5 associations:
 
 **Detailler**(#reference, #id_Commande, quantite)
 
-
 # 2 – Corrections sur MCD
 
 `Commande` est passée par un et un seul client donc la cardinalité est (1,1)
@@ -60,6 +59,7 @@ Un produit peut faire l'objet d'une commande ou pas (il est juste en stock) donc
 Un produit peut être fourni par un fournisseurs donc la cardinalité entre produit et Fournir est (1,1).
 
 ![](mea.png)
+
 
 # 3 – MCD Faux
 

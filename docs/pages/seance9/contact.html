@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/9a3585f24d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../assets/css/seance9/contact.css">
+        <script src="../../js/seance9/contact.js" defer></script>
+        <title>Post-submit</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="invit">
+                <div class="p1">
+                    <p>Nous</p>
+                    <p>contacter</p>
+                </div>
+                <div class="p2">
+                    <p>Nous serions ravis</p>
+                    <p>de vous lire...</p>
+                </div>
+            </div>
+            <div class="info">
+                <form id="contact-form" method="POST" action="submit-contact.php">
+                    <div class="form-group">
+                        <label for="firstname">Prénom<span class='asterisk'>*</span></label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Entrez votre prénom" required pattern="^[A-Z][a-zéèêëîïûüôöàâäç]+((\s|-)[A-Z][a-zéèêëîïûüôöàâäç]+){0,5}">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Nom<span class='asterisk'>*</span></label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Entrez votre nom" required pattern="^[A-Za-zéèêëîïûüôöàâäç]+([- ]?[A-Za-zéèêëîïûüôöàâäç]+)*( [dD][eE]( [lL])?)?([- ]?[A-Za-zéèêëîïûüôöàâäç]+)*$">
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">Mail<span class='asterisk'>*</span></label>
+                        <input type="email" id="mail" name="mail" placeholder="Entrez votre mail" required pattern="[a-z0-9]+@[a-z]+\.[a-z]+">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Commentaire<span class='asterisk'>*</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Entrez un commentaire" required maxlength="500"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Soumettre</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
