@@ -88,3 +88,12 @@ CREATE TABLE Animal(
 );
 
 ```
+
+# 3 – Gestion de projet Scrum
+
+## 1. Après analyse de ce système d’information, proposer un modèle conceptuel des données en utilisant le formalisme de votre choix
+
+![](scrum.png)
+
+## 2. Elaborer le modèle logique des données relationnel, en version crow’s foot.
+![](crowsfoot.png)
