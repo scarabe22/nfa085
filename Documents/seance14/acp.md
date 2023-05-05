@@ -19,7 +19,7 @@ Il s'agit de préciser la nature unique d'un vin selon son millesime.
 
 **Refuge** = (<ins>idRefuge</ins>, nom, localisationGps, numAdresse, rue, complement, cp, ville, tel, email, description, horaires)  
 
-**Tarif** = (idTarif, montant)  
+**Tarif** = (<ins>idTarif</ins>, montant)  
 
 **Adoption** = (<ins>idAdoption</ins>, dateAdoption)  
 
