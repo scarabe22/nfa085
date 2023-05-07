@@ -11,29 +11,27 @@ Identifier un vin de façon unique n'est possible que si l'on prend en compte le
 
 ## 1. Après analyse de ce système d’information, proposer un modèle conceptuel des données en utilisant le formalisme de votre choix.
 
-`status` correspond à SOS (booléen)  
+ 
 
-![](spa2.png)
+![](spa3.png)
 
 ## 2. Elaborer le modèle logique des données relationnel, en version textuelle normalisée
 
-**Refuge** = (<ins>idRefuge</ins>, nom, localisationGps, numAdresse, rue, complement, cp, ville, tel, email, description, horaires)  
+**Refuge** = (<ins>idRefuge</ins>, nom, localisationGps, numAdresse, rue , complement, cp, ville, tel, email, description)  
 
-**Tarif** = (<ins>idTarif</ins>, montant)  
+**Adoptant** = (<ins>idAdoptant</ins>, nom, prenom, numAdresse, rue, complement, cp, ville, telFixe, telMobile, email, infoComplementaires)  
 
-**Adoption** = (<ins>idAdoption</ins>, dateAdoption)  
+**Race** = (<ins>idRace</ins>, nom)  
 
-**StatusSos** = (<ins>idStatusSos</ins>, status, #idTarif)  
+**Visiteur** = (<ins>idVisiteur</ins>)  
 
-**Adoptant** = (<ins>idAdoptant</ins>, nom, prenom, numAdresse, rue, complement, cp, ville, telFixe, telMobile, email, infoComplementaires, #idAdoption)  
+**Animal** = (<ins>idAnimal</ins>, dateEntree, espece, nom, sexe, complement, dateNaisance, numIdentification, description, compatibilite, statusSos, #idRace, #idRefuge)  
 
-**Espece** = (<ins>idEspece</ins>, nom, #idTarif)  
+**Adopter** = (<ins>#idAnimal</ins>, <ins>#idAdoptant</ins>, dateAdoption, montantVerse)  
 
-**Race** = (<ins>idRace</ins>, nom, #idEspece)  
+**Informer** = (<ins>#idRefuge</ins>, <ins>#idVisiteur</ins>, horaires)  
 
-**Animal** = (<ins>idAnimal</ins>, dateEntree, espece, nom, sexe, complement, race, dateNaisance, numIdentification, description, compatibilite, #idEspece, #idStatusSos, #idRace, #idAdoptant, #idRefuge)  
 
-**Concerner** = (#idTarif, #idAdoption)
 
 
 ## 3. Générer la base de données pour MariaDB et afficher le modèle physique
@@ -51,28 +49,7 @@ CREATE TABLE Refuge(
    tel VARCHAR(50) NOT NULL,
    email VARCHAR(50),
    description VARCHAR(300),
-   horaires VARCHAR(50),
    PRIMARY KEY(idRefuge)
-);
-
-CREATE TABLE Tarif(
-   idTarif CHAR(50),
-   montant INT NOT NULL,
-   PRIMARY KEY(idTarif)
-);
-
-CREATE TABLE Adoption(
-   idAdoption CHAR(50),
-   dateAdoption DATE NOT NULL,
-   PRIMARY KEY(idAdoption)
-);
-
-CREATE TABLE StatusSos(
-   idStatusSos CHAR(50),
-   status LOGICAL NOT NULL,
-   idTarif CHAR(50) NOT NULL,
-   PRIMARY KEY(idStatusSos),
-   FOREIGN KEY(idTarif) REFERENCES Tarif(idTarif)
 );
 
 CREATE TABLE Adoptant(
@@ -88,25 +65,18 @@ CREATE TABLE Adoptant(
    telMobile VARCHAR(50) NOT NULL,
    email VARCHAR(50) NOT NULL,
    infoComplementaires VARCHAR(100),
-   idAdoption CHAR(50) NOT NULL,
-   PRIMARY KEY(idAdoptant),
-   FOREIGN KEY(idAdoption) REFERENCES Adoption(idAdoption)
-);
-
-CREATE TABLE Espece(
-   idEspece CHAR(50),
-   nom VARCHAR(50) NOT NULL,
-   idTarif CHAR(50) NOT NULL,
-   PRIMARY KEY(idEspece),
-   FOREIGN KEY(idTarif) REFERENCES Tarif(idTarif)
+   PRIMARY KEY(idAdoptant)
 );
 
 CREATE TABLE Race(
    idRace CHAR(50),
    nom VARCHAR(50) NOT NULL,
-   idEspece CHAR(50) NOT NULL,
-   PRIMARY KEY(idRace),
-   FOREIGN KEY(idEspece) REFERENCES Espece(idEspece)
+   PRIMARY KEY(idRace)
+);
+
+CREATE TABLE Visiteur(
+   idVisiteur CHAR(50),
+   PRIMARY KEY(idVisiteur)
 );
 
 CREATE TABLE Animal(
@@ -116,30 +86,35 @@ CREATE TABLE Animal(
    nom VARCHAR(50) NOT NULL,
    sexe VARCHAR(50) NOT NULL,
    complement VARCHAR(50) NOT NULL,
-   race VARCHAR(50) NOT NULL,
    dateNaisance DATE NOT NULL,
    numIdentification VARCHAR(50) NOT NULL,
    description VARCHAR(50) NOT NULL,
    compatibilite VARCHAR(50) NOT NULL,
-   idEspece CHAR(50) NOT NULL,
-   idStatusSos CHAR(50) NOT NULL,
+   statusSos VARCHAR(50),
    idRace CHAR(50) NOT NULL,
-   idAdoptant VARCHAR(50) NOT NULL,
    idRefuge CHAR(50) NOT NULL,
    PRIMARY KEY(idAnimal),
-   FOREIGN KEY(idEspece) REFERENCES Espece(idEspece),
-   FOREIGN KEY(idStatusSos) REFERENCES StatusSos(idStatusSos),
    FOREIGN KEY(idRace) REFERENCES Race(idRace),
-   FOREIGN KEY(idAdoptant) REFERENCES Adoptant(idAdoptant),
    FOREIGN KEY(idRefuge) REFERENCES Refuge(idRefuge)
 );
 
-CREATE TABLE Concerner(
-   idTarif CHAR(50),
-   idAdoption CHAR(50),
-   PRIMARY KEY(idTarif, idAdoption),
-   FOREIGN KEY(idTarif) REFERENCES Tarif(idTarif),
-   FOREIGN KEY(idAdoption) REFERENCES Adoption(idAdoption)
+CREATE TABLE Adopter(
+   idAnimal CHAR(50),
+   idAdoptant VARCHAR(50),
+   dateAdoption DATE NOT NULL,
+   montantVerse VARCHAR(50),
+   PRIMARY KEY(idAnimal, idAdoptant),
+   FOREIGN KEY(idAnimal) REFERENCES Animal(idAnimal),
+   FOREIGN KEY(idAdoptant) REFERENCES Adoptant(idAdoptant)
+);
+
+CREATE TABLE Informer(
+   idRefuge CHAR(50),
+   idVisiteur CHAR(50),
+   horaires VARCHAR(50),
+   PRIMARY KEY(idRefuge, idVisiteur),
+   FOREIGN KEY(idRefuge) REFERENCES Refuge(idRefuge),
+   FOREIGN KEY(idVisiteur) REFERENCES Visiteur(idVisiteur)
 );
 
 
