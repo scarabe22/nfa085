@@ -2,16 +2,16 @@
 
 ## 1. Expliquez pour quelle raison la clé du millésime est composite (idVin,millesime)
 
-Il s'agit de préciser la nature unique d'un vin selon son millesime.
+Identifier un vin de façon unique n'est possible que si l'on prend en compte les 2 attributs que sont le millésime et l'identifiant du vin. Ils sont liés de manière relative. 
 
 ## 2. Elaborez le MEA en utilisant Looping
-![](vin.png)
+![](vin2.png)
 
 # 2 – Refuges SPA – conception de A à Z
 
 ## 1. Après analyse de ce système d’information, proposer un modèle conceptuel des données en utilisant le formalisme de votre choix.
 
-`status` correspond à SOS (boléen)  
+`status` correspond à SOS (booléen)  
 
 ![](spa2.png)
 
