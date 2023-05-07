@@ -13,7 +13,7 @@ Identifier un vin de façon unique n'est possible que si l'on prend en compte le
 
  
 
-![](spa3.png)
+![](spa4.png)
 
 ## 2. Elaborer le modèle logique des données relationnel, en version textuelle normalisée
 
@@ -23,7 +23,7 @@ Identifier un vin de façon unique n'est possible que si l'on prend en compte le
 
 **Race** = (<ins>idRace</ins>, nom)  
 
-**Visiteur** = (<ins>idVisiteur</ins>)  
+**Visiteur** = (<ins>idVisiteur</ins>, nom, prenom)  
 
 **Animal** = (<ins>idAnimal</ins>, dateEntree, espece, nom, sexe, complement, dateNaisance, numIdentification, description, compatibilite, statusSos, #idRace, #idRefuge)  
 
