@@ -7,6 +7,12 @@ $('.fluid.ui.secondary.button').click(function() {
   .sidebar('toggle');
 });
 
+// const returnButton = document.querySelector('.return.button');
+// const returnLink = document.querySelector('.return-link');
+// returnButton.addEventListener('click', function() {
+//   window.location.assign(returnLink.href);
+// });
+
 // const data = [
 //   {
 //       name:'Client serveur Web',
