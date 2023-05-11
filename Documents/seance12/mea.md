@@ -7,15 +7,15 @@ Les clients sont identifiés par un numéro unique, possèdent un nom, un préno
 
 Ils peuvent passer des commandes qui sont identifiées par un numéro unique, une date de création, une adresse de livraison et un code d'état.
 
-La livraison de ces commandes peut se faire selon avec ou sans types de livraison.
+La livraison de ces commandes peut se faire selon un type de livraison.
 
-La livraison sans type est identifiée par un numéro unique et une date de livraison.
+Le type de livraison est identifié par un numéro unique, un libellé, des frais de port et le délai de livraison.
 
-La livraison avec type est identifiée par un numéro unique, un libellé, des frais de port et le délai de livraison.
+Les commandes font l'objet d'une livraison identifiée par un numéro unique et une date de livraison.
 
 Les commandes peuvent être détaillées selon une certaine quantité et concernent des articles qui sont identifiés par une référence (numéro unique), une désignation, un prix, une tranche d'âge et sa disponibilité.
 
-La livraison peut se faire par lot selon une certaine quantité.
+La livraison peut se faire par lot selon une certaine quantité d'articles.
 
 ## 2. Rescencer les associations et préciser leur type (CIF, CIM).
 
@@ -29,21 +29,22 @@ Il y a 5 associations:
 ## 3. Réaliser le modèle logique des données relationnel (MLDR).
 
 **Client**(<ins>id_client</ins>, nom, prenom, adresse, cp, ville, tel, email)  
-**clé primaire**: id_Client
+**Clé primaire**: id_Client
 
 **Commande**(<ins>id_Commande</ins>, dateC, adresseLivraison, codeEtat, #id_Client, #id_TypeLivraison)  
-**clé primaire**: id_Commande  
-**clés étrangères**: id_Client en référence à id_client de Client
-id_TypeLivraison en référence à type de livraison 
+**Clé primaire**: id_Commande  
+**Clés étrangères**: 
+- id_Client en référence à id_client de Client   
+- id_TypeLivraison en référence à type de livraison 
 
-**TypeLivraison**(<ins>id_TypeLivraison</ins>, libelle, fraisPort, delaiPort)    
+**TypeLivraison**(<ins>id_TypeLivraison</ins>, libelle, fraisPort, delaiPort)  
 **Clé primaire**: TypeLivraison
 
 **Article**(<ins>reference</ins>, designation, prix, trancheAge, dispo)  
 **Clé primaire**: reference
 
 **Livraison**(<ins>id_Livraison</ins>, dateLivraison, #reference)  
-**Clé primaire**: id_Livraison  
+**Clé primaire**: id_Livraison
 **Clé étrangère**: reference
 
 **LivrerLot**(#id_livraison, #reference, quantiteLivree)
@@ -53,9 +54,9 @@ id_TypeLivraison en référence à type de livraison
 # 2 – Corrections sur MCD
 
 `Commande` est passée par un et un seul client donc la cardinalité est (1,1)
-S'il y a une commande il y a au moins un produit dans la commande donc entre `Commande` et `Comporter` il y a une cardinalité de (1,n).
+S'il y a une commande il y a au moins un produit dans la commande donc entre Commande et Comporter il y a une cardinalité de (1,n).
 Un produit peut faire l'objet d'une commande ou pas (il est juste en stock) donc entre comporter et produit la cardinalité est de (0,n).
-Un produit peut être fourni par un fournisseurs donc la cardinalité entre produit et `Fournir` est (1,1).
+Un produit peut être fourni par un fournisseurs donc la cardinalité entre produit et Fournir est (1,1).
 
 ![](mea.png)
 
@@ -63,12 +64,13 @@ Un produit peut être fourni par un fournisseurs donc la cardinalité entre prod
 # 3 – MCD Faux
 
 ## 1. Relevez les erreurs sur le MCD
-Le `numImmat` est une propriété qui ne peut être dans ce type d'association.
+
+`Concerner` est une CIF car il y a un 1 en max dans une des branches.
+Le `numImmat est une propriété qui ne peut être dans ce type d'association.
 
 `Souscrire` est une CIF car il y a un 1 en max dans une des branches et donc l'association ne peut être ternaire mais doit être binaire.
 
 `contactFabricant` et `adresseFabricant` sont trop vagues.
-
 
 
 ## 2. Apportez les éventuelles corrections, en les justifiant
