@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../assets/css/seance10/ui-messages.css">
+    <script src="../../js/seance10/ui-messages.js" defer></script>
+    <title>Modal</title>
+</head>
+    <body>
+    <!-- Boutons pour ajouter un message et supprimer tous les messages -->
+      <h1>UI Messages avec Modal - Exemples</h1>
+      <button class="ui basic button add-message">
+        <i class="plus icon"></i>Ajouter un message
+      </button>
+      <div class="ui black button delete-all-messages" tabindex="0">
+        <i class="times icon"></i>Effacer tous les messages
+      </div>
+    <!-- Fin des boutons pour ajouter un message et supprimer tous les messages -->
+
+      <!-- Zone d'affichage des messages -->
+      <div class="ui container message-container">
+        <!-- Les messages seront ajoutés ici -->
+      </div>
+       <!-- Fin de la zone d'affichage des messages -->
+
+       <!-- Modal pour ajouter un message -->
+       <div class="ui modal add-message-modal">
+        <div class="content">
+
+          <!-- Dropdown "Type de message" -->
+          <div class="ui">Type de message</div>
+          <div class="ui selection fluid dropdown message-type-dropdown">
+            <input type="hidden" name="message-type">
+            <i class="dropdown icon"></i>
+            <div class="default text">Défaut</div>
+            <div class="scrollhint menu">
+              <div class="item" data-value="default">default</div>
+              <div class="item" data-value="success">success</div>
+              <div class="item" data-value="warning">warning</div>
+              <div class="item" data-value="error">error</div>
+              <div class="item" data-value="info">info</div>
+            </div>
+          </div>
+          <!-- Fin de dropdown "Type de message" -->
+
+          <!-- dropdown icônes avec saisie possible (search) -->
+          <div class="ui">Icône</div>
+            <div class="ui fluid search selection dropdown message-icon-dropdown">
+              <input name="message-icon" type="hidden">
+              <i class="dropdown icon"></i>
+              <div class="default text">Aucune</div>
+              <div class="menu">
+                <div class="item" data-value="default">default</div>
+                <div class="item" data-value="exclamation triangle">exclamation triangle</div>
+                <div class="item" data-value="warning circle">warning circle</div>
+                <div class="item" data-value="check circle">check circle</div>
+                <div class="item" data-value="info circle">info circle</div>
+              </div>
+            </div>  
+          <!-- Fin dropdown icônes avec saisie possible  (search)-->
+
+          <!-- Formulaire -->
+          <div class="ui form">
+            <div class="field">
+              <label>Titre</label>
+              <input type="text" name="message-title" placeholder="Titre">
+            </div>
+            <div class="field">
+              <label>Contenu</label>
+              <textarea name="message-content" placeholder="Message simple" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <div class="ui checkbox">
+                <input name="message-closeable" type="checkbox" tabindex="0" checked="">
+                <label>Message refermable</label>
+              </div>
+            </div>
+          </div>
+          <!-- Fin de formulaire -->
+         
+        </div>
+        <!-- Fin du modal content -->
+
+        <!-- Buttons action -->
+        <div class="actions">
+          <button class="ui deny red button">Annuler</button>
+          <button class="ui green approve button add-message-confirm">Ajouter</button>
+        </div>
+        <!-- Fin buttons action -->
+
+      </div>
+      <!-- Fin du modal pour ajouter un message -->
+
+      <!-- affichage des toasts -->
+      <div class="toast-container"></div>
+      <!-- Fin affichage des toasts -->
+    
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>  
+    </body>
+</html>
