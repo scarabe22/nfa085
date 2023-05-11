@@ -1,0 +1,126 @@
+/* Mise à zéro des réglages du browser*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.index {
+    width: 500px;
+    background-color: #f3f3f3;
+    box-shadow: -10px -25px 15px #aaa inset;
+    padding:  20px 50px 80px 200px;
+    border-radius: 25px;
+    margin: 30px auto auto 295px;
+}
+
+/* Police de caractères */
+body {
+    font-family: 'Roboto', sans-serif; /*Google Font*/
+    margin-left: 100px;
+}
+
+/* En-tête */
+h1 {
+    font-size: 300%;
+    margin: 30px
+}
+
+h2 {
+    font-size: 200%;
+    margin-bottom: 10px;
+}
+
+/* Liens */
+.seances {
+    font-size: 150%;
+    list-style-type: none; /*supprime le point d'une liste*/
+}
+
+.seances li a {
+    text-decoration: none; /*supprime le soulignement*/
+    color: rgb(255, 157, 0);
+}
+
+.seances li a:hover {
+    color: rgb(0, 98, 255);
+    text-decoration: none; /*supprime le soulignement*/
+}
+
+.seance5-global {
+    font-size: 150%;
+    list-style-type: none; /*supprime le point d'une liste*/
+}
+.seance5 li {
+    margin-left: 40px;
+    list-style-type: none;
+}
+
+.seance5 li a {
+    text-decoration: none;
+    color: rgb(255, 157, 0);
+}
+
+.seance5 li a:hover {
+    color: rgb(0, 98, 255);
+    text-decoration: none; /*supprime le soulignement*/
+}
+
+.seance6-global{
+    font-size: 150%;
+    list-style-type: none; /*supprime le point d'une liste*/
+}
+.seance6 li {
+    margin-left: 40px;
+    list-style-type: none;
+}
+
+.seance6 li a {
+    text-decoration: none;
+    color: rgb(255, 157, 0);
+
+}
+
+.seance6 li a:hover {
+    color: rgb(0, 98, 255);
+    text-decoration: none; /*supprime le soulignement*/
+}
+
+.seance8-global{
+    font-size: 150%;
+    list-style-type: none; /*supprime le point d'une liste*/
+}
+.seance8 li {
+    margin-left: 40px;
+    list-style-type: none;
+}
+
+.seance8 li a {
+    text-decoration: none;
+    color: rgb(255, 157, 0);
+
+}
+
+.seance8 li a:hover {
+    color: rgb(0, 98, 255);
+    text-decoration: none; /*supprime le soulignement*/
+}
+
+.seance9-global{
+    font-size: 150%;
+    list-style-type: none; /*supprime le point d'une liste*/
+}
+.seance9 li {
+    margin-left: 40px;
+    list-style-type: none;
+}
+
+.seance9 li a {
+    text-decoration: none;
+    color: rgb(255, 157, 0);
+
+}
+
+.seance9 li a:hover {
+    color: rgb(0, 98, 255);
+    text-decoration: none; /*supprime le soulignement*/
+}
