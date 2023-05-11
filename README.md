@@ -8,12 +8,12 @@
 
 - [Séance 6 - Bases HTML - CSS](https://scarabe22.github.io/nfa085/)
 
-- [Séance 8 - Programmation côté client (seance8 branch)](https://scarabe22.github.io/nfa085/)
+- [Séance 8 - Programmation côté client](https://scarabe22.github.io/nfa085/)
  
-- [Séance 9 - Echange de données/formulaires (seance8 branch)](https://scarabe22.github.io/nfa085/)
+- [Séance 9 - Echange de données/formulaires](https://scarabe22.github.io/nfa085/)
 
 - [Séance 12 - Analyse des données MEA](https://scarabe22.github.io/nfa085/)
 
-- [Séance 9 - Echange de données/formulaires (seance9 branch)](https://scarabe22.github.io/nfa085/)
+- [Séance 13 - Echange de données/formulaires](https://scarabe22.github.io/nfa085/)
 
-
+- [Séance 14 - Analyse conceptuelle pratique](https://scarabe22.github.io/nfa085/)
