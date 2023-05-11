@@ -1,198 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <script src="./js/main.js" defer></script>
-    <!-- <script src="data.js" defer></script> -->
-    <title>Création de compte</title>
-</head>
-    <body>
-    <div class="ui container">  
-      <!-- Top vertical menu -->
-       <div class="ui divider top"></div>
-      <div class="ui secondary  menu">
-        <a class="active item">
-          <img class="ui mini image" src="./assets/images/seance10/cnam.png" alt="cnam">NFA085
-        </a>
-        <a class="item" href="./index/client-serveur-web.html">Client/serveur</a>
-        <a class="item" href="./index/html-css.html">HTML/CSS</a>
-        <a class="item" href="./index/javascript.html">Javascript</a>
-        <a class="item" href="./index/conception.html">Conception</a>
-        <a class="item" href="#">Web riche</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-      </div>
-      <!-- Fin top vertical menu -->
-          
-      <h1 class="ui header">NFA085</h1>
-      <div class="ui divider bottom"></div>
-      <!-- Menu button-->
-      <button class="fluid ui secondary button">
-        <i class="bars inverted icon"></i>Menu
-      </button>
-      <!-- Fin Menu button-->
-
-      <!-- Segment -->
-      <div class="ui segment">
-        <h4 class="ui header">Objectifs pédagogiques</h4>
-        <div class="ui bulleted list">
-          <div class="item">Concevoir un site internet statique simple</div>
-          <div class="item">Mettre en place les mesures de sécurité pendant le développement du code</div>
-          <div class="item">
-            <div>Apprendre les tests de sécurité du code</div>
-          </div>
+        <!-- Police Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        
+        <!-- lien vers la feuille de style -->
+        <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+                
+        <title>nfa085</title>
+    
+    </head>
+    <body>
+        <div class="index">
+        <h1>nfa085</h1>
+        <h2>Documents</h2>
+            <ul class="seances">
+                <li><a href="https://github.com/scarabe22/nfa085/blob/main/Documents/seance2/client_serveur_web.md">Séance 2 sur GitHub</a></li>
+                <li><a href="https://github.com/scarabe22/nfa085/blob/seance3/Documents/seance3/culture_web.md">Séance 3 sur GitHub</a></li>
+            </ul>
+            <ul class="seance5-global">
+                <li>Séance 5 - Pages Web:</li>
+                <ul class="seance5">
+                    <li><a href="./pages/seance5/mentions-legales-1.html">Mentions légales</a></li>
+                    <li><a href="./pages/seance5/mentions-legales-2.html">Mentions légales - 2</a></li>
+                    <li><a href="./pages/seance5/mentions-legales-3.html">Mentions légales - 3</a></li>
+                    <li><a href="./pages/seance5/pate-a-crepes.html">Pâte à crêpes</a></li>
+                    <li><a href="./pages/seance5/statuts-juridiques.html">Status juridiques</a></li>
+                </ul>
+            </ul>
+            <ul class="seance6-global">
+                <li>Séance 6 - Pages Web:</li>
+                <ul class="seance6">
+                    <li><a href="./pages/seance6/conseil-gestion.html">Conseil en gestion - Blocs</a></li>
+                    <li><a href="./pages/seance6/about-us.html">Web-arena contact – blocs de page</a></li>
+                    <li><a href="./pages/seance6/blog.html">Web-arena Blog – colonnes</a></li>
+                </ul>
+            </ul>
         </div>
-        <h4 class="ui header">Compétences</h4>
-        <div class="ui bulleted list">
-          <div class="item">Savoir concevoir un site web simple</div>
-          <div class="item">Mettre en place de bonnes pratiques de sécurité dans le développement d'applications Web</div>
-          <div class="item">
-            <div>Apprendre les tests de sécurité du code</div>
-          </div>
-        </div>
-      </div>
-      <!-- Fin segment -->
-
-      <!-- Cards -->
-      <div class="ui three column grid horizontal link cards">
-         <a class="ui card" href="./index/client-serveur-web.html">
-          <div class="image">
-            <img src="https://img.freepik.com/free-vector/www-concept-illustration_114360-2143.jpg" alt="client-serveur-web">
-          </div>
-          <div class="content">
-            <div class="header">Client serveur Web</div>
-            <div class="meta"><span class="date">2 séances</span></div>
-            <div class="description">Architecture et culture Web</div>
-          </div>
-        </a>
-        <a class="ui card" href="./index/html-css.html">
-          <div class="image">
-            <img src="https://img.freepik.com/free-vector/javascript-frameworks-concept-illustration_114360-734.jpg" alt="html-css">
-          </div>
-          <div class="content">
-            <div class="header">HTML-CSS</div>
-            <div class="meta"><span class="date">3 séances</span></div>
-            <div class="description">
-              <div class="ui bulleted list">
-                <div class="item">Structuration (HTML)</div>
-                <div class="item">Présentation (CSS)</div>
-                <div class="item">Positionnement</div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a class="ui card" href="./index/javascript.html">
-          <div class="image">
-            <img src="https://img.freepik.com/free-vector/javascript-abstract-concept-illustration_335657-3702.jpg
-            " alt="javascript.jpg">
-          </div>
-          <div class="content">
-            <div class="header">Javascript</div>
-            <div class="meta"><span class="date">3 séances</span></div>
-            <div class="description">
-              <div class="ui bulleted list">
-                <div class="item">Programmation client</div>
-                <div class="item">Validation formulaires</div>
-                <div class="item">Framework JS/CSS</div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a class="ui card" href="./index/conception.html">
-          <div class="image">
-            <img src="https://img.freepik.com/free-vector/mind-map-concept-illustration_114360-1727.jpg
-            " alt="conception">
-          </div>
-          <div class="content">
-            <div class="header">Conception</div>
-            <div class="meta">
-              <span class="date">3 séances</span>
-            </div>
-            <div class="description">
-              <div class="ui bulleted list">
-                <div class="item">Merise</div>
-                <div class="item">UML</div>
-                <div class="item">Analyse</div>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a class="ui card" href="#">
-          <div class="image">
-            <img src="https://img.freepik.com/free-vector/web-developers-courses-computer-programming-web-design-script-coding-study-computer-science-student-learning-interface-structure-components_335657-2542.jpg
-            " alt="web-riche">
-          </div>
-          <div class="content">
-            <div class="header">Web riche et sémantique</div>
-            <div class="meta">
-              <span class="date">3 séances</span>
-            </div>
-            <div class="description">
-              <div class="ui bulleted list">
-                <div class="item">Client riche Web</div>
-                <div class="item">Web sémantique</div>
-                <div class="item">Validation /framework</div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Fin  cards -->
-      
-
-      <!-- Sidebar -->
-      <div class="ui sidebar vertical inverted massive menu">
-        <div class="item">
-          <div class="menu">
-            <a class="active item">
-              <img class="ui mini middle aligned image" src="./assets/images/seance10/cnam.png" alt="cnam"><span
-                    class="sidebar-text">NFA085
-            </span>
-            </a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="header">Client serveur Web</div>
-          <div class="menu">
-            <a class="item" href="./index/s1.html">S1: Web conf</a>
-            <a class="item" href="./index/s2.html">S2: Architecture Web</a>
-            <a class="item" href="./index/s3.html">S3: Culture Web</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="header">HTML-CSS</div>
-          <div class="menu">
-            <a class="item" href="./index/s4.html">S4: Web conf</a>
-            <a class="item" href="./index/s5.html">S5: Bases HTML-Structuration</a>
-            <a class="item" href="./index/s6.html">S6: Bases HTML-CSS</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="header">Javascript</div>
-          <div class="menu">
-            <a class="item" href="./index/s7.html">S7: Web conf</a>
-            <a class="item" href="./index/s8.html">S8: Programmation côté client</a>
-            <a class="item" href="./index/s9.html">S9: Echange de données/formulaires</a>
-            <a class="item" href="./index/s10.html">S10: Framework CSS</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="header">Conception</div>
-          <div class="menu">
-            <a class="item" href="./index/s11.html">S11: Web conf</a>
-            <a class="item" href="./index/s12.html">S12: Analyse des données - MEA</a>
-            <a class="item" href="./index/s13.html">S13: Analyse des données - UML</a>
-            <a class="item" href="./index/s14.html">S14: Analyse conceptuelle pratique</a>
-          </div>
-        </div>
-      </div>
-      <!-- Fin sidebar  -->
-      
-    </div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>  
     </body>
 </html>
