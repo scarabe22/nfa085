@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 800px;
+    height: 410px;
+    background-color: #eeeeee;
+    margin: 40px auto;
+    border-radius: 5px;
+    position: relative;
+}
+
+.formulaire {
+    position: absolute;
+    margin: 30px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.name-mail {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 370px;
+    height: 30px;
+    display: block;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    padding: 10px;
+    color: #cdcdcd;
+}
+
+label {
+    display: inline-block;
+    padding-bottom: 1px;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+textarea {
+    width: 750px;
+    height: 80px;
+}
+
+button {
+    width: 750px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 430px;
+        height: 455px;
+        background-color: #eeeeee;
+        margin: 40px auto;
+        border-radius: 5px;
+        position: relative;
+    }
+    .name-mail {
+        display:block ;
+    }
+
+    textarea, button {
+        width: 369px;
+    }
+
+}
