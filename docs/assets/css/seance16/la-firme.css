@@ -166,7 +166,7 @@ aside, .service-widescreen {
 .services-widescreen {
     display: none;
 }
-/* Footer*/
+/* Footer */
 footer {
     width: 100%;
     height: 500px;
@@ -200,7 +200,6 @@ footer p {
 .line {
     width: 45px;
     outline: 1px solid #8b9d83;
-    margin-left: px;
     margin-top: 5px;
     margin-bottom: 30px;
 }
@@ -250,7 +249,7 @@ footer p {
   .footer-social-links a:hover i{
     color:#fff;
   }
-  /* Fin footer*/
+  /* Fin footer */
 
 
 /***************/
@@ -400,8 +399,9 @@ footer p {
     .astuces h2, p {
         margin-left: -30px;
     }
+    /* Fin astuces */
 
-    /* Footer widescreen*/
+    /* Footer widescreen */
     footer {
         width: 100%;
         height: 400px;
@@ -414,6 +414,10 @@ footer p {
         text-align: left;
     }
 
+    .footer-firme {
+        margin-top: 16px;
+    }
+    /* Fin footer widescreen */
 
 
 }
