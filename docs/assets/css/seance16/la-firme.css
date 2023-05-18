@@ -142,20 +142,20 @@ aside, .service-widescreen {
 }
 /* fin apropos */
 
-/* services mobile */
-.services-mobile {
+/* services */
+.services {
     display: flex;
     flex-direction: column;
 }
 
-.services-mobile img {
+.services img {
     margin: 0 30px 0 -39px;
 }
 
 .services-text {
     margin: 60px 0 90px 0;
 }
-/* fin services mobile */
+/* fin services */
 
 /* astuces */
 .astuces-text {
@@ -163,9 +163,6 @@ aside, .service-widescreen {
 }
 /* fin astuces */
 
-.services-widescreen {
-    display: none;
-}
 /* Footer */
 footer {
     width: 100%;
@@ -357,13 +354,10 @@ footer p {
     /* fin apropos */
 
     /* services */
-    .services-widescreen {
+    .services {
         display: flex;
+        flex-direction: row-reverse;
         margin-top: 40px;
-    }
-
-    .services-mobile {
-        display: none;
     }
 
     .services h2 {
