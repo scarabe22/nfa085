@@ -9,13 +9,13 @@ img {
     height: 200px;
 }
 
-.section-1, .section-3 {
+section:nth-child(odd) {
     display: flex;
     justify-content: space-between;
     gap: 70px;
     margin-bottom: 40px;
 }
-.section-2 {
+section:nth-child(even) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -28,7 +28,14 @@ img {
 }
 
 @media (max-width: 768px)  {
-    .section-1, .section-2, .section-3 {
+    section {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    section:nth-child(even) {
         display: flex;
         flex-direction: column-reverse;
         gap: 10px;
