@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+  <link rel="stylesheet" href="../../assets/css/seance17/ui-markdown.css">
+    <title>UI - Editeur mardown</title>
+</head>
+<body>
+  <div class="ui container">
+    <h1 class="ui header">Éditeur Markdown</h1>
+    
+    <div class="ui top attached tabular menu">
+      <a class="item" data-tab="editor">Éditeur</a>
+      <a class="item" data-tab="preview">Aperçu</a>
+     
+    </div>
+    
+    <div class="ui bottom attached tab segment" data-tab="editor">
+      <form id="markdown-form" action="add-message.php" method="POST">
+        <div class="ui form">
+          <div class="field">
+            <div class="ui icon buttons">
+              <a class="ui button item menu-insert" data-markdown="# "><i class="heading icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="**"><i class="bold icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="_"><i class="italic icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="~~"><i class="strikethrough icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown=">"><i class="quote left icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="[Nom du lien](http://example.com)"><i class="linkify icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="![Texte alternatif de l'image](http://example.com/image.jpg)"><i class="image icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="- "><i class="list ul icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="1. "><i class="list ol icon"></i></a>
+              <a class="ui button item menu-insert" data-markdown="- [ ] "><i class="tasks icon"></i></a>
+            </div>
+            <textarea id="markdown-input" name="markdown" rows="20"></textarea>
+          </div>
+        </div>
+        <button class="ui fluid green button segment" type="submit">Valider</button>
+      </form>
+    </div>
+    
+    <div class="ui bottom attached tab segment" data-tab="preview">
+      <div id="preview"></div>
+      <form id="markdown-preview-form" action="add-message.php" method="POST">
+        <textarea id="preview-html" name="html"></textarea>
+      <button class="ui fluid green button segment" type="submit">Valider</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+  <script src="../../js/seance17/ui-markdown.js"></script>
+</body>
+</html>
