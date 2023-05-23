@@ -55,4 +55,5 @@ $(document).ready(function() {
   }
 })
 
-// Le filtrage ne peut se faire que du côté serveur. 
+// Vulnérabilité XSS de Markdown:
+// Utilisation des bibliothèques de filtrage HTML XSS côté serveur. 
