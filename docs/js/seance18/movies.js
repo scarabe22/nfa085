@@ -1,3 +1,4 @@
+console.log("hello");
 //*************************************************************************
 //Infos d'accès à l'API
 //*************************************************************************
@@ -6,7 +7,7 @@ const url = 'https://streaming-availability.p.rapidapi.com/v2/';
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'your_api_key',
+        'X-RapidAPI-Key': '6a7f65a292mshee0cf881b9be0a0p12d07ejsna3430a5371da',
         'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
 };
@@ -48,6 +49,10 @@ const genresColors = {
 //*************************************************************************
 //Gestion du localStorage
 //*************************************************************************
+// if (!localStorage.getItem("params")) {
+//     localStorage.setItem("params", JSON.stringify({}));
+//   }
+  
 function setLocalStorageParam(key,value){
     const params = JSON.parse(localStorage.getItem("params"));
     params[key]=value;
@@ -92,6 +97,43 @@ function getViewedMovies(){
         return viewedMovies;
     }
 }
+
+// Mémorisation dark/light mode
+function getDisplayMode() {
+    // Récupérer la valeur enregistrée dans localStorage
+    const savedMode = localStorage.getItem('displayMode');
+    
+    // Si aucune valeur n'est enregistrée, retourner null
+    if (!savedMode) {
+      return null;
+    }
+    
+    // Retourner le mode d'affichage enregistré
+    return savedMode;
+  }
+  
+  function toggleDisplayMode() {
+    const body = document.body;
+    const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    
+    // Inverser le mode d'affichage
+    body.classList.toggle('dark-mode');
+    
+    // Enregistrer le choix du mode d'affichage dans localStorage
+    localStorage.setItem('displayMode', currentMode);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const savedMode = getDisplayMode();
+    
+    if (savedMode === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else if (savedMode === 'light') {
+      document.body.classList.remove('dark-mode');
+    }
+
+  });
+  
 //*************************************************************************
 //Gestion des éléments du DOM
 //*************************************************************************
@@ -370,6 +412,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         const params = JSON.parse(localStorage.getItem("params"));
         $('services').value=params.service;
         $('genres').value=params.genre;
-        document.querySelector('input[name="show_type"][value="'+params.show_type+'"]').checked=true;
+        document.querySelector('input[name="show_type"][value="'+params.show_type+'"]').checked;
     }
 });
+
+
+
+
+  
+  
