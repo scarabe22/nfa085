@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+  <link rel="stylesheet" href="../../assets/css/seance17/ui-signin.css">
+    <title>UI - Formulaire</title>
+</head>
+<body>
+  <div class="ui container">
+    <form action="create-account.php"  method="POST" class="ui form" id="registration-form">
+      <h2 class="ui dividing header">Votre inscription</h2>
+      <div class="two fields">
+        <div class="required field">
+          <label>Nom</label>
+          <input type="text" name="last-name" placeholder="Nom" id="last-name">
+        </div>
+        <div class="required field">
+          <label>Prénom</label>
+          <input type="text" name="first-name" placeholder="Prénom" id="first-name">
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="required twelve wide field">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Email" id="email">
+        </div>
+        <div class="required four wide field">
+          <label>Téléphone</label>
+          <input type="text" name="phone" placeholder="Téléphone" id="phone">
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="required eight wide field">
+          <label>Mot de passe</label>
+          <input type="password" name="password" placeholder="Mot de passe" id="password">
+        </div>
+        <div class="required eight wide field">
+          <label>Confirmation du mot de passe</label>
+          <input type="password" name="confirm-password" placeholder="Confirmation du mot de passe" id="confirm-password">
+        </div>
+      </div>
+      <div class="ui top attached tabular menu">
+        <a class="active item" data-tab="personal-info">Informations privées</a>
+        <a class="item" data-tab="payment-info">Informations de paiement</a>
+      </div>
+      <div class="ui bottom attached tab segment active" data-tab="personal-info">
+        <div class="two fields">
+          <div class="two wide field">
+            <label>Age</label>
+            <input type="text" name="age" placeholder="age" id="age">
+          </div>
+          <div class="field">
+            <label>Genre</label>
+            <div class="ui selection dropdown">
+              <div class="default text">Genre</div>
+              <i class="dropdown icon"></i>
+              <input type="hidden" name="gender" id="gender">
+              <div class="menu">
+                <div class="item" data-value="male">Homme</div>
+                <div class="item" data-value="female">Femme</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui bottom attached tab segment" data-tab="payment-info">
+        <div class="two fields">
+          <div class="grouped fields six wide field">
+              <label>Moyen de paiement</label>
+              <div class="field">
+                <div class="ui radio checkbox">
+                    <input type="radio" name="payment-method" value="visa">
+                    <label>Visa</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="payment-method" value="visa-electron">
+                  <label>Visa Electron</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="payment-method" value="mastercard">
+                  <label>Mastercard</label>
+                </div>
+              </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="payment-method" value="amex">
+                    <label>American Express</label>
+                  </div>
+                </div>
+          </div>
+          <div class="fields">
+            <div class="eight wide field">
+                <label>Numéro de carte</label>
+                <input type="text" name="card-number" placeholder="Numéro de carte">
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="required field">
+        <label>Vous nous avez connu par</label>
+        <select name="reason" class="ui fluid search dropdown" id="referral">
+          <option value="">Sélectionnez ou ajoutez une option</option>
+          <option value="Presse">Presse</option>
+          <option value="Réseaux sociaux">Réseaux sociaux</option>
+          <option value="Internet">Internet</option>
+        </select>
+      </div>
+      <div class="required field">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden" id="terms">
+          <label for="terms">J'accepte les conditions d'utilisation</label>
+        </div>
+      </div>
+      <button class="ui primary button" type="submit">Créez votre compte</button>
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+  <script src="../../js/seance17/ui-signin.js"></script>
+
+  
+</body>
+</html>
