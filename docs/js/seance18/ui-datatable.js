@@ -1,198 +1,178 @@
-$(document).ready(function () {
-    const baseApiUrl = "https://jsonplaceholder.typicode.com/";
-    let selectedDataType = "users";
+console.log("hello");
+$(document).ready(function() {
+    // Variables globales
+    let baseUrl = 'https://jsonplaceholder.typicode.com/';
+    let currentDataType = 'users';
     let hiddenColumns = [];
   
-    // Fonction pour afficher les données dans la table
-    function displayData(data) {
-        let tableBody = $("#data-body");
-        tableBody.empty(); // Clear existing table data
-      
-        // Iterate over the data array and create a table row for each item
-        data.forEach(function (item) {
-          var rowData = "<tr>";
-          rowData += "<td>" + item.id + "</td>";
-          rowData += "<td>" + item.name + "</td>";
-          rowData += "<td>" + item.username + "</td>";
-          rowData += "<td>" + item.email + "</td>";
-          rowData += "<td>" + item.phone + "</td>";
-          rowData += "<td>" + item.website + "</td>";
-          rowData += "</tr>";
-          tableBody.append(rowData);
-        });
-      }
-
-    // Activation du dropdown menu-options
-  $("#menu-options").dropdown({
-    onChange: function (value) {
-      updateTableOptions(value);
-    },
-  });
+    // Chargement initial des utilisateurs
+    loadData(currentDataType);
   
-    // Fonction pour charger les données depuis l'API
-    
-       
-        // Chargement des données
-        function loadData(dataType) {
-          let url = "https://jsonplaceholder.typicode.com/" + dataType;
-      
-          $.ajax({
-            url: url,
-            type: "GET",
-            dataType: "json",
-            success: function(data) {
-              displayData(data);
-            },
-            error: function(xhr, status, error) {
-              console.log("Erreur lors du chargement des données :", error);
-            }
-          });
+    // Sélection d'un type de données dans le dropdown
+    $('#selected-data').dropdown({
+      onChange: function(value) {
+        currentDataType = value;
+        loadData(currentDataType);
+      }
+    });
+  
+    // Options de la table
+    $('#menu-options').dropdown({
+      onChange: function(value) {
+        let table = $('.ui.table');
+        table.removeClass('selectable celled structured inverted compact striped definition');
+        table.removeClass('red orange yellow olive green cyan blue violet magenta pink brown grey black');
+        table.addClass(value);
+      }
+    });
+  
+    // Masquage des colonnes
+    $('#hidden-fields').dropdown({
+      onChange: function(value, _text, $choice) {
+        if (value !== '') {
+          hideColumn(value);
+          $choice.remove();
         }
-      
-        // ...
-      
-        //  #selected-data
-        $("#selected-data").dropdown({
-          onChange: function(value) {
-            if (value === "users") {
-              loadData(value);
-            } else {
-              // Les autres types de données nécessitent une colonne spécifique pour l'affichage
-              let column = value === "comments" ? "body" :
-                           value === "albums" ? "title" :
-                           value === "photos" ? "url" :
-                           value === "todos" ? "title" :
-                           "";
-              if (column !== "") {
-                $.ajax({
-                  url: "https://jsonplaceholder.typicode.com/" + value,
-                  type: "GET",
-                  dataType: "json",
-                  success: function(data) {
-                    var transformedData = data.map(function(item) {
-                      return item[column];
-                    });
-                    displayData(transformedData);
-                  },
-                  error: function(_xhr, _status, error) {
-                    console.log("Erreur lors du chargement des données :", error);
-                  }
-                });
-              }
-            }
-          }
-        });
-      
-        
-      
-        // Chargement des données initiales (users)
-        loadData("users");
-        loadData("posts")
-        loadData("comments")
-        loadData("albums")
-        loadData("photos")
-        loadData("todos")
-      
-      
-  
-      
-  
-    // Fonction pour obtenir les colonnes à partir des données
-    function getColumnsFromData(data) {
-      if (data.length === 0) return [];
-  
-      return Object.keys(data[0]);
-    }
-  
-    // Fonction pour masquer une colonne de la table
-    function hideColumn(column) {
-      if (!hiddenColumns.includes(column)) {
-        hiddenColumns.push(column);
-        updateHiddenFieldsDropdown();
-        showHideColumns();
       }
-    }
+    });
   
-    // Fonction pour afficher une colonne de la table
-    function showColumn(column) {
-      const index = hiddenColumns.indexOf(column);
-      if (index !== -1) {
-        hiddenColumns.splice(index, 1);
-        updateHiddenFieldsDropdown();
-        showHideColumns();
-      }
-    }
+    // Affichage d'une colonne masquée
+    $(document).on('click', '#hidden-fields .menu .item', function() {
+      let column = $(this).data('value');
+      showColumn(column);
+    });
   
-    // Fonction pour afficher ou masquer les colonnes de la table en fonction des colonnes cachées
-    function showHideColumns() {
-      const columns = $("#data-body tr:first-child td");
-      columns.each(function () {
-        const columnName = $(this).text();
-        if (hiddenColumns.includes(columnName)) {
-          $(this).hide();
-        } else {
-          $(this).show();
+    // Chargement des données depuis l'API et affichage dans la table
+    function loadData(dataType) {
+      let url = baseUrl + dataType;
+      $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          displayData(data);
+        },
+        error: function(_xhr, _status, error) {
+          console.log(error);
         }
       });
     }
   
-    // Fonction pour mettre à jour le dropdown des colonnes masquées
-    function updateHiddenFieldsDropdown(columns) {
-        let dropdown = $("#hidden-fields");
-        let selectedValues = dropdown.dropdown("get value") || [];
-        let optionsHtml = "";
     
-        // Générer les options du dropdown à partir des colonnes disponibles
-        columns.forEach(function(column) {
-          let isChecked = selectedValues.includes(column) ? "checked" : "";
-          optionsHtml += `<div class="item" data-value="${column}">${column}</div>`;
-        });
-    
-        // Mettre à jour les options du dropdown et le rafraîchir
-        dropdown.find(".menu").html(optionsHtml);
-        dropdown.dropdown("refresh");
+// Affichage des données dans la table
+function displayData(data) {
+    let columns = getColumnsFromData(data);
+    let tableHead = $('.ui.table thead');
+    let tableBody = $('#data-body');
+  
+    // Réinitialisation des colonnes masquées
+    hiddenColumns = [];
+  
+    // Construction de l'en-tête de la table
+    tableHead.empty();
+    let tableHeaderRow = $('<tr class="table-header"></tr>');
+    columns.forEach(function(column) {
+      let columnCheckbox = $('<input type="checkbox" name="' + column + '" class="column-toggle" data-column="' + column + '">');
+      let columnLabel = $('<label>' + column + '</label>');
+      let columnCell = $('<th></th>').append($('<div class="ui checkbox"></div>').append(columnCheckbox).append(columnLabel));
+      if (hiddenColumns.includes(column)) {
+        columnCell.addClass('hidden-column');
+      } else {
+        columnCheckbox.prop('checked', true);
       }
+      tableHeaderRow.append(columnCell);
+    });
+    tableHead.append(tableHeaderRow);
   
-    // Chargement initial des utilisateurs
-    loadData(selectedDataType);
-  
-    // Gestion des événements
-  
-    // Chargement des données sur sélection d'un item du dropdown selected-data
-    $("#selected-data").dropdown({
-      onChange: function (value) {
-        selectedDataType = value;
-        loadData(selectedDataType);
-      },
+    // Construction du corps de la table
+    tableBody.empty();
+    data.forEach(function(item) {
+      let tableRow = $('<tr></tr>');
+      columns.forEach(function(column) {
+        let columnValue = item[column];
+        if (typeof columnValue === 'object' && columnValue !== null) {
+          if (column === 'address') {
+            columnValue = columnValue.street + ', ' + columnValue.suite + ', ' + columnValue.city + ', ' + columnValue.zipcode;
+          } else if (column === 'company') {
+            columnValue = columnValue.name + ' - ' + columnValue.catchPhrase + ' - ' + columnValue.bs;
+          }
+        }
+        let tableCell = $('<td>' + columnValue + '</td>');
+        tableRow.append(tableCell);
+      });
+      tableBody.append(tableRow);
     });
   
-    // Masquage de colonnes sur click sur la case à cocher des en-têtes de colonnes
-    $(".column-toggle").on("click", function () {
-      const column = $(this).data("column");
+    // Mise à jour du dropdown hidden-fields
+    let hiddenFieldsDropdown = $('#hidden-fields');
+    hiddenFieldsDropdown.dropdown('clear');
+    hiddenFieldsDropdown.dropdown('refresh');
+    hiddenFieldsDropdown.dropdown('set selected', hiddenColumns);
+  }
+  
+  // Gestion de l'événement de changement d'état de la case à cocher des colonnes
+  $(document).on('change', '.column-toggle', function() {
+    let column = $(this).data('column');
+    if ($(this).is(':checked')) {
+      showColumn(column);
+    } else {
       hideColumn(column);
-    });
+    }
+  });
   
-        // Affichage d'une colonne masquée sur suppression de l'item dans le dropdown hidden-fields
-        $("#hidden-fields").dropdown({
-            onRemove: function (value) {
-              showColumn(value);
-            },
-          });
-      
-          // Reset de la table et des colonnes masquées lors du click sur le bouton "Reset"
-          $("#reset-btn").on("click", function () {
-            hiddenColumns = [];
-            updateHiddenFieldsDropdown();
-            showHideColumns();
-          });
-    });
-      function updateTableOptions(value) {
-        // Remove all existing table options classes
-        $("table.ui.table").removeClass("selectable celled structured inverted compact striped definition red orange yellow olive green cyan blue violet magenta pink brown grey black");
-      
-        // Apply the selected table option class
-        if (value !== "") {
-          $("table.ui.table").addClass(value);
+
+    // Récupération des colonnes présentes dans les données
+    function getColumnsFromData(data) {
+      let columns = [];
+      if (data.length > 0) {
+        let firstItem = data[0];
+        for (let key in firstItem) {
+          columns.push(key);
         }
       }
-      
+      return columns;
+    }
+  
+    // Masquage d'une colonne de la table
+    function hideColumn(column) {
+      let table = $('.ui.table');
+      table.find('th, td').filter(':nth-child(' + (getColumnIndex(column) + 1) + ')').hide();
+      hiddenColumns.push(column);
+    }
+  
+    // Affichage d'une colonne de la table
+    function showColumn(column) {
+      let table = $('.ui.table');
+      table.find('th, td').filter(':nth-child(' + (getColumnIndex(column) + 1) + ')').show();
+      hiddenColumns = hiddenColumns.filter(function(item) {
+        return item !== column;
+      });
+    }
+  
+    // Récupération de l'index d'une colonne dans la table
+    function getColumnIndex(column) {
+      let table = $('.ui.table');
+      let headers = table.find('th');
+      let columnIndex = -1;
+      headers.each(function(index) {
+        let header = $(this);
+        if (header.text() === column) {
+          columnIndex = index;
+          return false; // Sortir de la boucle each
+        }
+      });
+      return columnIndex;
+    }
+  });
+  
+
+  
+  
+
+
+  
+ 
+  
+
+  
+  
