@@ -49,10 +49,6 @@ const genresColors = {
 //*************************************************************************
 //Gestion du localStorage
 //*************************************************************************
-// if (!localStorage.getItem("params")) {
-//     localStorage.setItem("params", JSON.stringify({}));
-//   }
-  
 function setLocalStorageParam(key,value){
     const params = JSON.parse(localStorage.getItem("params"));
     params[key]=value;
@@ -97,44 +93,11 @@ function getViewedMovies(){
         return viewedMovies;
     }
 }
+// gestion du mode Dark/light
 
-// Mémorisation dark/light mode
-function getDisplayMode() {
-    // Récupérer la valeur enregistrée dans localStorage
-    const savedMode = localStorage.getItem('displayMode');
-    
-    // Si aucune valeur n'est enregistrée, retourner null
-    if (!savedMode) {
-      return null;
-    }
-    
-    // Retourner le mode d'affichage enregistré
-    return savedMode;
-  }
-  
-  function toggleDisplayMode() {
-    const body = document.body;
-    const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
-    
-    // Inverser le mode d'affichage
-    body.classList.toggle('dark-mode');
-    
-    // Enregistrer le choix du mode d'affichage dans localStorage
-    localStorage.setItem('displayMode', currentMode);
-  }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const savedMode = getDisplayMode();
-    
-    if (savedMode === 'dark') {
-      document.body.classList.add('dark-mode');
-    } else if (savedMode === 'light') {
-      document.body.classList.remove('dark-mode');
-    }
-
-  });
-  
-//*************************************************************************
+//
+// *************************************************************************
 //Gestion des éléments du DOM
 //*************************************************************************
 
@@ -227,7 +190,7 @@ function addMovieInTable(movie,viewedMovies = {}){
     tdTitle.innerText = movie.title;
     tdYear.innerText = movie.year||movie.firstAirYear;
     tdAge.innerText = movie.advisedMinimumAudienceAge||'';
-    tdType.innerText = movie.type==='movie'?'Film':'Série';
+    tdType.innerHTML = movie.type==='movie'?'<i class="fas fa-film"></i>':'<i class="fas fa-tv"></i>';
     movie.genres.forEach((genre)=>{
         const spanGenre = document.createElement('span');
         spanGenre.classList.add('badge','rounded-pill','text-'+genresColors[genre.name]);
@@ -263,6 +226,9 @@ function toggleTheme() {
         darkIcon.style.display = "inline-block";
     }
 }
+
+
+
 
 //*************************************************************************
 //Manipulation des données
@@ -419,5 +385,3 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
 
-  
-  
