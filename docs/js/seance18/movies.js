@@ -220,15 +220,14 @@ function toggleTheme() {
         html.removeAttribute("data-bs-theme");
         lightIcon.style.display = "inline-block";
         darkIcon.style.display = "none";
+        localStorage.setItem("theme", "light"); // enregistrement dans le local storage
     } else {
         html.setAttribute("data-bs-theme", "dark");
         lightIcon.style.display = "none";
         darkIcon.style.display = "inline-block";
+        localStorage.setItem("theme", "dark"); // enregistrement dans le local storage
     }
 }
-
-
-
 
 //*************************************************************************
 //Manipulation des données
@@ -361,6 +360,15 @@ $('ck-vu').addEventListener('click', function (event) {
 document.addEventListener("DOMContentLoaded", async function () {
     const toggleButton = $("toggleTheme");
     toggleButton.addEventListener("click", toggleTheme);
+
+    // local storage check
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme !== "dark") {
+        toggleTheme();
+    }
+    // fin local storage check
+
 
     const services=await fetchDataWithCache(url+'services', options);
     const servicesList=$('services');
