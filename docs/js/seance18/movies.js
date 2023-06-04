@@ -49,11 +49,25 @@ const genresColors = {
 //*************************************************************************
 //Gestion du localStorage
 //*************************************************************************
-function setLocalStorageParam(key,value){
-    const params = JSON.parse(localStorage.getItem("params"));
-    params[key]=value;
+// function setLocalStorageParam(key,value){
+//     const params = JSON.parse(localStorage.getItem("params"));
+//     params[key]=value;
+//     localStorage.setItem("params", JSON.stringify(params));
+// }
+function setLocalStorageParam(key, value) {
+    let params = JSON.parse(localStorage.getItem("params"));
+    if (!params) {
+        params = {};
+    }
+    params[key] = value;
     localStorage.setItem("params", JSON.stringify(params));
 }
+
+
+
+
+
+
 
 function getLocalStorageParam(key){
     const params = JSON.parse(localStorage.getItem("params")||'{}');
@@ -157,7 +171,7 @@ function createBsCheckbox(label, value,checked=false){
     input.setAttribute('id', value);
     input.setAttribute('value', value);
     input.classList.add('_vu');
-    input.checked=checked?true:false;
+    input.checked= checked ?true : false;
 
     const inputLabel = document.createElement('label');
     inputLabel.classList.add('form-check-label');
@@ -363,7 +377,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // local storage check
     const savedTheme = localStorage.getItem("theme");
-
+    //
     if (savedTheme !== "dark") {
         toggleTheme();
     }
@@ -389,6 +403,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector('input[name="show_type"][value="'+params.show_type+'"]').checked;
     }
 });
+
+
 
 
 
