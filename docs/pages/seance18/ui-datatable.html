@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+        <link rel="stylesheet" href="../../assets/css/seance18/ui-datatable.css">
+        <title>DataTable</title>
+    </head>
+    <body>
+    
+    
+    
+        <!-- container   -->
+        <div class="ui container">
+
+            <!-- table-options -->
+            <div class="table-options">
+                
+                
+               
+                    <i class="table icon"></i>
+                    <h4>DataTable</h4>
+             
+                    <!-- requêtes -->
+                <div class="ui selection dropdown" id="selected-data">
+                    <input type="hidden" name="data-type">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Utilisateurs</div>
+                    <div class="menu">
+                    <div class="item" data-value="users">Utilisateurs</div>
+                    <div class="item" data-value="posts">Posts</div>
+                    <div class="item" data-value="comments">Commentaires</div>
+                    <div class="item" data-value="albums">Albums</div>
+                    <div class="item" data-value="photos">Photos</div>
+                    <div class="item" data-value="todos">Todos</div>
+                    </div>
+                </div>
+                <!-- Fin requêtes -->
+                
+            
+                    <!-- options -->
+                    <div class="ui dropdown" id="menu-options">
+                        <div class="text">Options</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item" data-value="selectable">Selectable</div>
+                            <div class="item" data-value="celled">Celled</div>
+                            <div class="item" data-value="structured">Structuré</div>
+                            <div class="item" data-value="inverted">Inversé</div>
+                            <div class="item" data-value="compact">Compact</div>
+                            <div class="item" data-value="striped">Rayures</div>
+                            <div class="item" data-value="definition">Définition</div>
+                            <div class="item" data-value="colors">
+                                <i class="dropdown icon"></i>
+                                Couleurs
+                                <div class="ui secondary menu" id="colors-submenu">
+                                    <div class="item" data-value="red">Rouge</div>
+                                    <div class="item" data-value="orange">Orange</div>
+                                    <div class="item" data-value="yellow">Yellow</div>
+                                    <div class="item" data-value="olive">Olive</div>
+                                    <div class="item" data-value="green">Vert</div>
+                                    <div class="item" data-value="cyan">Cyan</div>
+                                    <div class="item" data-value="blue">Bleu</div>
+                                    <div class="item" data-value="violet">Violet</div>
+                                    <div class="item" data-value="magenta">Magenta</div>
+                                    <div class="item" data-value="pink">Rose</div>
+                                    <div class="item" data-value="brown">Marron</div>
+                                    <div class="item" data-value="grey">Gris</div>
+                                    <div class="item" data-value="black">Noir</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin options -->
+
+                    <!-- hidden-fields -->
+                    <div class="ui clearable multiple selection dropdown" id="hidden-fields">
+                        <input type="hidden" name="hidden-fields">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Colonnes à masquer</div>
+                        <div class="menu">
+                            <div class="item" data-value="id">id</div>
+                            <div class="item" data-value="name">name</div>
+                            <div class="item" data-value="username">username</div>
+                            <div class="item" data-value="email">email</div>
+                            <div class="item" data-value="phone">phone</div>
+                            <div class="item" data-value="website">website</div>
+                            <div class="item" data-value="address">address</div>
+                            <div class="item" data-value="company">company</div>
+                        </div>
+                    </div>
+                    <!-- Fin hidden-fields -->
+                  
+            </div>
+            <!-- Fin table-options -->
+
+            <!-- table -->
+            <table class="ui table">
+                <thead>
+                    
+                </thead>
+                <tbody id="data-body">
+
+                </tbody>
+                
+            </table>
+            <!-- Fin table -->
+
+        </div>
+        <!-- container   -->
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+        <script src="../../js/seance18/ui-datatable.js"></script>
+    </body>
+</html>
+

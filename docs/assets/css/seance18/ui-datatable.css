@@ -1,0 +1,29 @@
+.table-header {
+    background-color: #f9fafb;
+    font-weight: bold;
+  }
+  .table-options {
+    display: flex;
+    align-items: center;
+  }
+  .table-options .ui.dropdown:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .ui.selection.dropdown  {
+    margin-left: 20px;
+  }
+
+  .ui.clearable.multiple.selection.dropdown {
+    margin-left: 500px;
+
+  }
+
+  h4 {
+    margin-top: 13px;
+  }
+  
+  .hide-column {
+    display: none;
+  }
+  
