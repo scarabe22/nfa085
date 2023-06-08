@@ -49,7 +49,8 @@
         </div>
       </div>
       <!-- fin ui menu -->
-      
+
+        <!-- 2 inputs same row      -->
         <div class="ui grid">
           <div class="eight wide column">
             <div class="ui fluid action input">
@@ -59,26 +60,30 @@
           <div class="eight wide column">
             <div class="ui fluid action input">
               <input id="url" type="text" placeholder="URL de la page à incorporer">
-              <button class="ui button">
+              <button class="ui button" id="bt-add-favori">
                 <i class="plus icon"></i>
                 Ajouter favori
               </button>
             </div>
           </div>
         </div>
+        <!-- Fin 2 inputs same row      -->
 
+        <!-- breadcrumb -->
         <div class="ui massive breadcrumb">
           <a class="section">Home</a>
-          <span class="divider">/<span/>
+          <span class="divider">/</span>
           <a class="section">Informatique</a>
-          
-        </>
-      </div>
-      <!-- Fin ui container -->
+        </div>
+        <!-- Fin breadcrumb -->
 
-    <!-- </div> -->
+        <!-- Conteneur pour les favoris -->
+        <div class="ui container" id="favorites-container"></div>
+      
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>  
-  <script src="../../js/evaluation/evaluation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>  
+    <script src="../../js/evaluation/evaluation.js"></script>
 </body>
 </html>
