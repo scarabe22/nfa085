@@ -1,9 +1,4 @@
-/* .item .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-   */
-   .ui.compact.red.button {
+.ui.compact.red.button {
     padding-right: 2px;
    }
+

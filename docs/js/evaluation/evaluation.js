@@ -1,119 +1,157 @@
-// Fonction pour créer un élément favori
+const defaultFavorites = [
+  { title: 'JetBrains', url: 'https://jetbrains.com' },
+  { title: 'GitHub', url: 'https://github.com' },
+  { title: 'StackOverflow', url: 'https://stackoverflow.com' },
+  { title: 'LinkedIn', url: 'https://linkedin.com' },
+  { title: 'Wikipedia', url: 'https://wikipedia.org' },
+  { title: 'Apple', url: 'https://apple.com' },
+  { title: 'Microsoft', url: 'https://microsoft.com' },
+  { title: 'WordPress', url: 'https://wordpress.com' },
+  { title: 'IMDB', url: 'https://imdb.com' },
+  { title: 'Trello', url: 'https://trello.com' },
+  { title: 'Slack', url: 'https://slack.com' },
+  { title: 'BitBucket', url: 'https://bitbucket.org' },
+  { title: 'GitLab', url: 'https://gitlab.com' },
+  { title: 'Bitly', url: 'https://bitly.com' },
+  { title: 'CodePen', url: 'https://codepen.io' },
+  { title: 'JSFiddle', url: 'https://jsfiddle.net' },
+  { title: 'JSBin', url: 'https://jsbin.com' },
+  { title: 'CodeAnywhere', url: 'https://codeanywhere.com' },
+  { title: 'CodeSandbox', url: 'https://codesandbox.io' },
+  { title: 'Repl.it', url: 'https://repl.it' },
+  { title: 'Glitch', url: 'https://glitch.com' },
+  { title: 'JSitor', url: 'https://jsitor.com' },
+];
+
 function createCard(favorite) {
-  // Créer les éléments HTML
-  let cardDiv = document.createElement('div');
-  cardDiv.className = 'ui cards';
+  const card = document.createElement('a');
+  card.classList.add('ui', 'card');
+  card.href = favorite.url;
+  card.target = '_blank';
 
-  let card = document.createElement('div');
-  card.className = 'card';
+  const imageElement = document.createElement('img');
+  imageElement.classList.add('left', 'floated', 'tiny', 'ui', 'image');
+  imageElement.src = `https://logo.clearbit.com/${encodeURIComponent(favorite.url)}`;
 
-  let logoImg = document.createElement('img');
-  logoImg.className = 'left floated tiny ui image';
+  const extraContentElement = document.createElement('div');
+  extraContentElement.classList.add('extra', 'content');
 
-  // Appeler la fonction scrapWebsiteLogo pour obtenir le logo depuis l'API
-  scrapWebsiteLogo(favorite.url)
-    .then(function (logoUrl) {
-      logoImg.src = logoUrl;
-    })
-    .catch(function (error) {
-      console.error('Erreur lors du chargement du logo :', error);
-    });
+  const logoTitleElement = document.createElement('div');
+  logoTitleElement.classList.add('header');
+  logoTitleElement.textContent = favorite.title;
 
-  let extraContent = document.createElement('div');
-  extraContent.className = 'extra content';
+  const logoMetaElement = document.createElement('div');
+  logoMetaElement.classList.add('meta');
+  logoMetaElement.textContent = favorite.url.replace(/(^\w+:|^)\/\//, '');
 
-  let titleHeader = document.createElement('div');
-  titleHeader.className = 'header';
-  titleHeader.textContent = favorite.title;
+  extraContentElement.appendChild(imageElement);
+  extraContentElement.appendChild(logoTitleElement);
+  extraContentElement.appendChild(logoMetaElement);
 
-  let urlMeta = document.createElement('div');
-  urlMeta.className = 'meta';
-  urlMeta.textContent = favorite.url.replace(/^https?:\/\//, '');
+  const deleteButton = document.createElement('div');
+  deleteButton.classList.add('ui', 'red', 'button');
+  deleteButton.innerHTML = '<i class="trash icon"></i>Supprimer';
+  deleteButton.style.float = 'left';
+  deleteButton.style.marginTop = '10px';
+  deleteButton.style.display = 'none';
 
-  let deleteButton = document.createElement('div');
-  deleteButton.className = 'ui red button';
-  deleteButton.style.display = 'none'; // Masquer le bouton de suppression par défaut
-
-  let deleteIcon = document.createElement('i');
-  deleteIcon.className = 'trash icon';
-
-  let deleteText = document.createTextNode('Supprimer');
-
-  // Ajouter les éléments HTML au DOM
-  cardDiv.appendChild(card);
-  card.appendChild(logoImg);
-  card.appendChild(extraContent);
-  extraContent.appendChild(titleHeader);
-  extraContent.appendChild(urlMeta);
-  card.appendChild(deleteButton);
-  deleteButton.appendChild(deleteIcon);
-  deleteButton.appendChild(deleteText);
-
-  // Associer l'événement pour afficher le bouton de suppression au survol de la souris
   card.addEventListener('mouseover', function () {
     deleteButton.style.display = 'block';
   });
 
-  // Associer l'événement pour masquer le bouton de suppression lorsque la souris quitte l'élément
   card.addEventListener('mouseout', function () {
     deleteButton.style.display = 'none';
   });
 
-  // Associer l'événement de suppression au bouton
-  deleteButton.addEventListener('click', function () {
-    cardDiv.remove();
-  });
+  card.appendChild(extraContentElement);
+  card.appendChild(deleteButton);
 
-  return cardDiv;
+  return card;
 }
 
-// // Fonction pour récupérer le logo d'un site depuis l'API
-function scrapWebsiteLogo(url) {
-  return new Promise(function (resolve, reject) {
-    let logoUrl = 'https://logo.clearbit.com/' + url.replace(/^https?:\/\//, '');
-    resolve(logoUrl);
-  });
-}
-
-
-
-
-// Tableau des favoris par défaut
-const defaultFavorites = [
-  {title: 'JetBrains', url: 'https://jetbrains.com'},
-  {title: 'GitHub', url: 'https://github.com'},
-  {title: 'StackOverflow', url: 'https://stackoverflow.com'},
-  {title: 'LinkedIn', url: 'https://linkedin.com'},
-  {title: 'Wikipedia', url: 'https://wikipedia.org'},
-  {title: 'Apple', url: 'https://apple.com'},
-  {title: 'Microsoft', url: 'https://microsoft.com'},
-  {title: 'WordPress', url: 'https://wordpress.com'},
-  {title: 'IMDB', url: 'https://imdb.com'},
-  {title: 'Trello', url: 'https://trello.com'},
-  {title: 'Slack', url: 'https://slack.com'},
-  {title: 'BitBucket', url: 'https://bitbucket.org'},
-  {title: 'GitLab', url: 'https://gitlab.com'},
-  {title: 'Bitly', url: 'https://bitly.com'},
-  {title: 'CodePen', url: 'https://codepen.io'},
-  {title: 'JSFiddle', url: 'https://jsfiddle.net'},
-  {title: 'JSBin', url: 'https://jsbin.com'},
-  {title: 'JS.do', url: 'https://js.do'},
-  {title: 'CodeAnywhere', url: 'https://codeanywhere.com'},
-  {title: 'CodeSandbox', url: 'https://codesandbox.io'},
-  {title: 'Repl.it', url: 'https://repl.it'},
-  {title: 'Glitch', url: 'https://glitch.com'},
-  {title: 'JSitor', url: 'https://jsitor.com'},
-];
-
-// Charger les favoris depuis le tableau defaultFavorites au chargement de la page
-document.addEventListener('DOMContentLoaded', function () {
-  let container = document.querySelector('.ui.container');
-  for (let i = 0; i < defaultFavorites.length; i++) {
-    let favorite = defaultFavorites[i];
-    let card = createCard(favorite);
-    container.appendChild(card);
-  }
+const favoritesContainer = document.getElementById('favorites-container');
+defaultFavorites.forEach(function (favorite) {
+  const card = createCard(favorite);
+  favoritesContainer.appendChild(card);
 });
+
+
+
+
+
+
+
+// Generate a random color
+function getRandomDarkColor(){
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i <6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Extract domain from url
+function getDomainFromUrl(url){
+  url=hasProtocol(url)?url:`https://${url}`;
+  const urlObject = new URL(url);
+  return urlObject.hostname;
+}
+
+// Remove protocol from url
+function removeProtocol(url){
+  return url.replace(/(^\w+:|^)\/\//, '');
+}
+
+// Check if url has protocol
+function hasProtocol(url){
+  return url.indexOf('http')===0;
+}
+
+// Convert hex to rgb
+const hexToRgb = hex => {
+  // turn hex val to RGB
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  return result
+      ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16)
+      }
+      : null
+}
+
+// calc to work out if it will match on black or white better
+const getForegroundColor = rgb =>
+  (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000 > 125 ? '000' : 'fff'
+
+// get the image from clearbit API
+function scrapWebsiteLogo(url) {
+  url=removeProtocol(url);
+  const apiUrl = `https://logo.clearbit.com/${encodeURIComponent(url)}`;
+  const imageElement = document.createElement('img');
+
+  return new Promise((resolve, reject) => {
+      fetch(apiUrl)
+          .then(response => response.blob())
+          .then(blob => {
+              const imageUrl = URL.createObjectURL(blob);
+
+              imageElement.src = imageUrl;
+
+              resolve(imageElement);
+          })
+          .catch(error => {
+              const bgColor = getRandomDarkColor();
+              const color= getForegroundColor(hexToRgb(bgColor));
+              const defaultImageUrl=`https://dummyimage.com/300x300/${bgColor.substring(1,4)}/${color}.png&text=${url}`;
+              imageElement.src = defaultImageUrl;
+              resolve(imageElement);
+          });
+  });
+}
+
+
 
 
 
@@ -130,10 +168,6 @@ function createFavorite(title, url) {
     url: url
   };
 }
-
-
-
-
 
 
 // Associer l'événement au bouton d'ajout de favori
@@ -164,3 +198,58 @@ addButton.addEventListener('click', function () {
   titleInput.value = '';
   urlInput.value = '';
 });
+
+
+
+// Nombre de favoris par ligne
+// Tableau des classes CSS correspondant au nombre de favoris par ligne
+const sizes = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight'};
+
+// Événement déclenché sur le changement de la zone de texte count-per-row
+const countPerRowInput = document.getElementById('count-per-row');
+countPerRowInput.addEventListener('change', function() {
+  // Récupérer la valeur sélectionnée
+  const selectedValue = parseInt(countPerRowInput.value);
+
+  // Vérifier si la valeur est valide et existe dans le tableau sizes
+  if (selectedValue > 0 && selectedValue <= Object.keys(sizes).length) {
+    // Récupérer la classe CSS correspondant à la valeur sélectionnée
+    const selectedSize = sizes[selectedValue];
+
+    // Modifier la classe CSS de l'élément .ui.cards
+    const cardContainer = document.getElementById('favorites-container');
+    cardContainer.className = `ui ${selectedSize} cards`;
+  } else {
+    console.error('Nombre de favoris par ligne invalide');
+  }
+});
+
+
+
+// Toggle light/dark mode
+// Récupérer le bouton de basculement du mode
+const modeButton = document.getElementById('bt-mode');
+
+// Récupérer l'icône du mode
+const modeIcon = document.getElementById('mode-icon');
+
+// Récupérer l'élément parent de votre interface
+const interfaceContainer = document.getElementById('interface-container');
+
+// Fonction pour basculer entre le mode sombre et le mode clair
+function toggleDarkMode() {
+  // Ajouter ou supprimer la classe "inverted" sur l'élément parent
+  interfaceContainer.classList.toggle('inverted');
+
+  // Changer l'icône en fonction du mode
+  if (modeIcon.classList.contains('sun')) {
+    modeIcon.classList.remove('sun');
+    modeIcon.classList.add('moon');
+  } else {
+    modeIcon.classList.remove('moon');
+    modeIcon.classList.add('sun');
+  }
+}
+
+// Ajouter un gestionnaire d'événement au bouton de basculement du mode
+modeButton.addEventListener('click', toggleDarkMode);
