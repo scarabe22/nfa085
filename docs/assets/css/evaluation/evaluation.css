@@ -2,3 +2,46 @@
     padding-right: 2px;
    }
 
+/* Styles pour le mode sombre */
+.dark-mode {
+    background-color: #232B32;
+  }
+  
+.dark-mode .ui.inverted.menu {
+    background-color: #232B32;
+}
+  
+.dark-mode .ui.inverted.card {
+    background-color: #2F3A40;
+}
+  
+.dark-mode .ui.inverted.input input,
+.dark-mode .ui.inverted.input input:focus {
+    background-color: #2F3A40;
+    color: #FFFFFF;
+}
+  
+/* Styles pour le mode clair */
+.ui.menu {
+    background-color: #FFFFFF;
+}
+  
+.ui.card {
+    background-color: #FFFFFF;
+}
+  
+.ui.input input,
+.ui.input input:focus {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.active-domain {
+    color: blue !important;
+  }
+  
+.ui.icon.menu {
+    margin-top: 20px;
+   
+   
+}
