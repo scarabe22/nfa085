@@ -221,7 +221,48 @@ const defaultFavorites = [
   //*****************************************************************/
   // 1 - chargement du Dropdown domaine                             /
   //*****************************************************************/
+  const domains = ['Informatique', 'Reseaux', 'Home', 'Achat', 'Cinema'];
 
+  // Utilisez la fonction `addDomainToLocalStorage` pour ajouter chaque domaine au localStorage
+  domains.forEach((domain) => {
+    addDomainToLocalStorage(domain);
+  });
+  console.log('Les domaines ont été stockés dans le localStorage.');
+  
+  function loadDomainsMenu() {
+    const domains = getDomainsFromLocalStorage();
+  
+    // Sélectionnez l'élément du menu dropdown
+    const dropdownMenu = document.getElementById('dropdown');
+  
+    // Supprimez tous les éléments enfants du menu dropdown existants
+    while (dropdownMenu.firstChild) {
+      dropdownMenu.removeChild(dropdownMenu.firstChild);
+    }
+  
+    // Parcourez les domaines
+    domains.forEach((domain) => {
+      // Créez un élément div pour chaque domaine
+      const item = document.createElement('div');
+      item.classList.add('item');
+      item.textContent = domain;
+  
+      // Ajoutez un gestionnaire d'événement pour le chargement du domaine lorsqu'il est sélectionné
+      item.addEventListener('click', function () {
+        loadDomain(domain);
+      });
+  
+      // Ajoutez l'élément div du domaine au menu dropdown
+      dropdownMenu.appendChild(item);
+    });
+  
+    // Initialisez le dropdown Semantic UI
+    $('.ui.dropdown').dropdown();
+  }
+  
+  // Appelez la fonction loadDomainsMenu pour charger le menu dropdown des domaines depuis le localStorage
+  loadDomainsMenu();
+  
   
 
 
