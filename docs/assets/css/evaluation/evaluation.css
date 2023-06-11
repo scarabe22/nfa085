@@ -45,3 +45,7 @@
    
    
 }
+
+.ui.card:last-child {
+    margin-top: 20px;
+}

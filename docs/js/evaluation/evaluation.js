@@ -24,14 +24,7 @@ const defaultFavorites = [
     {title: 'JSitor', url: 'https://jsitor.com', domains: 'Informatique'},
   ];
   
-  // Afficher les favoris du domaine "Home"
-  $(document).ready(function() {
-    // Cacher toutes les cards
-    $('.card').hide();
-    
-    // Afficher uniquement les cards liées au domaine "Home"
-    $('.card[data-domain="Home"]').show();
-  });
+  
       
     function createCard(favorite) {
       const card = document.createElement('a');
@@ -212,9 +205,10 @@ const defaultFavorites = [
     }
   });
   
-  
+ 
+
   //**************
-  // LocalSrorage  /
+  // LocalStorage  /
   //**************
   
   
@@ -223,44 +217,44 @@ const defaultFavorites = [
   //*****************************************************************/
   const domains = ['Informatique', 'Reseaux', 'Home', 'Achat', 'Cinema'];
 
-  // Utilisez la fonction `addDomainToLocalStorage` pour ajouter chaque domaine au localStorage
+  // Utiliser la fonction `addDomainToLocalStorage` pour ajouter chaque domaine au localStorage
   domains.forEach((domain) => {
     addDomainToLocalStorage(domain);
   });
-  console.log('Les domaines ont été stockés dans le localStorage.');
+  
   
   function loadDomainsMenu() {
     const domains = getDomainsFromLocalStorage();
   
-    // Sélectionnez l'élément du menu dropdown
+    // Sélectionner l'élément du menu dropdown
     const dropdownMenu = document.getElementById('dropdown');
   
-    // Supprimez tous les éléments enfants du menu dropdown existants
+    // Supprimer tous les éléments enfants du menu dropdown existants
     while (dropdownMenu.firstChild) {
       dropdownMenu.removeChild(dropdownMenu.firstChild);
     }
   
-    // Parcourez les domaines
+    // Parcourer les domaines
     domains.forEach((domain) => {
-      // Créez un élément div pour chaque domaine
+      // Créer un élément div pour chaque domaine
       const item = document.createElement('div');
       item.classList.add('item');
       item.textContent = domain;
   
-      // Ajoutez un gestionnaire d'événement pour le chargement du domaine lorsqu'il est sélectionné
+      // Ajouter un gestionnaire d'événement pour le chargement du domaine lorsqu'il est sélectionné
       item.addEventListener('click', function () {
         loadDomain(domain);
       });
   
-      // Ajoutez l'élément div du domaine au menu dropdown
+      // Ajouter l'élément div du domaine au menu dropdown
       dropdownMenu.appendChild(item);
     });
   
-    // Initialisez le dropdown Semantic UI
+    // Initialiser le dropdown Semantic UI
     $('.ui.dropdown').dropdown();
   }
   
-  // Appelez la fonction loadDomainsMenu pour charger le menu dropdown des domaines depuis le localStorage
+  // Appeler la fonction loadDomainsMenu pour charger le menu dropdown des domaines depuis le localStorage
   loadDomainsMenu();
   
   
@@ -288,7 +282,7 @@ const defaultFavorites = [
     });
     // Mettre à jour la variable activeDomain
       activeDomain = domains;
-      console.log(activeDomain)
+     
     // Appeler la fonction updateBreadcrumb avec le domaine actif
       updateBreadcrumb(activeDomain);
   }
@@ -322,12 +316,19 @@ const defaultFavorites = [
       breadcrumbElement.appendChild(activeDomainLink);
     }
   }
-  
+ 
   
   /*****************************************************************/
   // Fin Mise à jour du fil d’ariane                                /
   //****************************************************************/
-  
+  // Afficher les favoris du domaine "Home"
+  $(document).ready(function() {
+    // Cacher toutes les cards
+    $('.card').hide();
+    
+    // Afficher uniquement les cards liées au domaine "Home"
+    $('.card[data-domain="Home"]').show();
+  });
   
   
   
@@ -362,8 +363,8 @@ const defaultFavorites = [
     // Réinitialiser le champ de saisie
     domainInput.value = '';
   });
+
   
-  console.log(activeDomain)
   function updateDomainMenu() {
     const domains = getDomainsFromLocalStorage();
   
@@ -381,7 +382,7 @@ const defaultFavorites = [
       domainMenu.appendChild(domainOption);
     });
   }
-  
+
   
   //*****************************************************************/
   // Fin  Ajout de domaine                                           /
@@ -393,8 +394,62 @@ const defaultFavorites = [
   //***************************************************************/
   // 5 - Ajout de favori                                           /
   //***************************************************************/
+  function isValidURL(url) {
+    // Expression régulière pour valider l'URL
+    const urlPattern = /^(https?:\/\/)?([\w.-]+\.[a-z]{2,})(:[0-9]+)?(\/.*)?$/i;
+    
+    // Vérifier si l'URL correspond au modèle
+    return urlPattern.test(url);
+  }
   
   
+  function createFavorite(title, url) {
+    // Si le titre est vide, utiliser le domaine de l'URL comme titre
+    if (!title) {
+      let domain = url.replace(/^https?:\/\//, '').split('/')[0];
+      title = domain;
+    }
+  
+    // Retourner l'objet favori
+    return {
+      title: title,
+      url: url
+    };
+  }
+  
+  
+  // Associer l'événement au bouton d'ajout de favori
+  let addFavoriteButton = document.getElementById('bt-add-favori');
+  addFavoriteButton.addEventListener('click', function () {
+    // Récupérer les valeurs saisies
+    let titleInput = document.getElementById('title');
+    let urlInput = document.getElementById('url');
+  
+    let title = titleInput.value.trim();
+    let url = urlInput.value.trim();
+  
+    // Vérifier si l'URL est vide ou invalide
+    if (url === '' || !isValidURL(url)) {
+      alert('Veuillez saisir une URL valide.');
+      return;
+    }
+  
+    // Créer un nouvel objet favori
+    let favorite = createFavorite(title, url);
+  
+    // Stocker le favori dans le localStorage
+    // let activeDomain = getActiveDomain();
+    addFavoriteToLocalStorage(favorite, activeDomain);
+  
+    // Créer un élément card pour le favori et l'ajouter à l'interface
+    let container = document.querySelector('.ui.container');
+    let card = createCard(favorite);
+    container.appendChild(card);
+  
+    // Réinitialiser les valeurs des champs de saisie
+    titleInput.value = '';
+    urlInput.value = '';
+  });
   
  
 //***************************************************************/
