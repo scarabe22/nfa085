@@ -334,7 +334,53 @@ const defaultFavorites = [
   /*****************************************************************/
   // 4 - Ajout de domaine                                           /
   //****************************************************************/
+  document.getElementById('bt-add-domain').addEventListener('click', function() {
+    const domainInput = document.getElementById('domain-input');
+    const domainName = domainInput.value.trim();
   
+    if (domainName === '') {
+      alert('Le nom de domaine est obligatoire.');
+      return;
+    }
+  
+    if (!/^[a-zA-Z]+$/.test(domainName)) {
+      alert('Le nom de domaine ne peut contenir que des caractères alphabétiques.');
+      return;
+    }
+  
+    addDomainToLocalStorage(domainName);
+  
+    // Mettre à jour le menu des domaines
+    updateDomainMenu();
+  
+    // Définir le nouveau domaine comme activeDomain
+    activeDomain = domainName;
+  
+    // Mettre à jour l'affichage
+    document.location.reload();
+  
+    // Réinitialiser le champ de saisie
+    domainInput.value = '';
+  });
+  
+  console.log(activeDomain)
+  function updateDomainMenu() {
+    const domains = getDomainsFromLocalStorage();
+  
+    // Supprimer tous les éléments du menu
+    const domainMenu = document.getElementById('domain-input');
+    while (domainMenu.firstChild) {
+      domainMenu.removeChild(domainMenu.firstChild);
+    }
+  
+    // Ajouter les domaines à la liste du menu
+    domains.forEach(function(domain) {
+      const domainOption = document.createElement('option');
+      domainOption.value = domain;
+      domainOption.textContent = domain;
+      domainMenu.appendChild(domainOption);
+    });
+  }
   
   
   //*****************************************************************/
