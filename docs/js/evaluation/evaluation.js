@@ -276,17 +276,52 @@ const defaultFavorites = [
   //*****************************************************************/
   // 2 - Chargement des domaines                                     /
   //*****************************************************************/
-
+  function loadDomain(domains) {
+    const favoritesContainer = document.getElementById('favorites-container');
+    favoritesContainer.innerHTML = '';
   
+    const filteredFavorites = defaultFavorites.filter(favorite => favorite.domains === domains);
   
-  
-  
+    filteredFavorites.forEach(favorite => {
+      const card = createCard(favorite);
+      favoritesContainer.appendChild(card);
+    });
+    // Mettre à jour la variable activeDomain
+      activeDomain = domains;
+      console.log(activeDomain)
+    // Appeler la fonction updateBreadcrumb avec le domaine actif
+      updateBreadcrumb(activeDomain);
+  }
   
   
   //*****************************************************************/
   // 3 - Mise à jour du fil d’ariane                                 /
   //*****************************************************************/
+  function updateBreadcrumb(activeDomain) {
+    const breadcrumbElement = document.getElementById('breadcrumb');
+    breadcrumbElement.innerHTML = '';
   
+    const homeLink = document.createElement('a');
+    homeLink.textContent = 'Home';
+    homeLink.href = '#';
+    homeLink.addEventListener('click', function() {
+      loadDomain('Home');
+    });
+  
+    breadcrumbElement.appendChild(homeLink);
+  
+    if (activeDomain !== 'Home') {
+      const separator = document.createElement('span');
+      separator.innerHTML = '<i class="right angle icon divider"></i>';
+      breadcrumbElement.appendChild(separator);
+  
+      const activeDomainLink = document.createElement('span');
+      activeDomainLink.textContent = activeDomain;
+      activeDomainLink.style.color = '#1471b8';
+      activeDomainLink.style.fontWeight = 'bold';
+      breadcrumbElement.appendChild(activeDomainLink);
+    }
+  }
   
   
   /*****************************************************************/
