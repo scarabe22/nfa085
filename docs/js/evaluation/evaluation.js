@@ -9,7 +9,7 @@ const defaultFavorites = [
     {title: 'WordPress', url: 'https://wordpress.com', domains: 'Informatique'},
     {title: 'IMDB', url: 'https://imdb.com', domains: 'Cinema'},
     {title: 'Trello', url: 'https://trello.com', domains: 'Informatique'},
-    {title: 'Slack', url: 'https://slack.com', domains: 'Informatique'},
+    {title: 'Slack', url: 'https://slack.com', domains: 'Home'},
     {title: 'BitBucket', url: 'https://bitbucket.org', domains: 'Informatique'},
     {title: 'GitLab', url: 'https://gitlab.com', domains: 'Informatique'},
     {title: 'Bitly', url: 'https://bitly.com', domains: 'Informatique'},
@@ -215,7 +215,8 @@ const defaultFavorites = [
   
   //*****************************************************************/
   // 1 - chargement du Dropdown domaine                             /
-  //*****************************************************************/
+  //****************************************************************/
+
   const domains = ['Informatique', 'Reseaux', 'Home', 'Achat', 'Cinema'];
 
   // Utiliser la fonction `addDomainToLocalStorage` pour ajouter chaque domaine au localStorage
@@ -235,7 +236,7 @@ const defaultFavorites = [
       dropdownMenu.removeChild(dropdownMenu.firstChild);
     }
   
-    // Parcourer les domaines
+    // Parcourir les domaines
     domains.forEach((domain) => {
       // Créer un élément div pour chaque domaine
       const item = document.createElement('div');
@@ -258,19 +259,15 @@ const defaultFavorites = [
   // Appeler la fonction loadDomainsMenu pour charger le menu dropdown des domaines depuis le localStorage
   loadDomainsMenu();
   
-  
-
-
-  
   //*****************************************************************/
   // Fin chargement du Dropdown domaine                              /
   //*****************************************************************/
   
   
-  
   //*****************************************************************/
   // 2 - Chargement des domaines                                     /
   //*****************************************************************/
+
   function loadDomain(domains) {
     const favoritesContainer = document.getElementById('favorites-container');
     favoritesContainer.innerHTML = '';
@@ -287,11 +284,25 @@ const defaultFavorites = [
     // Appeler la fonction updateBreadcrumb avec le domaine actif
       updateBreadcrumb(activeDomain);
   }
-  
+
+  // Afficher les favoris du domaine "Home"
+  $(document).ready(function() {
+    // Cacher toutes les cards
+    $('.card').hide();
+    
+    // Afficher uniquement les cards liées au domaine "Home"
+    $('.card[data-domain="Home"]').show();
+  });
+
+   //*****************************************************************/
+  // Fin Chargement des domaines                                     /
+  //*****************************************************************/
+
   
   //*****************************************************************/
-  // 3 - Mise à jour du fil d’ariane                                 /
-  //*****************************************************************/
+  // 3 - Mise à jour du fil d’ariane                                /
+  /*****************************************************************/
+
   function updateBreadcrumb(activeDomain) {
     const breadcrumbElement = document.getElementById('breadcrumb');
     breadcrumbElement.innerHTML = '';
@@ -317,25 +328,16 @@ const defaultFavorites = [
       breadcrumbElement.appendChild(activeDomainLink);
     }
   }
- 
-  
+
   /*****************************************************************/
   // Fin Mise à jour du fil d’ariane                                /
   //****************************************************************/
-  // Afficher les favoris du domaine "Home"
-  $(document).ready(function() {
-    // Cacher toutes les cards
-    $('.card').hide();
-    
-    // Afficher uniquement les cards liées au domaine "Home"
-    $('.card[data-domain="Home"]').show();
-  });
-  
   
   
   /*****************************************************************/
   // 4 - Ajout de domaine                                           /
   //****************************************************************/
+
   document.getElementById('bt-add-domain').addEventListener('click', function() {
     const domainInput = document.getElementById('domain-input');
     const domainName = domainInput.value.trim();
@@ -364,7 +366,6 @@ const defaultFavorites = [
     // Réinitialiser le champ de saisie
     domainInput.value = '';
   });
-
   
   function updateDomainMenu() {
     const domains = getDomainsFromLocalStorage();
@@ -384,17 +385,16 @@ const defaultFavorites = [
     });
   }
 
-  
   //*****************************************************************/
-  // Fin  Ajout de domaine                                           /
+  // Fin  Ajout de domaine                                          /
   //****************************************************************/
   
   
   
-  
   //***************************************************************/
-  // 5 - Ajout de favori                                           /
-  //***************************************************************/
+  // 5 - Ajout de favori                                          /
+  //**************************************************************/
+
   function isValidURL(url) {
     // Expression régulière pour valider l'URL
     const urlPattern = /^(https?:\/\/)?([\w.-]+\.[a-z]{2,})(:[0-9]+)?(\/.*)?$/i;
@@ -417,7 +417,6 @@ const defaultFavorites = [
       url: url
     };
   }
-  
   
   // Associer l'événement au bouton d'ajout de favori
   let addFavoriteButton = document.getElementById('bt-add-favori');
@@ -452,13 +451,6 @@ const defaultFavorites = [
     urlInput.value = '';
   });
   
- 
 //***************************************************************/
 // 5 - Fin ajout de favori                                       /
 //***************************************************************/
-
-
-
-
-
-
